@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kohsruhe</title><link>https://www.kohsruhe.com/zh/</link><description>Recent content on Kohsruhe</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 22 Feb 2023 20:33:11 +0800</lastBuildDate><atom:link href="https://www.kohsruhe.com/zh/index.xml" rel="self" type="application/rss+xml"/><item><title>一套简单的博客部署方案</title><link>https://www.kohsruhe.com/zh/2023/02/22/blog-deployment-using-hugo/</link><pubDate>Wed, 22 Feb 2023 20:33:11 +0800</pubDate><guid>https://www.kohsruhe.com/zh/2023/02/22/blog-deployment-using-hugo/</guid><description>前言 一直尝试搭建一个博客用来写点东西，确实在读大学时了解过像 WordPress 这样的博客平台，无奈对我这种新手来说有点复杂，而且博客的更新和维护也不够优雅。</description><content:encoded><![CDATA[<h2 id="前言">前言</h2>
+<p>一直尝试搭建一个博客用来写点东西，确实在读大学时了解过像 WordPress 这样的博客平台，无奈对我这种新手来说有点复杂，而且博客的更新和维护也不够优雅。直到去年无意间看到了 Pseudoyu 的一篇使用 Hugo 和 GitHub Pages 的全流程博客搭建教程，感觉简单又炫酷，便照着也建一个自己的。</p>
+<p>本文主要内容参考 Pseudoyu 的<a href="https://www.pseudoyu.com/en/2022/05/29/deploy_your_blog_using_hugo_and_github_action/">教程</a>，并对自己的搭建流程做一个记录。</p>
+<h3 id="需求及目标">需求及目标</h3>
+<ul>
+<li>找到一套简单易用的博客部署方案，降低博客更新和维护成本，让自己能专注内容，提高输出。</li>
+<li>记录流程，避免踩坑，希望对后来者有所帮助。</li>
+</ul>
+<h3 id="环境准备">环境准备</h3>
+<ul>
+<li>安装 git，并知道一些简单的 git 指令</li>
+<li>熟悉命令行操作和使用</li>
+<li>申请一个 GitHub 账号</li>
+</ul>
+<h2 id="使用-hugo-搭建">使用 Hugo 搭建</h2>
+<p>开始之前先安利一下 Hugo 这个静态网站生成器，感觉挺适合个人博客和小型网站的。基于它可以使用简单的 Markdown 来写文章，如果之前熟悉 Markdown 语法能省去不少排版时间。</p>
+<p>另外补充一点关于静态网站的知识：</p>
+<blockquote>
+<p>静态网站是由预先准备好的 HTML、CSS 和 JavaScript 等静态文件组成的网站，它们在服务器上保存，并在请求时直接发送给访问者的浏览器。这些文件是在构建网站时创建的，不需要服务器端代码来处理请求或生成页面内容。相比之下，动态网站需要服务器端代码来处理请求并生成页面内容。</p>
+</blockquote>
+<p>好了，那让我们开始。</p>
+<h3 id="安装-hugo">安装 Hugo</h3>
+<p>我用的是 Windows 的 <a href="https://scoop.sh/">Scoop</a> 包管理工具来安装 Hugo，这里非常推荐 Scoop 这款工具，以后有机会可以详细聊聊。不过你也可以下载二进制文件安装，不影响。其他操作系统请参考<a href="https://gohugo.io/installation/">官方安装教程</a>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">scoop</span> <span class="n">install</span> <span class="nb">hugo-extended</span>
+</span></span></code></pre></div><p>安装完成后，可以输入 <code>hugo version</code> 命令来验证是否安装成功。</p>
+<h3 id="创建网站">创建网站</h3>
+<p>操作之前，可以先输入 <code>hugo help</code> 来查看 Hugo 的帮助文档，提前熟悉一番。</p>
+<p>这里推荐基于主题创建，效果立竿见影，去 <a href="https://themes.gohugo.io/">Hugo Themes</a> 找一款喜欢的主题，然后按教程拉取别人的模板到本地。下面以 <a href="https://themes.gohugo.io/themes/hugo-theme-den/">Den</a> 主题为例，在命令行窗口逐行输入以下内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo new site my-blog 
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> my-blog 
+</span></span><span class="line"><span class="cl">git init 
+</span></span><span class="line"><span class="cl">git submodule add https://github.com/shaform/hugo-theme-den.git themes/den
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;theme = &#39;den&#39;&#34;</span> &gt;&gt; config.toml 
+</span></span><span class="line"><span class="cl">hugo server
+</span></span></code></pre></div><p>这里会在本地建一个 <code>my-blog</code> 的文件夹，并初始化为 git 仓库，点进去会发现一些默认的文件和文件夹：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">my-blog/
+</span></span><span class="line"><span class="cl">├── archetypes/ <span class="c1">#包含默认的文章模板</span>
+</span></span><span class="line"><span class="cl">├── content/    <span class="c1">#包含所有网站内容，如文章、页面等</span>
+</span></span><span class="line"><span class="cl">├── data/       <span class="c1">#包含数据文件，如JSON、YAML等</span>
+</span></span><span class="line"><span class="cl">├── layouts/    <span class="c1">#包含网站的所有布局文件，如主页、文章页等</span>
+</span></span><span class="line"><span class="cl">├── static/     <span class="c1">#包含所有的静态文件，如图像、样式表等</span>
+</span></span><span class="line"><span class="cl">├── themes/     <span class="c1">#包含所有主题文件，如样式表、脚本等</span>
+</span></span><span class="line"><span class="cl">└── config.toml <span class="c1">#包含网站的配置信息，如网站名称、作者等</span>
+</span></span></code></pre></div><p>运行 <code>hugo server</code> 后，就可以在浏览器输入 <code>http://localhost:1313</code> 地址访问我们的本地预览网页了。</p>
+<p>当然目前网页内容是空的，只包含主题样式，但你可以通过 <code>hugo new</code> 来添加新的网页文件：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">hugo</span> <span class="n">new</span> <span class="n">posts</span><span class="p">/</span><span class="nb">my-first</span><span class="n">-post</span><span class="p">.</span><span class="nb">md
+</span></span></span></code></pre></div><p>新建的文件会在 <code>content/posts</code> 目录下，找到并使用编辑器打开，就可以使用 Markdown 语法编写文章内容了，可以添加标题、段落、列表、图像等元素。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;My First Post&#34;
+</span></span><span class="line"><span class="cl">date: 2023-02-19T12:08:43+08:00
+</span></span><span class="line"><span class="cl">draft: true
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## Introduction 
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="cl">This is <span class="gs">**bold**</span> text, and this is <span class="ge">*emphasized*</span> text. 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Visit the [<span class="nt">Hugo</span>](<span class="na">https://gohugo.io</span>) website!
+</span></span></code></pre></div><p>编辑完保存后，使用 <code>hugo server -D</code> 命令生成一遍看看效果。</p>
+<blockquote>
+<p><code>-D</code> 选项表示草稿也会生成，如果文件元数据的 <code>draft: true</code> 是开着的话。</p>
+</blockquote>
+<h3 id="配置网站">配置网站</h3>
+<p>开根目录下的 <code>config.toml</code> 可以对网站进行配置。一般主题会自带一个配置文件，建议在主题的配置文件上进行修改和补充。比如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl"><span class="gh"># ------------------------------------- #
+</span></span></span><span class="line"><span class="cl"><span class="gh"># ---- General Settings --------------- #
+</span></span></span><span class="line"><span class="cl"><span class="gh"># ------------------------------------- #
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>baseURL = &#34;https://example.com&#34;
+</span></span><span class="line"><span class="cl">title = &#34;Den&#34;
+</span></span><span class="line"><span class="cl">theme = &#34;hugo-theme-den&#34;
+</span></span><span class="line"><span class="cl"><span class="gh">#enableRobotsTXT = true       # generate robots.txt
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>enableEmoji = true           # use emoji support
+</span></span><span class="line"><span class="cl">hasCJKLanguage = true        # detect CJK languages for word count etc.
+</span></span><span class="line"><span class="cl">preserveTaxonomyNames = true # do not make tag names lowercase
+</span></span><span class="line"><span class="cl"><span class="gh"># uglyURLs = true            # more info: https://gohugo.io/content-management/urls/#ugly-urls
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl">rssLimit = 20                # limit number of entries in RSS feeds
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># Copyright, appears in the footer
+</span></span></span><span class="line"><span class="cl"><span class="gh"># copyright = &#34;&#34;             # default: author.name
+</span></span></span></code></pre></div><p>到这里，一个简单的静态网站就可以生成了。但由于我们还没有配置 Github Pages 和购买域名，目前还无法部署和对外发布。</p>
+<p>执行 <code>hugo</code> 指令，生成的静态网站文件会在根目录下的 <code>public/</code> 文件夹中。</p>
+<h2 id="使用-github-pages-部署">使用 GitHub Pages 部署</h2>
+<p>使用 GitHub Pages 前需要一个 GitHub 账号，官网可以免费注册一个。</p>
+<blockquote>
+<p>GitHub Pages 是 GitHub 提供的一项服务，允许用户将静态网页托管在 GitHub 上。通过 GitHub Pages，用户可以在 GitHub 上创建一个新的代码仓库，并将其作为一个静态网站托管在互联网上。</p>
+</blockquote>
+<p>GitHub Pages 需要新建一个 <code>&lt;username&gt;.github.io</code> 特殊命名格式的仓库（当然基于已有仓库的新分支也可以，后面说），其中 <code>&lt;username&gt;</code> 是注册的 GitHub 用户名，这样命名的仓库将被认为是我们的主页，并且 GitHub Pages 将自动使用它来托管我们的静态网站。</p>
+<p>我们通过将 <code>public/</code> 目录初始化为 git 仓库并关联我们的 <code>&lt;username&gt;.github.io</code> 远程仓库来推送我们的网页静态文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> public/
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git remote add origin git@github.com:leehyon/leehyon.github.io
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;init site&#34;</span>
+</span></span></code></pre></div><p>仓库建立完成后，可以在设置中配置自己注册的自定义域名来指向 GitHub Pages 生成的网址。此外，需要将博客站点配置文件 <code>config.toml</code> 中的 <code>baseURL</code> 改为自己的自定义域名，这样博客站点才能正常访问 GitHub Pages 生成的网站服务。</p>
+<p>最后通过 <code>git push origin master</code> 推送到远程仓库，稍等几分钟就可以在浏览器中输入 <code>https://&lt;username&gt;.github.io</code> 来查看网站了。</p>
+<h2 id="自动部署">自动部署</h2>
+]]></content:encoded></item><item><title>Python 多版本管理</title><link>https://www.kohsruhe.com/zh/2022/12/30/manage-multi-pythons/</link><pubDate>Fri, 30 Dec 2022 21:23:55 +0800</pubDate><guid>https://www.kohsruhe.com/zh/2022/12/30/manage-multi-pythons/</guid><description>起因 我相信很多人会遇到这样的问题，电脑装了 Python3.x，突然又要用到 Python2.x，那怎样让两者共存而又不影响各自使用呢？如果你去</description><content:encoded><![CDATA[<h2 id="起因">起因</h2>
+<p>我相信很多人会遇到这样的问题，电脑装了 Python3.x，突然又要用到 Python2.x，那怎样让两者共存而又不影响各自使用呢？如果你去百度，出来的答案基本上都推荐把 <code>python.exe</code> 改个名字。</p>
+<p>个人非常不建议这么做，虽然可能看似解决了，但是呢。先不说你这么随便改会不会影响其他功能，这种做法本身非常不优雅，而且它还破坏了程序，如果这是一种解决方案的话，Python 官方也不会释放。</p>
+<p>所以该怎么做呢？今天我们来聊聊。</p>
+<h2 id="从安装开始说起">从安装开始说起</h2>
+<p>不知道大家在最开始安装 Python 的时候有没注意到两个选项：</p>
+<ul>
+<li>Install launcher for all users (recommended)</li>
+<li>Add Python to PATH</li>
+</ul>
+<p><img src="https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/python38-installer.png" alt=""></p>
+<p>细心的你肯定发现第一个选项是默认勾选的，而且还有括弧推荐，而 <code>Add Python to PATH</code> 却没有这种待遇，这么设计官方是几个意思呢？而这又不得不从 PATH 变量说起。</p>
+<h3 id="关于-path">关于 PATH</h3>
+<p>在 Windows 系统中，PATH 是一个特殊的环境变量，它是一个包含多个路径的字符串，每个路径之间用分号分隔。当你在命令行中输入一个可执行文件的名称时，Windows 会搜索这些路径，以找到该文件的位置，使你可以在<strong>任何位置</strong>运行该文件。因此，为了让操作系统能运行 Python，是有必要在安装的时候将 Python 加入 PATH 的。</p>
+<p>但问题是，Python 不能只装一个，有时候我们会遇到开头的困境，那如何是好呢？其实很早以前官方就给出了解决方案，也就是安装界面的那个默认选项，详细介绍可以参考<a href="https://docs.python.org/3/using/windows.html#launcher">这里</a>。</p>
+<h2 id="python-launcher">Python launcher</h2>
+<p>Python 启动器也就是 <code>py.exe</code>，默认安装在 <code>C:\Windows\</code> 路径下，它允许我们在多个 Python 版本之间进行选择和切换。使用启动器，可以将 Python 脚本与指定的 Python 版本一起运行，而不用考虑系统默认的 Python 版本（即添加在 PATH 中的）。此外，启动器还可以自动检测 Python 脚本中的顶行，即 <code>#!/usr/bin/env python</code> 行，并选择正确的 Python 版本来运行它。</p>
+<p>在命令行中输入 <code>py --list</code> 会显示系统已安装的 Python 版本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">leehyon</span><span class="p">&gt;</span> <span class="n">py</span> <span class="p">-</span><span class="n">-list</span>
+</span></span><span class="line"><span class="cl"><span class="n">Installed</span> <span class="n">Pythons</span> <span class="n">found</span> <span class="n">by</span> <span class="n">C:</span><span class="p">\</span><span class="n">Windows</span><span class="p">\</span><span class="n">py</span><span class="p">.</span><span class="py">exe</span> <span class="n">Launcher</span> <span class="k">for</span> <span class="n">Windows</span>
+</span></span><span class="line"><span class="cl"> <span class="mf">-3.9</span><span class="p">-</span><span class="mf">64</span> <span class="p">*</span>
+</span></span><span class="line"><span class="cl"> <span class="mf">-3.9</span><span class="p">-</span><span class="mf">32</span>
+</span></span><span class="line"><span class="cl"> <span class="mf">-2.7</span><span class="p">-</span><span class="mf">64</span>
+</span></span></code></pre></div><p>假设你现在写了一个 <code>script.py</code> 脚本， 要在 Python 3.9 下运行，则可以使用以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">py</span> <span class="mf">-3.9</span> <span class="n">script</span><span class="p">.</span><span class="py">py</span>
+</span></span></code></pre></div><p>或者想用 Python 2.7 版本运行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">py</span> <span class="mf">-2</span> <span class="n">script</span><span class="p">.</span><span class="py">py</span>
+</span></span></code></pre></div><p>当然，如果嫌麻烦，就如上面说的，在 <code>script.py</code> 代码里的顶行加入说明，比如：<code>#! python2</code>，这样就可以简化成：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">py</span> <span class="n">script</span><span class="p">.</span><span class="py">py</span>
+</span></span></code></pre></div><h2 id="最后">最后</h2>
+<p>今天先聊到这，具体的用法还需自己探索，建议多看看<a href="https://docs.python.org/3/contents.html">官方文档</a>。</p>
+<p>另外，多认识一下环境变量，比如系统环境变量和用户环境变量，它们之间的优先级等等，有时候可以帮你解决很多问题。</p>
+]]></content:encoded></item><item><title>Git 子模块使用</title><link>https://www.kohsruhe.com/zh/2022/11/21/git-submodule/</link><pubDate>Mon, 21 Nov 2022 10:50:19 +0800</pubDate><guid>https://www.kohsruhe.com/zh/2022/11/21/git-submodule/</guid><description>前言 克隆他人项目时，有时候会看到仓库目录下有一个 .gitmodules 的文本文件，打开后有如下类似内容： [submodule &amp;#34;foo/bar&amp;#34;] path = foo/bar url = https://example.com/foo.git branch = dev 上述内容表面该仓库使用了 git submodule 方式链</description><content:encoded><![CDATA[<h2 id="前言">前言</h2>
+<p>克隆他人项目时，有时候会看到仓库目录下有一个 <code>.gitmodules</code> 的文本文件，打开后有如下类似内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>submodule <span class="s2">&#34;foo/bar&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">path</span> <span class="o">=</span> foo/bar
+</span></span><span class="line"><span class="cl">	<span class="nv">url</span> <span class="o">=</span> https://example.com/foo.git
+</span></span><span class="line"><span class="cl">	<span class="nv">branch</span> <span class="o">=</span> dev
+</span></span></code></pre></div><p>上述内容表面该仓库使用了 <code>git submodule</code> 方式链接了其他仓库。如果要使用被链接的仓库，需要用以下命令进行初始化：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git submodule update --init --recursive
+</span></span></code></pre></div><h3 id="为什么使用-git-子模块">为什么使用 git 子模块</h3>
+<p>其实背后的思想是模块化设计：</p>
+<ul>
+<li>根据代码功能或维护周期把项目拆分成不同的子模块，并建立不同的 git 仓库</li>
+<li>一个模块能被多处使用，通过 <code>git submodule</code> 进行关联</li>
+<li>主模块不必负责子模块的维护，只在必要时候同步更新</li>
+</ul>
+<p>另外，如果项目依赖一个开源的第三方库时，也建议将第三方库设置为子模块。</p>
+<h2 id="主要内容">主要内容</h2>
+<ul>
+<li>添加子模块到仓库并不会把子模块的源码添加进来，只是添加子模块的信息，比如 <code>url</code> 和 <code>branch</code></li>
+<li>添加后的子模块不会随子模块仓库的更新而自动更新，以保证主仓库的稳定性</li>
+</ul>
+<h3 id="添加子模块">添加子模块</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git submodule add &lt;submodule_url&gt; &lt;path&gt;
+</span></span></code></pre></div><p>执行添加命令成功后，可以在当前路径中看到一个 <code>.gitsubmodule</code> 文件，里面的内容就是子模块的信息。</p>
+<p>如果在添加子模块的时候想要指定分支，可以利用 <code>-b</code> 参数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git submodule add -b &lt;branch&gt; &lt;url&gt; &lt;path&gt;
+</span></span></code></pre></div><p>添加之后，仓库 <code>&lt;path&gt;</code> 目录下不会有任何变化，需要执行下面命令才会添加源码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git submodule update --init --recursive
+</span></span></code></pre></div><h3 id="更新子模块">更新子模块</h3>
+<p>如果子模块仓库更新了，如有必要，需要手动进行更新，即进入子模块目录，执行 <code>git pull</code> 命令。</p>
+<h3 id="删除子模块">删除子模块</h3>
+<p>网上搜到的方法有点繁琐，其实可以使用 <code>git submodule deinit</code> 命令进行删除，简单又优雅：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git submodule deinit &lt;submodule_name&gt;
+</span></span><span class="line"><span class="cl">$ git rm &lt;submodule_name&gt;
+</span></span></code></pre></div><p>这个命令如果添加上参数 <code>--force</code>，则子模块工作区内即使有本地的修改，也会被移除。</p>
+]]></content:encoded></item><item><title>Git 快速上手</title><link>https://www.kohsruhe.com/zh/2022/11/20/git-quick-guide/</link><pubDate>Sun, 20 Nov 2022 16:59:39 +0800</pubDate><guid>https://www.kohsruhe.com/zh/2022/11/20/git-quick-guide/</guid><description>前言 本文主要内容参考自 Git 教程 - 廖雪峰的官方网站，同时结合自己的使用习惯稍作修改。 对任何软件的使用，首先要明确自己的需求，虽然我之前就知道 gi</description><content:encoded><![CDATA[<h2 id="前言">前言</h2>
+<p>本文主要内容参考自 <a href="https://www.liaoxuefeng.com/wiki/896043488029600">Git 教程 - 廖雪峰的官方网站</a>，同时结合自己的使用习惯稍作修改。</p>
+<p>对任何软件的使用，首先要<strong>明确自己的需求</strong>，虽然我之前就知道 git，但直到最近由于工作需要才开始接触命令行操作，一旦会了就基本告别 GUI 了。其次是<strong>抓住软件的底层逻辑</strong>，比如 git 的核心是 stage（暂存区）和指针，明白这两个概念，其他很多内容都不言自明了。</p>
+<h2 id="git-是什么">Git 是什么</h2>
+<p>Git 是目前世界上最先进的<strong>分布式</strong>版本控制系统，即 Distributed Version Control System (DVCS)，由大神 Linus 开发完成，他同时也是开源 Linux 创建者。</p>
+<h3 id="集中式和分布式">集中式和分布式</h3>
+<p>集中式版本控制系统，顾名思义是有一个中央服务器存储你的版本库。每次版本的更新和提交都需要你连接和上传到中央服务器。</p>
+<p>而分布式版本控制系统没有中央服务器的概念，<strong>每个人的本地电脑都是一个完整的版本库</strong>，版本的更新和提交都发生在你自己的电脑上。</p>
+<p>现在请思考：</p>
+<ul>
+<li>如果每个人的电脑都有一个完整的版本库，那么该怎么实现多人协作？</li>
+<li>相比集中式，分布式有什么优点？</li>
+</ul>
+<h2 id="安装和配置">安装和配置</h2>
+<p>在 Windows 上使用 git，可以从官网直接<a href="https://git-scm.com/downloads">下载安装程序</a>，然后按默认选项安装即可。</p>
+<p>安装完成后，右键开始菜单找到 <code>Git Bash</code>，弹出一个带颜色的命令行窗口，输入 <code>git -v</code> 能查到版本信息就代表安装成功。</p>
+<h3 id="用户信息配置">用户信息配置</h3>
+<p>安装完成后的第一步是配置你的个人信息，因为 git 是分布式的，每台电脑需要自报家门。</p>
+<p>在命令行输入以下内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git config --global user.name <span class="s2">&#34;Your Name&#34;</span>
+</span></span><span class="line"><span class="cl">$ git config --global user.email <span class="s2">&#34;email@example.com&#34;</span>
+</span></span></code></pre></div><blockquote>
+<p>你的信息保存在全局配置文件 <code>~/.gitconfig</code> 中，你也可以通过 <code>git config --list</code> 命令确认你的信息。</p>
+</blockquote>
+<p>命令中的 <code>--global</code> 参数，表示你这台电脑上所有的 git 仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和 Email 地址。</p>
+<ul>
+<li>即在需要单独配置的仓库源目录下运行 <code>git config</code> 命令，省略 <code>--global</code></li>
+</ul>
+<h2 id="版本管理">版本管理</h2>
+<blockquote>
+<p>版本库又名仓库，英文名 repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被 git 管理起来，每个文件的修改、删除，git 都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
+</blockquote>
+<h3 id="创建版本库">创建版本库</h3>
+<p><code>git init</code> 命令可以把一个目录变成 git 可以管理的仓库。</p>
+<ul>
+<li>创建后，该目录下会多一个 <code>.git</code> 的子目录，这个目录是 git 来跟踪管理版本库的，该目录默认隐藏</li>
+</ul>
+<h3 id="添加和修改">添加和修改</h3>
+<p><code>git status</code> 命令可以让我们时刻掌握仓库当前的状态，而 <code>git diff</code> 命令可以对比修改的内容。</p>
+<p>提交修改和提交新文件是一样的两步（从这里可以看出 git 跟踪的是<strong>修改</strong>而不是文件），先 <code>git add</code>，再 <code>git commit</code>。</p>
+<ul>
+<li><code>git add .</code> 可以添加所有的修改</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;# Git is fun&#34;</span> &gt;&gt; README.md
+</span></span><span class="line"><span class="cl">$ git add README.md
+</span></span><span class="line"><span class="cl">$ git commit -m <span class="s2">&#34;add readme&#34;</span>
+</span></span></code></pre></div><h3 id="版本控制">版本控制</h3>
+<p><code>git log</code> 命令显示从最近到最远的提交日志。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">leehyon@Kohs-MacBook kohsruhe % git log
+</span></span><span class="line"><span class="cl">commit fa9c94b19b0347a61c5e72b556947d9f86fefb21 <span class="o">(</span>HEAD -&gt; main, origin/main<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Author: Leehyon Koh &lt;leehyon@live.com&gt;
+</span></span><span class="line"><span class="cl">Date:   Sun Nov <span class="m">20</span> 16:43:58 <span class="m">2022</span> +0800
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">test</span> aliyun image hub
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">commit 7381263185e996491d84cde9f15520fe88afb379
+</span></span><span class="line"><span class="cl">Author: Leehyon Koh &lt;leehyon@live.com&gt;
+</span></span><span class="line"><span class="cl">Date:   Sun Nov <span class="m">20</span> 14:24:38 <span class="m">2022</span> +0800
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    add first article
+</span></span></code></pre></div><p><code>commit</code> 后面跟的一大串数字就是版本号，即 <code>commit id</code>。</p>
+<ul>
+<li>思考：为什么 git 的版本号不像 SVN 一样以数字迭代的？</li>
+</ul>
+<p>那么有了版本号是不是可以在不同版本间跳转了呢？那的确是的。不过 git 必须首先知道当前是哪个版本。</p>
+<p>在 git 中，用 <code>HEAD</code> 表示当前版本，也就是最新的提交的 <code>fa9c9...</code>，上一个版本就是 <code>HEAD^</code>，上上一个版本就是 <code>HEAD^^</code>，当然往上100个版本请写成 <code>HEAD~100</code>。</p>
+<p>使用 <code>git reset</code> 命令，并添加 <code>Head</code> 信息或指定版本号来实现版本回退：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git reset --hard HEAD^  <span class="c1"># 回退到上一版本</span>
+</span></span><span class="line"><span class="cl">$ git reset --hard <span class="m">73812</span>  <span class="c1"># 或指定版本号</span>
+</span></span></code></pre></div><p>Git 的版本回退速度非常快，因为它仅仅更改了 <code>HEAD</code> 的指向。这里是重点，后面提到的<strong>分支管理</strong>也是基于指针的操作。</p>
+<p>思考：回到过去后，突然反悔了又想回到未来怎么办？</p>
+<ul>
+<li>Git 提供了一个命令 <code>git reflog</code> 用来记录你的每一次命令，找到需要返回的 <code>commit id</code></li>
+</ul>
+<h2 id="核心逻辑一暂存区">核心逻辑一：暂存区</h2>
+<p><code>.git</code> 目录是 git 的版本库，里面存了非常重要的两个东西：</p>
+<ul>
+<li>一是被称为 stage 的暂存区</li>
+<li>二是 git 自动创建的第一个分支 <code>master</code>，以及指向 <code>master</code> 的一个 <code>HEAD</code> 指针</li>
+</ul>
+<p><img src="https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/stage.png" alt=""></p>
+<p>前面讲了我们把文件往 git 版本库里添加是分两步执行的：</p>
+<ol>
+<li><code>git add</code> 把文件添加进去，实际上就是把文件修改添加到暂存区</li>
+<li><code>git commit</code> 提交修改，实际上就是把暂存区的所有内容提交到当前分支</li>
+</ol>
+<p>为什么 git 比其他版本控制系统设计得优秀，因为 git 跟踪并管理的是<strong>修改</strong>，而非文件。每次修改，如果不用 <code>git add</code> 到暂存区，那就不会加入到 <code>git commit</code> 中。</p>
+<p>思考：什么是修改？什么又是文件？</p>
+<h3 id="撤销修改">撤销修改</h3>
+<p>先看下面一条命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git checkout -- README.md
+</span></span></code></pre></div><p>意思是，把 <code>README.md</code> 文件在工作区的修改全部撤销，这里有两种情况：</p>
+<ol>
+<li><code>README.md</code> 自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态</li>
+<li><code>README.md</code> 已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态</li>
+</ol>
+<p><code>git checkout -- &lt;file&gt;</code> 命令中的 <code>--</code> 很重要，没有 <code>--</code>，就变成了“切换到另一个分支”。</p>
+<ul>
+<li>一种可选的方法是：用 <code>git reset HEAD &lt;file&gt;</code> 可以把暂存区的修改撤销掉，重新放回工作区</li>
+</ul>
+<p>注意：这里所指的撤销都是基于还没有 <code>git commit</code> 的。</p>
+<p>每次在撤销或修改操作时，建议先用 <code>git status</code> 查看仓库状态。</p>
+<p>思考：如果已经把暂存区提交到了版本库了，该怎么办？</p>
+<h2 id="远程仓库">远程仓库</h2>
+<p>GitHub 是基于 git 的一个面向开源及私有软件项目的<strong>托管平台</strong>。除了 GitHub，其他的还有比如 <a href="https://about.gitlab.com/">GitLab</a> 和 <a href="https://gitee.com/">Gitee</a> 等。</p>
+<h3 id="配置-ssh">配置 SSH</h3>
+<p>由于本地仓库和 GitHub 仓库之间的传输是通过 SSH 协议加密的，所以需要首先配置 SSH。配置过程参考<a href="https://docs.github.com/en/enterprise-server@3.7/authentication/connecting-to-github-with-ssh">官方教程</a>。</p>
+<p>配置完成后，可以在用户主目录里找到 <code>.ssh</code> 目录，里面有 <code>id_rsa</code> 和 <code>id_rsa.pub</code> 两个文件（如果使用默认名），这两个就是 SSH 的密钥对，<code>id_rsa</code> 是私钥，不能泄漏，而 <code>id_rsa.pub</code> 是公钥，复制粘贴到 GitHub 设置里。</p>
+<p>GitHub 允许你添加多个 SSH 密钥对。如果你使用多台电脑工作，只要把每台电脑的公钥都添加到 GitHub 设置里，就可以在每台电脑上往 GitHub 远程仓库拉取和推送了。</p>
+<h3 id="配置-gpg">配置 GPG</h3>
+<p>我们查看仓库的 <code>commit</code> 历史时，发现有带 <code>Verified</code> 的绿色标记：
+<img src="https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/verified-commit.png" alt=""></p>
+<p>该标记表示这一次 <code>commit</code> 是经过签名验证的。配置过程参考<a href="https://docs.github.com/en/enterprise-server@3.7/authentication/managing-commit-signature-verification">官方教程</a>。</p>
+<h3 id="克隆远程仓库">克隆远程仓库</h3>
+<p>要克隆一个仓库，首先必须知道仓库的地址，然后使用 <code>git clone</code> 命令克隆。</p>
+<blockquote>
+<p>Git 支持多种协议，包括 <code>https</code>，但 <code>ssh</code> 协议速度最快。</p>
+</blockquote>
+<p>如果本地仓库已经有了，那怎么办？新建一个空的远程仓库，再进行关联。</p>
+<h3 id="关联远程仓库">关联远程仓库</h3>
+<p>关联和添加远程仓库使用 <code>git remote add</code> 命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git remote add origin &lt;git@newempty.git&gt;  <span class="c1"># 关联一个远程仓库</span>
+</span></span></code></pre></div><blockquote>
+<p><code>origin</code> 是远程仓库的名字，这是 git 默认的叫法，也可以改成别的。</p>
+</blockquote>
+<p>把本地库的内容推送到远程，用 <code>git push</code> 命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git push -u origin master  <span class="c1"># 推送当前分支到远程master分支</span>
+</span></span></code></pre></div><blockquote>
+<p>如果远程库是空的，我们第一次推送 <code>master</code> 分支时，加上了 <code>-u</code> 参数，git 不但会把本地的分支内容推送到远程的 <code>master</code> 分支，还会把本地分支和远程的 <code>master</code> 分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+</blockquote>
+<p>从今往后，只要本地作了提交，就可以通过 <code>git push origin master</code> 命令提交修改。</p>
+<h3 id="解除远程关联">解除远程关联</h3>
+<p>如果添加的时候地址写错了，或者就是想解除关联，可以用 <code>git remote rm &lt;repo name&gt;</code> 命令。</p>
+<p>使用前，建议先用 <code>git remote -v</code> 查看远程库信息：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git remote -v  <span class="c1"># 查看远程库信息</span>
+</span></span><span class="line"><span class="cl">origin	git@github.com:leehyon/kohsruhe-site.git <span class="o">(</span>fetch<span class="o">)</span>
+</span></span><span class="line"><span class="cl">origin	git@github.com:leehyon/kohsruhe-site.git <span class="o">(</span>push<span class="o">)</span>
+</span></span></code></pre></div><p>然后，根据名字解除，比如 <code>git remote rm origin</code>。</p>
+<h2 id="核心逻辑二分支管理指针">核心逻辑二：分支管理（指针）</h2>
+<p>当我们创建新的分支 <code>dev</code> 时，git 新建了一个指针叫 <code>dev</code>，指向 <code>master</code> 相同的一个 <code>commit</code>，再把 <code>HEAD</code> 指针指向 <code>dev</code>，就表示当前分支在 <code>dev</code> 上：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git switch -c dev  <span class="c1"># 创建dev分支并切换</span>
+</span></span></code></pre></div><p><code>git switch</code> 令加上 <code>-c</code> 参数表示创建并切换，相当于以下两条命令：</p>
+<ul>
+<li><code>git branch dev</code></li>
+<li><code>git switch dev</code></li>
+</ul>
+<blockquote>
+<p>Git 创建一个分支很快，因为除了增加一个 <code>dev</code> 指针，更改 <code>HEAD</code> 的指向，没有更改工作区内容。</p>
+</blockquote>
+<p><code>git branch</code> 命令会列出所有分支，带 <code>*</code> 号的为当前分支。</p>
+<p>从现在开始，对工作区的修改和提交都是针对 <code>dev</code> 分支了，比如新提交一次后，<code>dev</code> 指针往前移动一步，而 <code>master</code> 指针保持不变：</p>
+<p><img src="https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/branch-point.png" alt=""></p>
+<p>如果我们在 <code>dev</code> 分支上的工作完成了，就可以把 <code>dev</code> 合并到 <code>master</code> 上。那 git 怎么合并呢？最简单的方法，就是直接把 <code>master</code> 指向 <code>dev</code> 的当前提交。</p>
+<p>所以 git 合并分支也很快，就改改指针，也没有更改工作区内容。</p>
+<p>合并分支后，甚至可以删除 <code>dev</code> 分支。删除 <code>dev</code> 分支就是把 <code>dev</code> 指针给删掉，删掉后，就剩 <code>master</code> 分支了。</p>
+<p>到此为止，应该明白<strong>针对分支的操作其实是针对指针的操作</strong>。了解完这一点，git 就没啥了。</p>
+<h3 id="分支管理策略">分支管理策略</h3>
+<p>在实际开发中，应该按照怎么样的策略进行分支管理呢？</p>
+<ul>
+<li>首先，<code>master</code> 分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活</li>
+<li>干活都在 <code>dev</code> 分支上，等到新版本发布时，再把 <code>dev</code> 分支合并到 <code>master</code> 上，并在 <code>master</code> 分支发布新版本</li>
+<li>修复 bug 时，建议通过创建新的 bug 分支进行修复，然后合并，最后删除
+<ul>
+<li>bug 分支只用在本地修复 bug，就没必要推到远程了</li>
+</ul>
+</li>
+<li>开发一个新 feature，最好新建一个分支</li>
+</ul>
+<h3 id="多人协作">多人协作</h3>
+<p>多人协作的工作模式通常是这样：</p>
+<ol>
+<li>首先，可以试图用 <code>git push origin &lt;branch-name&gt;</code> 推送自己的修改</li>
+<li>如果推送失败，则因为远程分支比你的本地更新，需要先用 <code>git pull</code> 试图合并</li>
+<li>如果合并有冲突，则解决冲突，并在本地提交</li>
+<li>没有冲突或者解决掉冲突后，再用 <code>git push origin &lt;branch-name&gt;</code> 推送修改</li>
+</ol>
+<h2 id="标签管理">标签管理</h2>
+<p>标签是版本库的一个快照。</p>
+<p>Git 的标签其实是指向某个 <code>commit</code> 的指针，同前面提到的分支类似，但区别是分支的指针可以移动，而标签不能移动（可以理解为一个<strong>常量指针</strong>）。</p>
+<ul>
+<li><code>git tag &lt;tagname&gt;</code> 新建一个标签，默认为 <code>HEAD</code>，也可以指定一个 <code>commit id</code></li>
+<li><code>git tag -a &lt;tagname&gt; -m &quot;&lt;message&gt;&quot;</code> 指定标签信息</li>
+<li><code>git tag</code> 查看所有标签</li>
+<li><code>git push origin &lt;tagname&gt;</code> 推送一个本地标签</li>
+<li><code>git push origin --tags</code> 推送全部未推送过的本地标签</li>
+<li><code>git tag -d &lt;tagname&gt;</code> 删除一个本地标签</li>
+<li><code>git push origin :refs/tags/&lt;tagname&gt;</code> 删除一个远程标签</li>
+</ul>
+<h2 id="参考资料">参考资料</h2>
+<blockquote>
+<ol>
+<li><a href="https://www.liaoxuefeng.com/wiki/896043488029600">Git 教程 - 廖雪峰的官方网站</a></li>
+<li><a href="https://git-scm.com/book/en/v2">Git - Book</a></li>
+<li><a href="https://docs.github.com/en/enterprise-server@3.7/authentication/connecting-to-github-with-ssh">Connecting to GitHub with SSH</a></li>
+<li><a href="https://docs.github.com/en/enterprise-server@3.7/authentication/managing-commit-signature-verification">Managing commit signature verification</a></li>
+<li><a href="https://education.github.com/git-cheat-sheet-education.pdf">Git Cheat Sheet</a></li>
+</ol>
+</blockquote>
+]]></content:encoded></item><item><title>信创是短期炒作还是基本面驱动</title><link>https://www.kohsruhe.com/zh/2022/11/19/talk-about-infono/</link><pubDate>Sat, 19 Nov 2022 20:37:56 +0800</pubDate><guid>https://www.kohsruhe.com/zh/2022/11/19/talk-about-infono/</guid><description>前言 ❗️ 本文内容不构成任何投资建议，仅是个人观点。投资有风险，交易需谨慎！ “当我们在谈论一个行业的时候，我们到底在谈论什么？而当我们在炒股的</description><content:encoded><![CDATA[<h2 id="前言">前言</h2>
+<blockquote>
+<p>❗️ 本文内容不构成任何投资建议，仅是个人观点。投资有风险，交易需谨慎！</p>
+</blockquote>
+<p>“当我们在谈论一个行业的时候，我们到底在谈论什么？而当我们在炒股的时候，我们又在炒什么？”这是我近期一直在思考的一个问题。</p>
+<p>其实最开始接触信创这个概念的时候，我也是一头雾水，但看那些连板标的，想着如果我稍微多了解一点是不是也可以喝点汤。当然市场行情瞬息万变，近期板块轮动也是捉摸不定，像我这种小散户大概率是被割韭菜的命。但是，如果有那么一种策略，平衡我有限的精力和承受的风险，那应该是最 praktisch 的。如何在政策引导下快速关注一个行业情况，并思考它的底层逻辑和基本面演绎，确实是我需要学习的一课。</p>
+<p>本打算是以信创为引子写点投资框架的感悟，但认识肤浅还是算了。</p>
+<h2 id="信创是什么">信创是什么</h2>
+<blockquote>
+<p>信创，即信息技术应用创新产业，旨在实现信息技术领域的自主可控，保障国家信息安全。其核心在于通过行业应用拉动构建国产化信息技术软硬件底层架构体系和全周期生态体系，解决核心技术关键环节“卡脖子”问题。信创产业是数字经济、信息安全发展的基础，也是“新基建”的重要内容，将成为拉动中国经济增长的重要抓手之一。</p>
+</blockquote>
+<p>在谈论信创之前先讲讲大背景。</p>
+<p>信创其实并不是一件新的东西，只是最近伴随政策催化而引发市场热议。信创的重要性不言而喻，特别是对整个现代化办公过程的发展。早在2016年国家就提到了信息产业的安全可控。从那时起，信创这一概念逐渐扩展到从底层芯片到上层应用的整个产业化过程。</p>
+<p><img src="https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/infono-system.png" alt=""></p>
+<p>狭义的信创指支撑党政办公所需的东西，比如办公软件、数据库这些，也就是国家提出的“2+8+N”体系中的“2”。目前这个节点信创已发展成了一个更广义的概念，涉及“8+N”，包括金融、电信电力和石油交通等多个行业，它不仅指那些通用的支撑办公的软硬件，还涉及核心组件的国产化等多个环节。</p>
+<p>信创概念在2019年-2020年就发酵过一轮，只不过那个阶段完成的是从0到1这个过程。而从目前这个节点往后看，信创不管从时间上还是空间上看应该都有一个较大的预期。</p>
+<h2 id="最近为什么会火">最近为什么会火</h2>
+<p>我们先回头看上一轮的信创发酵的过程。当时由于外部环境的原因，十九大报告着重提了安全和发展。另外中美关系也从那时起变得微妙，特别是2019年以来，美国持续打压以华为为代表的中国科技公司。国家相继出台了很多措施来加大对核心技术环节的支持力度，信创概念持续发酵。不过，到2020年6、7月份，由于产业成熟度不够、同时叠加疫情影响而没能继续往上走。</p>
+<p>上一轮可以说是一个摸索的过程，主要完成了一个前期的准备工作。</p>
+<p>而这一轮是在从二十大开始，会上国家对安全的重要性提升很大，这在业内是超预期的。</p>
+<p>从时间上看，至少到明年信创还是具备持续的基础，目前有两个方向的期待：一是各种细化政策的制定和推出，应该会有持续刺激；二是明年党政央企的采购工作规划。</p>
+<p>从空间上看，在自主可控政策驱动下，这一轮对产业带来的空间应该是非常可观的。上一轮有点操之过急，产业成熟度不够，但这一轮具备全面推开的条件。</p>
+<h2 id="投资板块">投资板块</h2>
+<p>从上图可以看出，信创主要包含三大部分：基础硬件、基础软件和应用软件。</p>
+<ul>
+<li>基础硬件包括PC整机、服务器整机和外设等</li>
+<li>基础软件包括操作系统、中间件和数据库三个类别</li>
+<li>应用软件包括邮箱和办公软件等</li>
+</ul>
+<h2 id="短期炒作还是业绩支撑">短期炒作还是业绩支撑</h2>
+<h3 id="时间层面">时间层面</h3>
+<p>信创从短期和中线两个维度上看都是有持续性的：</p>
+<ul>
+<li>短期来讲，从现在到春节前应该会有各种细化政策的出台</li>
+<li>中线上看（两到三年），目前位置也仅仅是估值修复。这一轮高点应该是具体订单的落地，同时伴随一些关键行业渗透率创新高</li>
+</ul>
+<h3 id="空间层面">空间层面</h3>
+<p>首先思考一个问题：上一轮完成了多少的渗透率？这一轮呢？</p>
+<p>政策从制定到执行再到落地需要一个过程，可以关注明后年的订单和行业增速节奏。明年业绩会兑现一部分，但整个过程至少会持续到2025年前后。</p>
+<h2 id="再谈数字经济">再谈数字经济</h2>
+<p>数字经济的核心是整个社会数字化过程，包括三个方向和两个建设：</p>
+<ul>
+<li>政府数字化：是基座</li>
+<li>行业数字化：特别是央企和国企</li>
+<li>安全：之前数字化不够高，对安全不够重视，等数字经济建设成熟了会带来安全的拐点和加速</li>
+<li>数字货币：基础设施建设和运营推广（商户端）两个阶段</li>
+<li>数字ID：身份证</li>
+</ul>
+<h2 id="操作建议">操作建议</h2>
+<ul>
+<li>中线是起点，有回调就入，买一些有估值支撑的</li>
+<li>短线是有机会的，但要观察是否有其他更强的方向，比如疫情放开</li>
+<li>数据库可做重点关注</li>
+</ul>
+]]></content:encoded></item></channel></rss>
