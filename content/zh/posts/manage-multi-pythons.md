@@ -2,8 +2,8 @@
 title: "Python 多版本管理"
 date: 2022-12-30T21:23:55+08:00
 draft: false
-tags: ["python", "env"]
-categories: ["articles"]
+tags: ["python", "help"]
+categories: ["tech"]
 authors:
 - "leehyon"
 ---
@@ -12,7 +12,7 @@ authors:
 
 我相信很多人会遇到这样的问题，电脑装了 Python3.x，突然又要用到 Python2.x，那怎样让两者共存而又不影响各自使用呢？如果你去百度，出来的答案基本上都推荐把 `python.exe` 改个名字。
 
-个人非常不建议这么做，虽然可能看似解决了，但是呢。先不说你这么随便改会不会影响其他功能，这种做法本身非常不优雅，而且它还破坏了程序，如果这是一种解决方案的话，Python 官方也不会释放。
+个人非常不建议这么做，虽然可能看似解决了，但是呢，先不说你这么随便改会不会影响其他功能，这种做法本身非常不优雅，而且它还破坏了程序，如果这是一种解决方案的话，Python 官方也不会 release。
 
 所以该怎么做呢？今天我们来聊聊。
 
@@ -25,7 +25,7 @@ authors:
 
 ![](https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/python38-installer.png)
 
-细心的你肯定发现第一个选项是默认勾选的，而且还有括弧推荐，而 `Add Python to PATH` 却没有这种待遇，这么设计官方是几个意思呢？而这又不得不从 PATH 变量说起。
+细心的你肯定发现第一个选项是默认勾选的，而且还有括弧推荐，而 “Add Python to PATH” 却没有这种待遇，这么设计官方是几个意思？而这又不得不从 PATH 变量说起。
 
 ### 关于 PATH
 
@@ -33,9 +33,9 @@ authors:
 
 但问题是，Python 不能只装一个，有时候我们会遇到开头的困境，那如何是好呢？其实很早以前官方就给出了解决方案，也就是安装界面的那个默认选项，详细介绍可以参考[这里](https://docs.python.org/3/using/windows.html#launcher)。
 
-## Python launcher
+## Python 启动器
 
-Python 启动器也就是 `py.exe`，默认安装在 `C:\Windows\` 路径下，它允许我们在多个 Python 版本之间进行选择和切换。使用启动器，可以将 Python 脚本与指定的 Python 版本一起运行，而不用考虑系统默认的 Python 版本（即添加在 PATH 中的）。此外，启动器还可以自动检测 Python 脚本中的顶行，即 `#!/usr/bin/env python` 行，并选择正确的 Python 版本来运行它。
+Python 启动器（launcher）也就是 `py.exe`，如果勾选第一个选项，默认安装在 `C:\Windows\` 路径下，它允许我们在多个 Python 版本之间进行选择和切换。使用启动器，可以将 Python 脚本与指定的 Python 版本一起运行，而不用考虑系统默认的 Python 版本（即添加在 PATH 中的）。此外，启动器还可以自动检测 Python 脚本中的顶行，即 `#!/usr/bin/env python` 行，并选择正确的 Python 版本来运行它。
 
 在命令行中输入 `py --list` 会显示系统已安装的 Python 版本：
 
