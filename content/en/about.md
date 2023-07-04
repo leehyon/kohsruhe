@@ -16,7 +16,7 @@ Outside of my studies and work, I take pleasure in outdoor activities and learni
 
 ## 🏕️ About Kohsruhe
 
-[Kohsruhe](kohsruhe.com) is my first website, which I built using Hugo and host on GitHub.
+[Kohsruhe](https://www.kohsruhe.com) is my first website, which I built using Hugo and host on GitHub.
 
 The name of the site is a combination of my nickname "Koh", and the German word "Ruhe", meaning "peace" or "calm". I hope that through this site I can settle my thoughts and find a sense of inner peace. Well, no quatsch, the name is largely borrowed from "Karlsruhe", the city where I studied in Germany, lol.
 
