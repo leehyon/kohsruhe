@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.kohsruhe.com/sitemap.xml
