@@ -8,7 +8,7 @@ authors:
 - "leehyon"
 ---
 
-{{<audio src="audio/life_live.mp3" caption="♪ Life Live - Mayday" >}}
+{{<audio src="audio/life-live.mp3" caption="♪ Life Live - Mayday" >}}
 
 ## Motivation
 
