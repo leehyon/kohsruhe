@@ -157,7 +157,7 @@ defaultContentLanguageInSubdir = true
     weight = 20
     identifier = "goodreads"
     url = "https://www.goodreads.com/leehyon"
-  
+
 [languages.zh]
   languageCode = "zh"
   languageName = "中文"
@@ -168,7 +168,7 @@ defaultContentLanguageInSubdir = true
     description = "Wouldn't be a Noble mission if it were easy."
 
   [[languages.zh.menu.main]]
-    name = "简报"
+    name = "周报"
     weight = 10
     identifier = "newsletter"
     url = "category/newsletter/"
