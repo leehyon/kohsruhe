@@ -2,7 +2,7 @@
 title: "Newsletter 01 - Getting Started"
 date: 2023-07-16T09:48:30+08:00
 draft: false
-tags: ["review", "life", "start", "edge-ai"]
+tags: ["review", "life", "start", "edge-ai", "vector-db"]
 categories: ["Newsletter"]
 authors:
 - "leehyon"
@@ -63,7 +63,7 @@ Recently, I have been building my own labeling system, such as how to tag notes,
 Recently, I've been working with the TI AM62A EVM board and, in the process, I've also learned about the concept of Edge Computing. I've heard about Edge Computing to some extent on technology-related channels before, and it differs from cloud computing. Edge Computing focuses on the Internet of Things (IoT) devices and the embedded domain, including Edge AI.
 
 ![](https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/edge-computing.png)
->Image source: [Edge Intelligence - Paving the Last Mile of Artificial Intelligence With Edge Computing](https://ieeexplore.ieee.org/document/8736011)
+>Image source: [Edge Intelligence](https://ieeexplore.ieee.org/document/8736011)
 
 The development of this technology is mainly driven by the consideration that data collected from edge devices, especially various sensors, is often redundant. Uploading such data directly to cloud computing would consume a significant amount of bandwidth, and edge devices are typically battery-powered with a priority on power efficiency. Therefore, it is preferable to perform data cleaning and processing at the edge and only send data to the cloud when necessary. This approach also helps to avoid data privacy issues.
 

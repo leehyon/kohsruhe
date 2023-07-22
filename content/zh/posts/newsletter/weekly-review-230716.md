@@ -2,7 +2,7 @@
 title: "周报 01 - 学而不思则罔"
 date: 2023-07-16T09:48:30+08:00
 draft: false
-tags: ["review", "life", "start", "edge-ai"]
+tags: ["review", "life", "start", "edge-ai", "vector-db"]
 categories: ["Newsletter"]
 authors:
 - "leehyon"
@@ -59,7 +59,7 @@ authors:
 近期在玩 TI AM62A 的板子，顺便也了解了 Edge Computing 概念。边缘计算之前在科技类频道或多或少听说过，区别与云计算，边缘计算侧重在物联网设备或嵌入式领域，包括 Edge AI。
 
 ![](https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/edge-computing.png)
->图片来源：[Edge Intelligence - Paving the Last Mile of Artificial Intelligence With Edge Computing](https://ieeexplore.ieee.org/document/8736011)
+>图片来源：[Edge Intelligence](https://ieeexplore.ieee.org/document/8736011)
 
 这项技术的发展主要还是考虑到，那些边缘设备（特别是各类传感器）采集到的数据很冗余，如果直接上传数据中心来云计算，那会消耗很大的带宽，同时边缘设备一般都是电池驱动，功耗优先。所以最好能在边缘就做了数据的清洗和处理，仅在需要的时候才上云，这样也能避免数据隐私的问题。
 
@@ -80,7 +80,7 @@ authors:
 - 结合 SK-AM62A 准备 TI Edge AI 的组内分享会
 - 学习了 Linux u-Boot 的大概开发流程
 - 使用 Gitea + PostgreSQL 重新搭了 Git 服务器
-- 使用 Hugo + IIS 搭了部门的内网网站
+- 使用 Hugo + IIS 搭了知识型内网
 - Miniconda 跑了一些 DL 的模型
 - 看书重新学习一下 Git 和 WSL 技术
 
