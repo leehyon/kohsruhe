@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kohsruhe</title><link>https://www.kohsruhe.com/zh/</link><description>Recent content on Kohsruhe</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 16 Jul 2023 09:48:30 +0800</lastBuildDate><atom:link href="https://www.kohsruhe.com/zh/index.xml" rel="self" type="application/rss+xml"/><item><title>周报 01 - 学而不思则罔</title><link>https://www.kohsruhe.com/zh/2023/07/16/weekly-review-230716/</link><pubDate>Sun, 16 Jul 2023 09:48:30 +0800</pubDate><guid>https://www.kohsruhe.com/zh/2023/07/16/weekly-review-230716/</guid><description>♪ 超人 - 五月天 前言 距离我第一次打算用博客来写周报这件事过去有一年了，终于今天打算开始写写，希望最后能发出来。 是怎么可以拖到现在的？一方面是拖</description><content:encoded><![CDATA[<figure >
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kohsruhe</title><link>https://www.kohsruhe.com/zh/</link><description>Recent content on Kohsruhe</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 21 Jul 2023 09:28:26 +0800</lastBuildDate><atom:link href="https://www.kohsruhe.com/zh/index.xml" rel="self" type="application/rss+xml"/><item><title>在 Shell 中自动提示 Git 信息</title><link>https://www.kohsruhe.com/zh/2023/07/21/git-info-in-shell-prompt/</link><pubDate>Fri, 21 Jul 2023 09:28:26 +0800</pubDate><guid>https://www.kohsruhe.com/zh/2023/07/21/git-info-in-shell-prompt/</guid><description>背景 开发过程中，终端和 Git 是唯二两个离不开的工具。个人而言，那些经常使用的东西，总想着有什么地方是可以优化和改进的，要不然即使是一些不痛不痒的</description><content:encoded><![CDATA[<h2 id="背景">背景</h2>
+<p>开发过程中，终端和 Git 是唯二两个离不开的工具。个人而言，那些经常使用的东西，总想着有什么地方是可以优化和改进的，要不然即使是一些不痛不痒的点也会在日积月累中被逐渐放大，以待解决。</p>
+<p>最开始是觉得 Git Bash 很难用，特别是像 Windows 常用的复制拷贝快捷键无效，而自己的键盘又没 <code>Insert</code> 键，导致一度很不优雅的使用鼠标右键菜单，一言难尽的步骤。</p>
+<blockquote>
+<p>这里想到一个关于 Linux 命令行操作的笑话两则，实践<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>出真知哈 😅</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm ./*
+</span></span><span class="line"><span class="cl">rm -rf /*
+</span></span><span class="line"><span class="cl">^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit
+</span></span><span class="line"><span class="cl">^C^C^D^D^X^X^X^Z^Z^Zexit.exitexit<span class="o">()</span>^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C
+</span></span></code></pre></div><p>后来即使把 Git Bash 整合进了 Windows Terminal 但还是感觉别捏，毕竟需另起一个窗口，还要定位到当前位置。</p>
+<p>到这里，可以看出我的诉求很简单：</p>
+<ul>
+<li>对于 Git 仓库文件夹，默认一个终端窗口解决</li>
+<li>进入仓库文件夹后能自动提示一些简单信息，比如分支名等</li>
+</ul>
+<p>网上搜了下，其实已经造好轮子了，这里我会对 Windows 的 PowerShell 和 Linux 的 Bash 做一个整理。</p>
+<h2 id="针对-powershell-的方案">针对 PowerShell 的方案</h2>
+<p>该方案是通过 <strong>polish-git</strong> 工具实现的，详细配置过程可前往<a href="http://dahlbyk.github.io/posh-git/">官网</a>查阅。</p>
+<h3 id="先决条件">先决条件</h3>
+<ul>
+<li>PowerShell 5.x 或 PowerShell Core 6.0</li>
+<li>脚本执行策略需设置成 <code>RemoteSigned</code> 或 <code>Unrestricted</code></li>
+<li>已安装了 Git 并加入 PATH 环境变量</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">koh</span><span class="p">&gt;</span> <span class="nb">Get-ExecutionPolicy</span>
+</span></span><span class="line"><span class="cl"><span class="n">RemoteSigned</span>
+</span></span><span class="line"><span class="cl"><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">koh</span><span class="p">&gt;</span> <span class="n">git</span> <span class="p">-</span><span class="n">-version</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">version</span> <span class="mf">2.37</span><span class="p">.</span><span class="py">3</span><span class="p">.</span><span class="py">windows</span><span class="p">.</span><span class="py">1</span>
+</span></span></code></pre></div><h3 id="安装和使用">安装和使用</h3>
+<ol>
+<li>打开 PowerShell 并输入以下命令<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>：全新安装选 A，更新选 B</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># (A) You&#39;ve never installed posh-git from the PowerShell Gallery</span>
+</span></span><span class="line"><span class="cl"><span class="n">PowerShellGet</span><span class="p">\</span><span class="nb">Install-Module</span> <span class="nb">posh-git</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># (B) You&#39;ve already installed a previous version of posh-git</span>
+</span></span><span class="line"><span class="cl"><span class="n">PowerShellGet</span><span class="p">\</span><span class="nb">Update-Module</span> <span class="nb">posh-git</span>
+</span></span></code></pre></div><ol start="2">
+<li>
+<p>安装完成后，通过以下方式启用：</p>
+<ul>
+<li>在每一次 session 中手动输入 <code>Import-Module posh-git</code> 命令</li>
+<li>添加 <code>Import-Module posh-git</code> 到配置文件<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>，自动载入（推荐）</li>
+</ul>
+</li>
+</ol>
+<p>这样，下一次进入一个 Git 仓库目录时，你的终端就会变成这样子：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\koh\repos\kohsruhe</span><span class="c1"> [main ≡ +4 ~3 -0 !]&gt;</span>
+</span></span></code></pre></div><p>方括号内的内容即为自动提示的 Git 信息，表示当前所在的分支为 <code>main</code>，同时还提示了分支的一些变更，对应的 <code>git status</code> 为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">On branch main
+</span></span><span class="line"><span class="cl">Your branch is up to date with <span class="s1">&#39;origin/main&#39;</span>.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Changes not staged <span class="k">for</span> commit:
+</span></span><span class="line"><span class="cl">  <span class="o">(</span>use <span class="s2">&#34;git add &lt;file&gt;...&#34;</span> to update what will be committed<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">(</span>use <span class="s2">&#34;git restore &lt;file&gt;...&#34;</span> to discard changes in working directory<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        modified:   content/en/posts/newsletter/weekly-review-230716.md
+</span></span><span class="line"><span class="cl">        modified:   content/zh/about.md
+</span></span><span class="line"><span class="cl">        modified:   content/zh/posts/newsletter/weekly-review-230716.md
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Untracked files:
+</span></span><span class="line"><span class="cl">  <span class="o">(</span>use <span class="s2">&#34;git add &lt;file&gt;...&#34;</span> to include in what will be committed<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        content/en/posts/productivity/
+</span></span><span class="line"><span class="cl">        content/en/posts/tech/
+</span></span><span class="line"><span class="cl">        content/zh/posts/productivity/
+</span></span><span class="line"><span class="cl">        content/zh/posts/tech/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">no changes added to commit <span class="o">(</span>use <span class="s2">&#34;git add&#34;</span> and/or <span class="s2">&#34;git commit -a&#34;</span><span class="o">)</span>
+</span></span></code></pre></div><h2 id="针对-bash-的方案">针对 Bash 的方案</h2>
+<p>同样的，针对 Bash 的方案是通过 <strong>bash-git-prompt</strong> 工具实现的，详细配置过程可前往<a href="https://github.com/magicmonty/bash-git-prompt">仓库</a>查看。</p>
+<h3 id="安装和使用-1">安装和使用</h3>
+<p>首先，使用以下命令克隆仓库到你的用户主目录：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth<span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></div><blockquote>
+<p>该命令将仓库保存到你用户主目录下的 .bash-git-prompt 文件夹，拉取最新的一次 commit。</p>
+</blockquote>
+<p>然后，添加以下内容到你用户目录下的 <code>.bashrc</code> 文件（类比 PowerShell 的 profile 文件）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.bash-git-prompt/gitprompt.sh&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">GIT_PROMPT_ONLY_IN_REPO</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">source</span> <span class="nv">$HOME</span>/.bash-git-prompt/gitprompt.sh
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><blockquote>
+<p>GIT_PROMPT_ONLY_IN_REPO 变量设置为仅在包含 Git 仓库的文件夹中使用提示。</p>
+</blockquote>
+<p>现在，重新打开 Bash 窗口并切换到一个 Git 仓库目录，即可看到效果。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">koh@aliyunecs:~$ git clone https://github.com/magicmonty/bash-git-prompt.git <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 ~/.bash-git-prompt --depth<span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">Cloning into <span class="s1">&#39;/home/koh/.bash-git-prompt&#39;</span>...
+</span></span><span class="line"><span class="cl">remote: Enumerating objects: 63, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Counting objects: 100% <span class="o">(</span>63/63<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Compressing objects: 100% <span class="o">(</span>55/55<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Total <span class="m">63</span> <span class="o">(</span>delta 21<span class="o">)</span>, reused <span class="m">22</span> <span class="o">(</span>delta 7<span class="o">)</span>, pack-reused <span class="m">0</span>
+</span></span><span class="line"><span class="cl">Unpacking objects: 100% <span class="o">(</span>63/63<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">koh@aliyunecs:~$ nano .bashrc
+</span></span><span class="line"><span class="cl"><span class="c1"># restart Bash </span>
+</span></span><span class="line"><span class="cl">koh@aliyunecs:~/dev/oax4600-linux-sdk/SourceCode$ <span class="nb">cd</span> OAX4600_linux/
+</span></span><span class="line"><span class="cl">✔ ~/dev/oax4600-linux-sdk/SourceCode/OAX4600_linux <span class="o">[</span>main<span class="p">|</span>✔<span class="o">]</span>
+</span></span><span class="line"><span class="cl">19:50 $
+</span></span></code></pre></div><p>有关其他配置选项，请参考<a href="https://github.com/magicmonty/bash-git-prompt">仓库文档</a>。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>不要轻易尝试第一条！&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>当然你也可以选择包管理工具安装，比如 Scoop，具体参考官网教程。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>用好配置文件能让你的终端如虎添翼，不清楚的配置文件的参考<a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.3">这里</a>。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded></item><item><title>周报 01 - 学而不思则罔</title><link>https://www.kohsruhe.com/zh/2023/07/16/weekly-review-230716/</link><pubDate>Sun, 16 Jul 2023 09:48:30 +0800</pubDate><guid>https://www.kohsruhe.com/zh/2023/07/16/weekly-review-230716/</guid><description>♪ 超人 - 五月天 前言 距离我第一次打算用博客来写周报这件事过去有一年了，终于今天打算开始写写，希望最后能发出来。 是怎么可以拖到现在的？一方面是拖</description><content:encoded><![CDATA[<figure >
     <audio controls preload="metadata">
         
         <source src="/audio/life-live.mp3" type="audio/mpeg">
@@ -33,7 +148,7 @@
 <p>近期在玩 TI AM62A 的板子，顺便也了解了 Edge Computing 概念。边缘计算之前在科技类频道或多或少听说过，区别与云计算，边缘计算侧重在物联网设备或嵌入式领域，包括 Edge AI。</p>
 <p><img src="https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/edge-computing.png" alt=""></p>
 <blockquote>
-<p>图片来源：<a href="https://ieeexplore.ieee.org/document/8736011">Edge Intelligence - Paving the Last Mile of Artificial Intelligence With Edge Computing</a></p>
+<p>图片来源：<a href="https://ieeexplore.ieee.org/document/8736011">Edge Intelligence</a></p>
 </blockquote>
 <p>这项技术的发展主要还是考虑到，那些边缘设备（特别是各类传感器）采集到的数据很冗余，如果直接上传数据中心来云计算，那会消耗很大的带宽，同时边缘设备一般都是电池驱动，功耗优先。所以最好能在边缘就做了数据的清洗和处理，仅在需要的时候才上云，这样也能避免数据隐私的问题。</p>
 <p>作为人工智能的最后一公里技术，感兴趣的可以参考<a href="https://ieeexplore.ieee.org/document/8736011">这篇论文</a>，做进一步学习。</p>
@@ -46,7 +161,7 @@
 <li>结合 SK-AM62A 准备 TI Edge AI 的组内分享会</li>
 <li>学习了 Linux u-Boot 的大概开发流程</li>
 <li>使用 Gitea + PostgreSQL 重新搭了 Git 服务器</li>
-<li>使用 Hugo + IIS 搭了部门的内网网站</li>
+<li>使用 Hugo + IIS 搭了知识型内网</li>
 <li>Miniconda 跑了一些 DL 的模型</li>
 <li>看书重新学习一下 Git 和 WSL 技术</li>
 </ul>

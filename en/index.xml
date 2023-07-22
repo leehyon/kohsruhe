@@ -1,4 +1,120 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kohsruhe</title><link>https://www.kohsruhe.com/en/</link><description>Recent content on Kohsruhe</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 16 Jul 2023 09:48:30 +0800</lastBuildDate><atom:link href="https://www.kohsruhe.com/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Newsletter 01 - Getting Started</title><link>https://www.kohsruhe.com/en/2023/07/16/weekly-review-230716/</link><pubDate>Sun, 16 Jul 2023 09:48:30 +0800</pubDate><guid>https://www.kohsruhe.com/en/2023/07/16/weekly-review-230716/</guid><description>♪ Life Live - Mayday Motivation It has been a year since I first thought about using this blog to write my weekly reviews. Today, I am determined to start writing an one and hopefully be able to post it eventually. How did it take me this long to get started? On one hand, I am a severe procrastinator, struggling with the late stages of the condition. On the other</description><content:encoded><![CDATA[<figure >
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kohsruhe</title><link>https://www.kohsruhe.com/en/</link><description>Recent content on Kohsruhe</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 21 Jul 2023 09:28:26 +0800</lastBuildDate><atom:link href="https://www.kohsruhe.com/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Git Information in Shell Prompt</title><link>https://www.kohsruhe.com/en/2023/07/21/git-info-in-shell-prompt/</link><pubDate>Fri, 21 Jul 2023 09:28:26 +0800</pubDate><guid>https://www.kohsruhe.com/en/2023/07/21/git-info-in-shell-prompt/</guid><description>Motivation During development, the Terminal and Git are the two indispensable tools. Personally, for tools I use frequently, I&amp;rsquo;m always thinking about how I can optimize and improve the workflow. Otherwise, even minor issues will gradually accumulate over time until they need to be addressed.
+At first, I felt the Git Bash was very difficult to use, especially since common copy and paste shortcuts in Windows don&amp;rsquo;t work, and my keyboard doesn&amp;rsquo;t have an Insert key.</description><content:encoded><![CDATA[<h2 id="motivation">Motivation</h2>
+<p>During development, the Terminal and Git are the two indispensable tools. Personally, for tools I use frequently, I&rsquo;m always thinking about how I can optimize and improve the workflow. Otherwise, even minor issues will gradually accumulate over time until they need to be addressed.</p>
+<p>At first, I felt the Git Bash was very difficult to use, especially since common copy and paste shortcuts in Windows don&rsquo;t work, and my keyboard doesn&rsquo;t have an <code>Insert</code> key. This led to a period of very clumsy use of the right-click menu, which were hard to describe.</p>
+<blockquote>
+<p>This makes me think of two jokes about Linux command line operations<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 😅</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm ./*
+</span></span><span class="line"><span class="cl">rm -rf /*
+</span></span><span class="line"><span class="cl">^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit
+</span></span><span class="line"><span class="cl">^C^C^D^D^X^X^X^Z^Z^Zexit.exitexit<span class="o">()</span>^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C
+</span></span></code></pre></div><p>Later, although I integrated the Git Bash profile into Windows Terminal, it still felt awkward having to open a separate window and navigate to the current location.</p>
+<p>From here, my needs are simple:</p>
+<ul>
+<li>For Git repository folders, handle everything in one terminal window by default</li>
+<li>After entering a repo folder, automatically display some basic info like the branch name</li>
+</ul>
+<p>I searched online and found there are already existing solutions for this. Here I&rsquo;ll summarize for both Windows PowerShell and Linux Bash.</p>
+<h2 id="solution-for-powershell">Solution for PowerShell</h2>
+<p>This solution uses the <strong>posh-git</strong> tool, detailed configuration steps can be found on the <a href="http://dahlbyk.github.io/posh-git/">official website</a>.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Windows PowerShell 5.x or PowerShell Core 6.0.</li>
+<li>The script execution policy must be set to either <code>RemoteSigned</code> or <code>Unrestricted</code>.</li>
+<li>Git is installed and added to PATH environment variable</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">koh</span><span class="p">&gt;</span> <span class="nb">Get-ExecutionPolicy</span>
+</span></span><span class="line"><span class="cl"><span class="n">RemoteSigned</span>
+</span></span><span class="line"><span class="cl"><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">koh</span><span class="p">&gt;</span> <span class="n">git</span> <span class="p">-</span><span class="n">-version</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">version</span> <span class="mf">2.37</span><span class="p">.</span><span class="py">3</span><span class="p">.</span><span class="py">windows</span><span class="p">.</span><span class="py">1</span>
+</span></span></code></pre></div><h3 id="installation-and-usage">Installation and Usage</h3>
+<ol>
+<li>Open PowerShell and enter the following commands<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>: select A for a new install, B for update</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># (A) You&#39;ve never installed posh-git from the PowerShell Gallery</span>
+</span></span><span class="line"><span class="cl"><span class="n">PowerShellGet</span><span class="p">\</span><span class="nb">Install-Module</span> <span class="nb">posh-git</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># (B) You&#39;ve already installed a previous version of posh-git</span>
+</span></span><span class="line"><span class="cl"><span class="n">PowerShellGet</span><span class="p">\</span><span class="nb">Update-Module</span> <span class="nb">posh-git</span>
+</span></span></code></pre></div><ol start="2">
+<li>
+<p>After installation, enable it through:</p>
+<ul>
+<li>Manually run <code>Import-Module posh-git</code> in each session</li>
+<li>Add <code>Import-Module posh-git</code> to your profile<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> for auto-loading (recommended)</li>
+</ul>
+</li>
+</ol>
+<p>The next time you enter a Git repository directory, your terminal will look like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Users\koh\repos\kohsruhe</span><span class="c1"> [main ≡ +4 ~3 -0 !]&gt;</span>
+</span></span></code></pre></div><p>The content inside the square brackets is the auto Git information. It indicates that the current branch is <code>main</code> and also shows some changes in the branch, corresponding to the <code>git status</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">On branch main
+</span></span><span class="line"><span class="cl">Your branch is up to date with <span class="s1">&#39;origin/main&#39;</span>.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Changes not staged <span class="k">for</span> commit:
+</span></span><span class="line"><span class="cl">  <span class="o">(</span>use <span class="s2">&#34;git add &lt;file&gt;...&#34;</span> to update what will be committed<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">(</span>use <span class="s2">&#34;git restore &lt;file&gt;...&#34;</span> to discard changes in working directory<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        modified:   content/en/posts/newsletter/weekly-review-230716.md
+</span></span><span class="line"><span class="cl">        modified:   content/zh/about.md
+</span></span><span class="line"><span class="cl">        modified:   content/zh/posts/newsletter/weekly-review-230716.md
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Untracked files:
+</span></span><span class="line"><span class="cl">  <span class="o">(</span>use <span class="s2">&#34;git add &lt;file&gt;...&#34;</span> to include in what will be committed<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        content/en/posts/productivity/
+</span></span><span class="line"><span class="cl">        content/en/posts/tech/
+</span></span><span class="line"><span class="cl">        content/zh/posts/productivity/
+</span></span><span class="line"><span class="cl">        content/zh/posts/tech/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">no changes added to commit <span class="o">(</span>use <span class="s2">&#34;git add&#34;</span> and/or <span class="s2">&#34;git commit -a&#34;</span><span class="o">)</span>
+</span></span></code></pre></div><h2 id="solution-for-bash">Solution for Bash</h2>
+<p>Similarly, the solution for Bash is achieved through the <strong>bash-git-prompt</strong> tool, and you can find the detailed configuration process in the <a href="https://github.com/magicmonty/bash-git-prompt">repository</a>.</p>
+<h3 id="installation-and-usage-1">Installation and Usage</h3>
+<p>Firstly, use the following command to clone the repository into your home directory:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth<span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></div><blockquote>
+<p>This git clone command clones the repo into a .bash-git-prompt folder in your user folder and uses &ndash;depth=1 to only pull the latest commit.</p>
+</blockquote>
+<p>Next, add the following content to the <code>.bashrc</code> file located in your home directory (similar to PowerShell&rsquo;s profile file).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.bash-git-prompt/gitprompt.sh&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">GIT_PROMPT_ONLY_IN_REPO</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">source</span> <span class="nv">$HOME</span>/.bash-git-prompt/gitprompt.sh
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><blockquote>
+<p>It sets the GIT_PROMPT_ONLY_IN_REPO variable to only use the custom prompt in folders with a Git repository, and then loads the git prompt.</p>
+</blockquote>
+<p>Now, reopen your Bash and navigate to a Git repository directory to see the effect.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">koh@aliyunecs:~$ git clone https://github.com/magicmonty/bash-git-prompt.git <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                 ~/.bash-git-prompt --depth<span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">Cloning into <span class="s1">&#39;/home/koh/.bash-git-prompt&#39;</span>...
+</span></span><span class="line"><span class="cl">remote: Enumerating objects: 63, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Counting objects: 100% <span class="o">(</span>63/63<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Compressing objects: 100% <span class="o">(</span>55/55<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">remote: Total <span class="m">63</span> <span class="o">(</span>delta 21<span class="o">)</span>, reused <span class="m">22</span> <span class="o">(</span>delta 7<span class="o">)</span>, pack-reused <span class="m">0</span>
+</span></span><span class="line"><span class="cl">Unpacking objects: 100% <span class="o">(</span>63/63<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">koh@aliyunecs:~$ nano .bashrc
+</span></span><span class="line"><span class="cl"><span class="c1"># restart Bash </span>
+</span></span><span class="line"><span class="cl">koh@aliyunecs:~/dev/oax4600-linux-sdk/SourceCode$ <span class="nb">cd</span> OAX4600_linux/
+</span></span><span class="line"><span class="cl">✔ ~/dev/oax4600-linux-sdk/SourceCode/OAX4600_linux <span class="o">[</span>main<span class="p">|</span>✔<span class="o">]</span>
+</span></span><span class="line"><span class="cl">19:50 $
+</span></span></code></pre></div><p>For other configuration options, see the documentation <a href="https://github.com/magicmonty/bash-git-prompt">here</a>.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Don&rsquo;t try it!&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Of course, you can also choose to install it using a package management tool, such as Scoop. For specific instructions, please refer to the official website tutorial.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Using a well-configured file can make your terminal more powerful. If you are not familiar with the configuration file, you can refer to it <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.3">here</a>.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded></item><item><title>Newsletter 01 - Getting Started</title><link>https://www.kohsruhe.com/en/2023/07/16/weekly-review-230716/</link><pubDate>Sun, 16 Jul 2023 09:48:30 +0800</pubDate><guid>https://www.kohsruhe.com/en/2023/07/16/weekly-review-230716/</guid><description>♪ Life Live - Mayday Motivation It has been a year since I first thought about using this blog to write my weekly reviews. Today, I am determined to start writing an one and hopefully be able to post it eventually. How did it take me this long to get started? On one hand, I am a severe procrastinator, struggling with the late stages of the condition. On the other</description><content:encoded><![CDATA[<figure >
     <audio controls preload="metadata">
         
         <source src="/audio/life-live.mp3" type="audio/mpeg">
@@ -35,7 +151,7 @@
 <p>Recently, I&rsquo;ve been working with the TI AM62A EVM board and, in the process, I&rsquo;ve also learned about the concept of Edge Computing. I&rsquo;ve heard about Edge Computing to some extent on technology-related channels before, and it differs from cloud computing. Edge Computing focuses on the Internet of Things (IoT) devices and the embedded domain, including Edge AI.</p>
 <p><img src="https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/edge-computing.png" alt=""></p>
 <blockquote>
-<p>Image source: <a href="https://ieeexplore.ieee.org/document/8736011">Edge Intelligence - Paving the Last Mile of Artificial Intelligence With Edge Computing</a></p>
+<p>Image source: <a href="https://ieeexplore.ieee.org/document/8736011">Edge Intelligence</a></p>
 </blockquote>
 <p>The development of this technology is mainly driven by the consideration that data collected from edge devices, especially various sensors, is often redundant. Uploading such data directly to cloud computing would consume a significant amount of bandwidth, and edge devices are typically battery-powered with a priority on power efficiency. Therefore, it is preferable to perform data cleaning and processing at the edge and only send data to the cloud when necessary. This approach also helps to avoid data privacy issues.</p>
 <p>As the last mile technology of artificial intelligence, those interested can refer to <a href="https://ieeexplore.ieee.org/document/8736011">this paper</a> for further study.</p>
