@@ -30,7 +30,7 @@ Think about how many moments in life make you wonder why you acted or spoke a ce
 
 [^1]: [35,000 Decisions: The Great Choices of Strategic Leaders](https://go.roberts.edu/leadingedge/the-great-choices-of-strategic-leaders)
 
-### How to change?
+### How to Change?
 
 Currently, I can't say there's a definite solution, but I can realize the moments of those choices. Slow down a bit and let rationality intervene instead of acting on assumptions. I believe this approach will greatly improve things. Taking things for granted is, to some extent, a form of laziness – lazy thinking and decision-making. So, the next time I encounter unhappiness, I'll think about what I just experienced and whether I can slow down to make choices, and if possible, optimize or avoid them in the future.
 
@@ -50,11 +50,11 @@ For instance, a video contains numerous features and attributes, such as its dur
 
 Similar data bodies, when vectorized, will be located closer to each other within the vector space, making it highly suitable for recommendation algorithms.
 
-### Why is data vectorized?
+### Why is Data Vectorized?
 
 Because vector operations are what computers excel at.
 
-### Vectorization and labeling system
+### Vectorization and Labeling System
 
 Recently, I have been building my own labeling system, such as how to tag notes, emails, and bookmarked web pages, among other things. We might have the opportunity to discuss labels in more detail later. For now, I want to emphasize that the process of labeling is somewhat similar to vectorization, and a labeling system can be considered a weakened form of a vector database. The main goal of both is to achieve better content retrieval and association through the extraction and abstraction of attributes.
 
@@ -73,7 +73,7 @@ As the last mile technology of artificial intelligence, those interested can ref
 
 This section will document some progress made in work and studies this week. It will also list books, audiovisual materials, interesting purchases, and more. The content will be more rambly.
 
-### Technical learning
+### Technical Learning
 
 - Prepared an internal sharing session on TI Edge AI by incorporating SK-AM62A EVM board.
 - Learned about the general development process of Linux u-Boot.
@@ -82,7 +82,7 @@ This section will document some progress made in work and studies this week. It 
 - Ran some deep learning models using Miniconda.
 - Refreshed knowledge on Git and WSL technologies by reading books.
 
-### Books and media[^2]
+### Books and Media[^2]
 
 [^2]: I personally believe that listening to podcasts is an excellent way to gain firsthand knowledge, especially through interviews with industry professionals.
 
@@ -93,7 +93,7 @@ This section will document some progress made in work and studies this week. It 
 - [Video: 向量数据库爆火背后的逻辑](https://www.bilibili.com/video/BV1W94y1B7Vd/?share_source=copy_web)
 - [Video: 向量数据库技术鉴赏](https://www.bilibili.com/video/BV11a4y1c7SW/?share_source=copy_web)
 
-### Investment and fitness
+### Investment and Fitness
 
 - Completed 4 sessions of rowing machine training, totaling 82 minutes.
 - Last week's stock return rate was +1.36%, lagging behind the market's +1.92%.

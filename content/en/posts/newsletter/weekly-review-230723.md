@@ -1,5 +1,5 @@
 ---
-title: "Newsletter 02 - Passionate Love Can Withstand Time"
+title: "Newsletter 02 - Nothing but Enthusiasm Brightens Up the Endless Years"
 date: 2023-07-23T13:52:27+08:00
 draft: false
 tags: ["review", "photography", "record", "flow"]
@@ -101,7 +101,7 @@ This section will record some of my work and study progress this week, as well a
 
 #### Movies
 
-- [异形](https://movie.douban.com/subject/1300868/)
+- [Alien](https://www.rottentomatoes.com/m/alien)
 
 ### Investment and Fitness
 
