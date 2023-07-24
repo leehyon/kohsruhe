@@ -69,9 +69,9 @@ The development of this technology is mainly driven by the consideration that da
 
 As the last mile technology of artificial intelligence, those interested can refer to [this paper](https://ieeexplore.ieee.org/document/8736011) for further study.
 
-## Inescapable List of Events
+## The Inevitable Ramblings
 
-This section will document some progress made in work and studies this week. It will also list books, audiovisual materials, interesting purchases, and more, making the content more like a casual account.
+This section will document some progress made in work and studies this week. It will also list books, audiovisual materials, interesting purchases, and more. The content will be more rambly.
 
 ### Technical learning
 
