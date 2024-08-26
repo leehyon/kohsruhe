@@ -1,0 +1,4 @@
+[submodule "themes/den"]
+	path = themes/den
+	url = git@github.com:leehyon/hugo-theme-den.git
+	branch = koh
