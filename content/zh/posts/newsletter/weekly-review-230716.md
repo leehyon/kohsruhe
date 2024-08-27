@@ -58,7 +58,7 @@ authors:
 
 近期在玩 TI AM62A 的板子，顺便也了解了 Edge Computing 概念。边缘计算之前在科技类频道或多或少听说过，区别与云计算，边缘计算侧重在物联网设备或嵌入式领域，包括 Edge AI。
 
-![](https://kohsruhe-images.oss-cn-shanghai.aliyuncs.com/images/edge-computing.png)
+![edge-computing-illustration](https://images.kohsruhe.com/edge-computing-illustration.png)
 >图片来源：[Edge Intelligence](https://ieeexplore.ieee.org/document/8736011)
 
 这项技术的发展主要还是考虑到，那些边缘设备（特别是各类传感器）采集到的数据很冗余，如果直接上传数据中心来云计算，那会消耗很大的带宽，同时边缘设备一般都是电池驱动，功耗优先。所以最好能在边缘就做了数据的清洗和处理，仅在需要的时候才上云，这样也能避免数据隐私的问题。
