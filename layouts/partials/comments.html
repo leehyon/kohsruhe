@@ -1,0 +1,21 @@
+<div align="center">
+  <div class="comment-underline"></div>
+</div>
+
+<br>
+
+<div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="50b5d4e4-6f9c-470a-a152-72bf1b7ecdbb"
+  data-page-id="{{ .File.UniqueID }}"
+  data-page-url="{{ .Permalink }}"
+  data-page-title="{{ .Title }}">
+</div>
+
+{{ if eq .Site.Language.Lang "zh" }}
+    <script defer src="https://cusdis.com/js/widget/lang/zh-cn.js"></script>
+{{ end }}
+
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script defer data-host="https://cusdis.com" data-app-id="50b5d4e4-6f9c-470a-a152-72bf1b7ecdbb"
+        src="https://cusdis.com/js/cusdis-count.umd.js"></script>
