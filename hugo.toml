@@ -60,7 +60,7 @@ description = "Wouldn't be a Noble mission if it were easy."
 logoTitle = "Koh"                       # shown on top-left, default: title
 siteLogoImage = "images/noble.png"      # shown besides logoTitle
 # headerTitle = "Kohsruhe"              # default: title
-headerImage = "images/sh-sky.jpg"
+headerImage = "images/lake.jpeg"
 showAuthorCard = true                   # Whether to show author information below the article
 
 showMenuLanguages = true
