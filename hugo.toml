@@ -41,9 +41,6 @@ categories = "/category/:slug/"         # required
 tags = "/tag/:slug/"                    # required
 pages = "/:slug/"
 
-[author] # required
-name = "Leehyon Koh"
-
 [sitemap] # required
 changefreq = "weekly"
 priority = 0.5
@@ -85,6 +82,10 @@ customCSS = [
   'custom.css',
 ] # if ['custom.css'], load '/static/css/custom.css' file
 customJS = [] # if ['custom.js'], load '/static/js/custom.js' file
+
+[params.author]
+email = 'kohsruhe@outlook.com'
+name = 'Leehyon Koh'
 
 [markup]
 [markup.goldmark]
