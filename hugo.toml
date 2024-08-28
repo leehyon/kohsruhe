@@ -121,7 +121,7 @@ weight = 100
 # menus.zh.toml
 [languages.zh]
 languageCode = "zh"
-languageName = "中文"
+languageName = "ZH"
 contentDir = "content/zh"
 weight = 1
 
