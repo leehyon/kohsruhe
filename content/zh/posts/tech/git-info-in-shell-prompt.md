@@ -1,16 +1,28 @@
 ---
-title: "在 Shell 中自动提示 Git 信息"
+title: "在终端中自动提示 Git 信息"
 date: 2023-07-21T09:28:26+08:00
 draft: false
-tags: ["git", "powershell", "bash", "widget", "guide"]
+tags: ["git", "powershell", "bash", "zsh", "guide"]
 categories: ["Tech"]
 authors:
 - "leehyon"
 ---
 
+## 更新
+
+### 2024-08-28
+
+现在很多终端工具都能提示 Git 信息，而且提供更多定制化的选项，比如 [Oh My Posh](https://ohmyposh.dev/) 和 [Oh My Zsh](https://ohmyz.sh/)，建议一步到位。
+
+Windows 平台，我个人使用 [Starship](https://starship.rs/) + [Terminal-Icons](https://www.powershellgallery.com/packages/Terminal-Icons/0.11.0)，效果如下：
+
+![windows-terminal-showcase](https://images.kohsruhe.com/2024/windows-terminal-showcase.png)
+
+Mac 平台，可参考数字花园文章 [Setup Mac Terminal](https://garden.kohsruhe.com/setup/setup-mac-terminal) 设置。
+
 ## 背景
 
-开发过程中，终端和 Git 是唯二两个离不开的工具。个人而言，那些经常使用的东西，总想着有什么地方是可以优化和改进的，要不然即使是一些不痛不痒的点也会在日积月累中被逐渐放大，以待解决。
+开发过程中，终端和 Git 是唯二两个离不开的工具。个人而言，那些经常使用的东西，总想着有什么地方是可以优化和改进的，要不然即使是一些不痛不痒的点也会在日积月累中被逐渐放大，积重难返。
 
 最开始是觉得 Git Bash 很难用，特别是像 Windows 常用的复制拷贝快捷键无效，而自己的键盘又没 `Insert` 键，导致一度很不优雅的使用鼠标右键菜单，一言难尽的步骤。
 
@@ -72,7 +84,7 @@ PowerShellGet\Update-Module posh-git
 
 2. 安装完成后，通过以下方式启用：
 
-	- 在每一次 session 中手动输入 `Import-Module posh-git` 命令 
+	- 在每一次 session 中手动输入 `Import-Module posh-git` 命令
 	- 添加 `Import-Module posh-git` 到配置文件[^3]，自动载入（推荐）
 
 [^3]: 用好配置文件能让你的终端如虎添翼，不清楚的配置文件的参考[这里](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.3)。
@@ -144,13 +156,10 @@ remote: Compressing objects: 100% (55/55), done.
 remote: Total 63 (delta 21), reused 22 (delta 7), pack-reused 0
 Unpacking objects: 100% (63/63), done.
 koh@aliyunecs:~$ nano .bashrc
-# restart Bash 
+# restart Bash
 koh@aliyunecs:~/dev/oax4600-linux-sdk/SourceCode$ cd OAX4600_linux/
 ✔ ~/dev/oax4600-linux-sdk/SourceCode/OAX4600_linux [main|✔]
 19:50 $
 ```
 
 有关其他配置选项，请参考[仓库文档](https://github.com/magicmonty/bash-git-prompt)。
-
-
-

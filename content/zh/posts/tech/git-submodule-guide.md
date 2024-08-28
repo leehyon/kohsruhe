@@ -2,21 +2,27 @@
 title: "Git 子模块使用"
 date: 2022-11-21T10:50:19+08:00
 draft: false
-tags: ["git","guide","feature"]
-categories: ["articles"]
+tags: ["git","help"]
+categories: ["tech"]
 authors:
 - "Leehyon"
 ---
 
+## 更新
+
+### 2024-08-28
+
+请移步数字花园文章 [Manage Git Submodules](https://garden.kohsruhe.com/setup/manage-git-submodules) 了解更多。
+
 ## 前言
 
-克隆他人项目时，有时候会看到仓库目录下有一个 `.gitmodules` 的文本文件，打开后有如下类似内容：
+Clone 他人项目时，有时候会看到仓库目录下有一个 `.gitmodules` 的文本文件，打开后有如下类似内容：
 
 ```shell
-[submodule "foo/bar"]
-	path = foo/bar
-	url = https://example.com/bar.git
-	branch = dev
+[submodule "themes/den"]
+	path = themes/den
+	url = git@github.com:leehyon/hugo-theme-den.git
+	branch = koh
 ```
 
 上述内容表面该仓库使用了 `git submodule` 方式链接了其他仓库。如果要使用被链接的仓库，需要用以下命令进行初始化：
@@ -29,7 +35,7 @@ $ git submodule update --init --recursive
 
 其实背后的思想是模块化设计：
 
-- 根据代码功能或维护周期把项目拆分成不同的子模块，并建立不同的仓库
+- 根据代码功能或维护周期把项目拆分成不同的子模块并建立不同的仓库
 - 一个模块能被多处使用，通过 `git submodule` 进行关联
 - 主模块不必负责子模块的维护，只在必要时候同步更新
 
@@ -37,7 +43,7 @@ $ git submodule update --init --recursive
 
 ## 主要内容
 
-- 添加子模块到仓库并不会把子模块的源码添加进来，只是添加子模块的信息，比如 `url` 和 `branch`
+- ~~添加子模块到仓库并不会把子模块的源码添加进来，只是添加子模块的信息，比如 `url` 和 `branch`~~
 - 添加后的子模块不会随子模块仓库的更新而自动更新，以保证主仓库的稳定性
 
 ### 添加子模块
