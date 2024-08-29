@@ -8,7 +8,7 @@ rss_ignore: true
 
 ## Search the site
 
-*Please enter your search keyword directly into the input area below*
+*Please enter the search term in the input box below*
 
 {{< search >}}
 

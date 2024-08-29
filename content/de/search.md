@@ -8,7 +8,7 @@ rss_ignore: true
 
 ## Interne Suche
 
-*Bitte geben Sie den Suchinhalt direkt in das folgende Eingabefeld ein*
+*Bitte geben Sie den Suchinhalt unten im Eingabefeld ein*
 
 {{< search >}}
 
