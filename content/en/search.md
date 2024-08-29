@@ -2,13 +2,13 @@
 title: "Search"
 date: 2023-01-12T16:03:46+08:00
 menu: "main"
-weight: 100
+weight: 110
 rss_ignore: true
 ---
 
 ## Search the site
 
-**Please enter your search keyword directly into the input area below**
+*Please enter your search keyword directly into the input area below*
 
 {{< search >}}
 

@@ -2,13 +2,13 @@
 title: "Suche"
 date: 2023-01-12T16:03:46+08:00
 menu: "main"
-weight: 100
+weight: 110
 rss_ignore: true
 ---
 
 ## Interne Suche
 
-**Bitte geben Sie den Suchinhalt direkt in das folgende Eingabefeld ein**
+*Bitte geben Sie den Suchinhalt direkt in das folgende Eingabefeld ein*
 
 {{< search >}}
 
