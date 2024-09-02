@@ -28,3 +28,15 @@ $(document).ready(function() {
 });
 </script>
 {{- end }}
+
+{{ if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    var config = {
+      startOnLoad: true,
+      theme: 'default',
+      align: 'center',
+    };
+    mermaid.initialize(config);
+  </script>
+{{ end }}
