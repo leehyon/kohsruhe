@@ -87,6 +87,9 @@ customJS = [] # if ['custom.js'], load '/static/js/custom.js' file
 email = 'kohsruhe@outlook.com'
 name = 'Leehyon HNG'
 
+[params.markmap]
+enable = true
+
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
