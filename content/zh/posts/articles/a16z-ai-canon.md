@@ -2,7 +2,7 @@
 title: "[译] AI 学习精选集"
 date: 2024-08-25T13:35:08+08:00
 draft: false
-tags: ["ai", "transformer", "reading", "llm"]
+tags: ["ai", "transformer", "reading", "llm", "translation"]
 categories: ["Articles"]
 authors:
 - "leehyon"
