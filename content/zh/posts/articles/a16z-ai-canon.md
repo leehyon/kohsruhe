@@ -88,7 +88,7 @@ authors:
 - [LLM Bootcamp](https://fullstackdeeplearning.com/llm-bootcamp/): 由 Charles Frye、Sergey Karayev 和 Josh Tobin 教授的关于构建 LLM 基础应用的实用课程。
 - [Hugging Face Transformers](https://huggingface.co/learn/nlp-course/chapter1/1): 使用 Hugging Face 库中的开源 LLM 指南课程。
 
-### LLM基准
+### LLM 基准
 
 - [Chatbot Arena](https://lmsys.org/blog/2023-05-03-arena/): UC Berkeley 团队领导的流行 LLMs 的 Elo 排名系统，用户还可以通过头对头比较模型参与其中。
 - [Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard): Hugging Face 排名，比较了开源 LLM 在许多基准和任务上的表现。
@@ -144,7 +144,7 @@ authors:
 ### 图像生成模型
 
 - [Learning transferable visual models from natural language supervision](https://arxiv.org/abs/2103.00020) (2021)：介绍基础模型 CLIP 的论文，该模型将文本描述与图像联系起来，首次在计算机视觉中有效大规模使用基础模型。([blog post](https://openai.com/research/clip))
-- [Zero-shot text-to-image generation](https://arxiv.org/abs/2102.12092) (2021)：介绍 DALL-E 的论文，该模型结合了上面提到的 CLIP和 GPT-3，根据文本提示自动生成图像。其继任者 DALL-E 2 将在 2022 年引发基于图像的生成 AI 热潮。([blog post](https://openai.com/research/dall-e))
+- [Zero-shot text-to-image generation](https://arxiv.org/abs/2102.12092) (2021)：介绍 DALL-E 的论文，该模型结合了上面提到的 CLIP 和 GPT-3，根据文本提示自动生成图像。其继任者 DALL-E 2 将在 2022 年引发基于图像的生成 AI 热潮。([blog post](https://openai.com/research/dall-e))
 - [High-resolution image synthesis with latent diffusion models](https://arxiv.org/abs/2112.10752) (2021)：描述 Stable Diffusion 的论文，该模型在推出和迅速增长的开源社区后详细介绍。
 - [Photorealistic text-to-image diffusion models with deep language understanding](https://arxiv.org/abs/2205.11487) (2022)：Imagen 是 Google 在 AI 图像生成领域的探索。自发布以来，超过一年后，该模型尚未公开发布。([website](https://imagen.research.google/))
 - [DreamBooth: Fine tuning text-to-image diffusion models for subject-driven generation](https://arxiv.org/abs/2208.12242) (2022)：由 Google 开发的系统 DreamBooth，用于训练模型识别用户提交的主题并将其应用于提示的上下文中（如“微笑着站在埃菲尔铁塔前”）。([website](https://dreambooth.github.io/))
