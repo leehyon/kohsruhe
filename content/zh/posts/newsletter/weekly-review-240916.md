@@ -50,7 +50,7 @@ authors:
 
 1. 台风过境后的大晴天，云朵很好看
 2. 一种玻璃的内部纹理
-3. 几十块的充电底座让 iPod touch 起死回生
+3. 十几块的充电底座让 iPod touch 起死回生
 
 {{< gallery >}}
   {{< figure src="https://images.kohsruhe.com/2024/IMG_1058.JPG" >}}
