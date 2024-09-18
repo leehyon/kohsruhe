@@ -8,7 +8,7 @@ authors:
 - "leehyon"
 ---
 
-{{<audio src="audio/life-live.mp3" caption="♪ Life Live - Mayday" >}}
+{{<audio src="audio/life-live.mp3" caption="♪ 超人 - 五月天" >}}
 
 ## 前言
 

@@ -8,7 +8,7 @@ authors:
 - "leehyon"
 ---
 
-{{<audio src="audio/life-live.mp3" caption="♪ Life Live - Mayday" >}}
+{{<audio src="audio/life-live.mp3" caption="♪ 超人 - 五月天" >}}
 
 周二跟超超一起去看了《长安三万里》，电影以盛唐为背景，讲述了安史之乱后整个长安因战争而陷入混乱，身处局势之中的高适回忆起自己与李白的过往的故事。
 
