@@ -19,8 +19,8 @@ page_view_conter = true
 # Pagination
 # number of entries per page for archives, tags and categories
 # since we don't have list view, recommend a large value
-paginate = 20
-paginatePath = "page"
+pagination.pagerSize = 20
+pagination.path = "page"
 
 # Syntax Hightlight
 PygmentsCodeFences = true
