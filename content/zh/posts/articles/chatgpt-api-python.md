@@ -3,7 +3,7 @@ title: "白嫖 ChatGPT API"
 date: 2023-03-06T09:47:44+08:00
 draft: false
 tags: ["chatgpt", "guide"]
-categories: ["tech"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

@@ -3,7 +3,7 @@ title: "Git Information in Shell Prompt"
 date: 2023-07-21T09:28:26+08:00
 draft: false
 tags: ["git", "powershell", "bash", "widget", "guide"]
-categories: ["Tech"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

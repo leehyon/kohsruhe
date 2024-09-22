@@ -3,7 +3,7 @@ title: "在终端中自动提示 Git 信息"
 date: 2023-07-21T09:28:26+08:00
 draft: false
 tags: ["git", "powershell", "bash", "zsh", "guide"]
-categories: ["Tech"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

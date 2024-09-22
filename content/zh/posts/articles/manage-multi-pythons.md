@@ -3,7 +3,7 @@ title: "Python 多版本管理"
 date: 2022-12-30T21:23:55+08:00
 draft: false
 tags: ["python", "help"]
-categories: ["tech"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---
