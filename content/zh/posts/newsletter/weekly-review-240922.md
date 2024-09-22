@@ -66,6 +66,7 @@ Perhaps we can be like Truman, continuously picking up the true fragments of the
 - [The 10 best tools to green your software](https://github.blog/open-source/social-impact/the-10-best-tools-to-green-your-software/)：GitHub 列出了 10 个有助于减少软件碳足迹的工具，旨在帮助开发者以更可持续的方式编写代码。
 - [The big ideas behind retrieval augmented generation](https://www.elastic.co/blog/retrieval-augmented-generation-explained)：本文探讨了检索增强生成（RAG）在生成式 AI 中的应用。
 - [Good Refactoring vs Bad Refactoring](https://www.builder.io/blog/good-vs-bad-refactoring)：重构是保持代码健康的关键，但不当的重构可能导致代码更难理解、更慢且更易出错。
+- [Mastodon embed timeline widget](https://gitlab.com/idotj/mastodon-embed-timeline)：将 Mastodon 时间线嵌入到 HTML 页中，子栏目「嘟嘟」构建工具。
 
 ### 播客
 
