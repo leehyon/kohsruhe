@@ -143,11 +143,6 @@ name = "文章"
 weight = 20
 identifier = "articles"
 url = "category/articles/"
-[[languages.zh.menu.main]]
-name = "技术"
-weight = 30
-identifier = "tech"
-url = "category/tech/"
 
 [[languages.zh.menu.social]]
 name = "Telegram"
@@ -194,11 +189,6 @@ name = "Articles"
 weight = 20
 identifier = "articles"
 url = "category/articles/"
-[[languages.en.menu.main]]
-name = "Tech"
-weight = 30
-identifier = "tech"
-url = "category/tech/"
 
 [[languages.en.menu.social]]
 name = "Telegram"
@@ -242,11 +232,6 @@ name = "Artikel"
 weight = 20
 identifier = "articles"
 url = "category/articles/"
-[[languages.de.menu.main]]
-name = "Tech"
-weight = 30
-identifier = "tech"
-url = "category/tech/"
 
 [[languages.de.menu.social]]
 name = "Telegram"
