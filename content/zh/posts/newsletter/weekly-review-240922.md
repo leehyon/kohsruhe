@@ -22,8 +22,7 @@ authors:
 
 > 草台班子理论指的是，人们发现世界并不是如同我们认知中的那样精密运转的，而是处处充满着混乱、敷衍，各种组织表面上光鲜亮丽，实则各有各的问题。
 
-![vast-stage](https://images.kohsruhe.com/2024/vast-stage.png)
-> 图片来源：[一个不需要我的草台班子 - 云云众生](https://yylives.cc/2024/08/13/001-makeshift-troupe-that-not-need-me/)
+![chatglm-1727056087048420119](https://images.kohsruhe.com/2024/chatglm-1727056087048420119.png)
 
 当然，大多数时候，我自己也很草台，因此大家都是半斤八两，彼此彼此。个人觉得现在去评判这种现象没有意义，因为这确实是常态，难以避免，想想我们的工作，是不是很多时候：
 
@@ -71,7 +70,7 @@ Perhaps we can be like Truman, continuously picking up the true fragments of the
 - [The 10 best tools to green your software](https://github.blog/open-source/social-impact/the-10-best-tools-to-green-your-software/)：GitHub 列出了 10 个有助于减少软件碳足迹的工具，旨在帮助开发者以更可持续的方式编写代码。
 - [The big ideas behind retrieval augmented generation](https://www.elastic.co/blog/retrieval-augmented-generation-explained)：本文探讨了检索增强生成（RAG）在生成式 AI 中的应用。
 - [Good Refactoring vs Bad Refactoring](https://www.builder.io/blog/good-vs-bad-refactoring)：重构是保持代码健康的关键，但不当的重构可能导致代码更难理解、更慢且更易出错。
-- [Mastodon embed timeline widget](https://gitlab.com/idotj/mastodon-embed-timeline)：将 Mastodon 时间线嵌入到 HTML 页中，子栏目「嘟嘟」构建工具。
+- [Mastodon embed timeline widget](https://gitlab.com/idotj/mastodon-embed-timeline)：将 Mastodon 时间线嵌入到 HTML 页面中。
 
 ### 播客
 
