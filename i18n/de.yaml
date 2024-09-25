@@ -1,0 +1,89 @@
+- id: sitemap
+  translation: Sitemap
+
+- id: tags
+  translation: Schlagwörter
+
+- id: categories
+  translation: Kategorien
+
+- id: social
+  translation: Soziales
+
+- id: links
+  translation: Links
+
+- id: rss_feed
+  translation: RSS Feed
+
+- id: tag
+  translation: Schlagwort
+
+- id: category
+  translation: Kategorie
+
+- id: archive_of_tag
+  translation: Archiv nach Schlagwort
+
+- id: archive_of_category
+  translation: Archiv nach Kategorie
+
+- id: archive
+  translation: Archiv
+
+- id: list_of_tags
+  translation: Schlagwortliste
+
+- id: list_of_categories
+  translation: Kategorienliste
+
+- id: more_post
+  translation: Weitere Beiträge
+
+- id: articles_tagged
+  translation: Artikel mit Schlagwort
+
+- id: article_tagged
+  translation: Artikel mit Schlagwort
+
+- id: error_404
+  translation: 'Fehler 404 - Seite nicht gefunden'
+
+- id: in_category
+  translation: 'Kategorie: '
+
+- id: words
+  translation: Wörter
+
+- id: minutes
+  translation: Minuten
+
+- id: comments
+  translation: Kommentare
+
+- id: latest_posts
+  translation: Neueste Beiträge
+
+- id: page
+  translation: Seite
+
+- id: previous
+  translation: Vorherige
+
+- id: next
+  translation: Nächste
+
+- id: author_by
+  translation: 'Autor: '
+
+- id: related
+  translation: Verwandte Beiträge
+
+- id: load_disqus
+  translation: Disqus-Kommentare Laden
+
+- id: translations
+  translation: '-'
+
+- id: author
+  translation: Autor
