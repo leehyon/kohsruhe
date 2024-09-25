@@ -1,3 +1,221 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://www.kohsruhe.com/'
+title = 'Kohsruhe'
+theme = 'den'
+
+enableRobotsTXT = true                  # generate robots.txt
+enableEmoji = true                      # use emoji support
+hasCJKLanguage = true                   # detect CJK languages for word count etc.
+preserveTaxonomyNames = true            # do not make tag names lowercase
+rssLimit = 100                          # limit number of entries in RSS feeds
+
+# Syntax hightlight
+PygmentsCodeFences = true
+PygmentsUseClasses = true               # required for shhighlight shortcode
+
+# Service plugins
+disqusShortname = '' # disqus_shortname
+googleAnalytics = '' # UA-XXXXXXXX-X
+
+defaultContentLanguage = 'zh'
+defaultContentLanguageInSubdir = true  # true if you want to use /zh/ in URL
+
+[pagination]
+  disableAliases = false
+  pagerSize = 20
+  path = 'page'
+
+[permalinks]
+  posts = '/:year/:month/:filename/'
+  categories = '/category/:slug/'       # required
+  tags = '/tag/:slug/'                  # required
+  pages = '/:slug/'
+
+[sitemap] # required
+  changefreq = 'weekly'
+  priority = 0.5
+  filename = 'sitemap.xml'
+
+# Params
+[params]
+  since = '2022'                          # Site creation time
+  rssFullContent = true                   # set true to use full content instead of summary
+
+  # site info (optional)
+  keywords = ["hugo", "embedded", "programming"]
+  description = "Wouldn't be a Noble mission if it were easy."
+  logoTitle = 'Koh'                       # shown on top-left, default: title
+  siteLogoImage = 'images/noble.png'      # shown besides logoTitle
+  # headerTitle = "Kohsruhe"              # default: title
+  headerImage = 'images/lake.jpeg'
+  showAuthorCard = true                   # Whether to show author information below the article
+
+  showMenuLanguages = true
+
+  autoLoadComments = false                # auto load comment when scrolling down
+
+  # paginate style, default use numbered pagination links
+  # if true, use original "Previous" and "Next" links.
+   paginateOriginalStyle = true
+
+  # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
+  dateFormatToUse = '2006-01-02'
+
+  google_verification = ''                # Google_Verification
+
+  # Link custom CSS and JS assets
+  #   (relative to /static/css and /static/js respectively)
+  customCSS = [
+    'custom.css',
+  ] # if ['custom.css'], load '/static/css/custom.css' file
+  customJS = [] # if ['custom.js'], load '/static/js/custom.js' file
+
+  [params.author]
+    email = 'kohsruhe@outlook.com'
+    name = 'Leehyon HNG'
+  [params.markmap]
+    enable = true
+
+[markup]
+  [markup.goldmark]
+    duplicateResourceFiles = false
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false
+
+# Related content
+[related]
+  includeNewer = true
+  threshold = 50
+  toLower = true
+  [[related.indices]]
+    name = 'categories'
+    weight = 200
+  [[related.indices]]
+    name = 'keywords'
+    weight = 150
+  [[related.indices]]
+    name = 'tags'
+    weight = 100
+
+# Multilingual mode
+# Use a single configuration file to manage multiple languages
+
+[languages]
+  [languages.zh]
+    contentDir = 'content/zh'
+    disabled = false
+    languageCode = 'zh'
+    languageName = 'ZH'
+    weight = 1
+    [languages.zh.params]
+      subtitle = "Wouldn't be a Noble mission if it were easy."
+    [languages.zh.menus]
+      [[languages.zh.menu.main]]
+        name = "周报"
+        weight = 10
+        identifier = "newsletter"
+        url = "category/newsletter/"
+      [[languages.zh.menu.main]]
+        name = "文章"
+        weight = 20
+        identifier = "articles"
+        url = "category/articles/"
+      [[languages.zh.menu.social]]
+        name = "Telegram"
+        weight = 10
+        identifier = "telegram"
+        url = "https://t.me/kohsorbit"
+      [[languages.zh.menu.social]]
+        name = "Instagram"
+        weight = 20
+        identifier = "instagram"
+        url = "https://www.instagram.com/kohsruhe/"
+      [[languages.zh.menu.links]]
+        name = "GitHub"
+        weight = 10
+        identifier = "github"
+        url = "https://github.com/leehyon"
+      [[languages.zh.menu.links]]
+        name = "Koh's Garden"
+        weight = 20
+        identifier = "garden"
+        url = "https://garden.kohsruhe.com/"
+  [languages.en]
+    contentDir = 'content/en'
+    disabled = false
+    languageCode = 'en'
+    languageName = 'EN'
+    weight = 2
+    [languages.en.params]
+      subtitle = "Wouldn't be a Noble mission if it were easy."
+    [languages.en.menus]
+        [[languages.en.menu.main]]
+        name = "Newsletter"
+        weight = 10
+        identifier = "newsletter"
+        url = "category/newsletter/"
+        [[languages.en.menu.main]]
+        name = "Articles"
+        weight = 20
+        identifier = "articles"
+        url = "category/articles/"
+        [[languages.en.menu.social]]
+        name = "Telegram"
+        weight = 10
+        identifier = "telegram"
+        url = "https://t.me/kohsorbit"
+        [[languages.en.menu.social]]
+        name = "Instagram"
+        weight = 20
+        identifier = "instagram"
+        url = "https://www.instagram.com/kohsruhe/"
+        [[languages.en.menu.links]]
+        name = "GitHub"
+        weight = 10
+        identifier = "github"
+        url = "https://github.com/leehyon"
+        [[languages.en.menu.links]]
+        name = "Koh's Garden"
+        weight = 20
+        identifier = "garden"
+        url = "https://garden.kohsruhe.com/"
+  [languages.de]
+    contentDir = 'content/de'
+    disabled = false
+    languageCode = 'de'
+    languageName = 'DE'
+    weight = 3
+    [languages.de.params]
+      subtitle = "Es wäre keine edle Mission, wenn es einfach wäre."
+    [languages.de.menus]
+      [[languages.de.menu.main]]
+        name = "Newsletter"
+        weight = 10
+        identifier = "newsletter"
+        url = "category/newsletter/"
+      [[languages.de.menu.main]]
+        name = "Artikel"
+        weight = 20
+        identifier = "articles"
+        url = "category/articles/"
+      [[languages.de.menu.social]]
+        name = "Telegram"
+        weight = 10
+        identifier = "telegram"
+        url = "https://t.me/kohsorbit"
+      [[languages.de.menu.social]]
+        name = "Instagram"
+        weight = 20
+        identifier = "instagram"
+        url = "https://www.instagram.com/kohsruhe/"
+      [[languages.de.menu.links]]
+        name = "GitHub"
+        weight = 10
+        identifier = "github"
+        url = "https://github.com/leehyon"
+      [[languages.de.menu.links]]
+        name = "Koh's Garden"
+        weight = 20
+        identifier = "garden"
+        url = "https://garden.kohsruhe.com/"
