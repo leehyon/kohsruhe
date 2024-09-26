@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@idotj/mastodon-embed-timeline@4.4.2/dist/mastodon-timeline.min.css" integrity="sha256-1UGgxsonaMCfOEnVOL89aMKSo3GEAmaRP0ISbsWa6lU=" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@idotj/mastodon-embed-timeline@4.4.2/dist/mastodon-timeline.umd.js" integrity="sha256-E6WPG6iq+qQIzvu3HPJJxoAeRdum5siq13x4ITjyxu8=" crossorigin="anonymous"></script>
+
+<div id="mt-container" class="mt-container">
+    <div class="mt-body" role="feed">
+        <div class="mt-loading-spinner"></div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener("load", () => {
+        const myTimeline = new MastodonTimeline.Init({
+
+            // Id of the <div> containing the timeline
+            // Default: "mt-container"
+            mtContainerId: "mt-container",
+            
+            // Default: "https://mastodon.social"
+            instanceUrl: "https://ohai.social",
+
+            // Choose type of posts to show in the timeline: 'local', 'profile', 'hashtag'
+            // Default: "local"
+            timelineType: "profile",
+            
+            // Leave it empty if you didn't choose 'profile' as type of timeline
+            userId: "113175461650196839",
+            profileName: "@leehyon",
+
+            // Leave it empty if you didn't choose 'hashtag' as type of timeline
+            // Default: ""
+            hashtagName: "",
+
+            // Class name for the loading spinner (also used in CSS file)
+            // Default: "mt-loading-spinner"
+            spinnerClass: "mt-loading-spinner",
+
+            // Preferred color theme: "light", "dark" or "auto"
+            // Default: "auto"
+            defaultTheme: "auto",
+
+            // Maximum number of posts to request to the server
+            // Default: "20"
+            maxNbPostFetch: "20",
+            // Maximum number of posts to show in the timeline
+            // Default: "20"
+            maxNbPostShow: "20",
+
+            // Specifies the format of the date according to the chosen language/country
+            // Default: "en-GB" (British English: day-month-year order)
+            dateLocale: "en-US",
+
+            // Customize the date format using the options for day, month and year
+            // Default: day: "2-digit", month: "short", year: "numeric" (DD MMM YYYY)
+            dateOptions: {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+            },
+
+            // Hide unlisted posts
+            // Default: false (don't hide)
+            hideUnlisted: false,
+
+            // Hide boosted posts
+            // Default: false (don't hide)
+            hideReblog: false,
+
+            // Hide replies posts
+            // Default: false (don't hide)
+            hideReplies: false,
+
+            // Hide pinned posts from the profile timeline
+            // Default: false (don't hide)
+            hidePinnedPosts: false,
+
+            // Hide the user account under the user name
+            // Default: false (don't hide)
+            hideUserAccount: false,
+
+            // Limit the text content to a maximum number of lines
+            // Use "0" to show no text
+            // Default: "" (unlimited)
+            txtMaxLines: "",
+
+            // Customize the text of the button used for showing/hiding sensitive/spoiler text
+            btnShowMore: "SHOW MORE",
+            btnShowLess: "SHOW LESS",  
+
+            // Converts Markdown symbol ">" at the beginning of a paragraph into a blockquote HTML tag
+            // Default: false (don't apply)
+            markdownBlockquote: false,  
+
+            // Hide custom emojis available on the server
+            // Default: false (don't hide)
+            hideEmojos: false,  
+
+            // Customize the text of the button used for showing a sensitive/spoiler media content
+            btnShowContent: "SHOW CONTENT",  
+
+            // Hide video image preview and load the video player instead
+            // Default: false (don't hide)
+            hideVideoPreview: false,
+
+            // Customize the text of the button used for the image preview to play the video
+            btnPlayVideoTxt: "Load and play video",  
+
+            // Hide preview card if post contains a link, photo or video from a Url
+            // Default: false (don't hide)
+            hidePreviewLink: false,
+
+            // Limit the preview text description to a maximum number of lines
+            // Use "0" to show no text
+            // Default: "" (unlimited)
+            previewMaxLines: "",
+
+            // Hide replies, boosts and favourites posts counter
+            // Default: false (don't hide)
+            hideCounterBar: false,
+
+            // Disable a carousel/lightbox when the user clicks on a picture in a post
+            // Default: false (not disabled)
+            disableCarousel: false,
+
+            // Customize the text of the buttons used for the carousel/lightbox
+            carouselCloseTxt: "Close carousel",
+            carouselPrevTxt: "Previous media item",
+            carouselNextTxt: "Next media item", 
+
+            // Customize the text of the button pointing to the Mastodon page placed at the end of the timeline
+            // Leave the value empty to hide it
+            btnSeeMore: "See more posts at Mastodon",
+
+            // Customize the text of the button reloading the list of posts placed at the end of the timeline
+            // Leave the value empty to hide it
+            btnReload: "Refresh",
+
+            // Keep searching for the main <div> container before building the timeline. Useful in some cases where extra time is needed to render the page
+            // Default: false (don't apply)
+            insistSearchContainer: false,
+
+            // Defines the maximum time to continue searching for the main <div> container
+            // Default: "3000" (3 seconds)
+            insistSearchContainerTime: "3000",
+        });
+    });
+</script>
