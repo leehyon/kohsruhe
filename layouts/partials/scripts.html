@@ -36,12 +36,9 @@ $(document).ready(function() {
 <style>
 .markmap > svg {
   width: 100%;
-  height: 320px;
+  height: 300px;
 }
 </style>
-
-<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@latest"></script>
-
 <script>
 window.markmap = {
   autoLoader: {
@@ -51,7 +48,9 @@ window.markmap = {
     },
   },
 };
-
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@latest"></script>
+<script>
 $(document).ready(function() {
   var needMarkmap = false;
 
