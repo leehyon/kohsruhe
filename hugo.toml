@@ -77,6 +77,7 @@ defaultContentLanguageInSubdir = true  # true if you want to use /zh/ in URL
 [params.mermaid]
   theme = 'neutral'  # Optional theme: "default" | "base" | "dark" | "forest" | "neutral" | "null"
 
+## Markmap configuration
 [params.markmap]
   enable = true
 

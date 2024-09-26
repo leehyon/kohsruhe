@@ -1,4 +1,7 @@
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 {{- if and (or .Params.mathjax (and .Site.Params.mathjax (ne .Params.mathjax false))) (or .IsPage .IsHome) }}
@@ -28,6 +31,44 @@ $(document).ready(function() {
 });
 </script>
 {{- end }}
+
+{{ if .Site.Params.markmap.enable -}}
+<style>
+.markmap > svg {
+  width: 100%;
+  height: 320px;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@latest"></script>
+
+<script>
+window.markmap = {
+  autoLoader: {
+    manual: true,
+    onReady() {
+        // You can keep this empty if you don't need to customize plugins
+    },
+  },
+};
+
+$(document).ready(function() {
+  var needMarkmap = false;
+
+  $('.language-markmap').each(function() {
+    needMarkmap = true; // Set flag to true if any element is found
+    var $this = $(this);
+    var content = $this.text(); // Get the text content
+    $this.replaceWith($('<div class="markmap">').text(content)); // Replace with a new div
+  });
+
+  const { markmap } = window;
+  if (needMarkmap) {
+    markmap.autoLoader.renderAll(); // Render all Markmap elements
+  }
+});
+</script>
+{{ end -}}
 
 {{ if .Page.Store.Get "hasmermaid" -}}
 {{- partial "scripts/mermaid.html" . -}}
