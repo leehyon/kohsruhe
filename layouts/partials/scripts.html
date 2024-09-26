@@ -28,3 +28,7 @@ $(document).ready(function() {
 });
 </script>
 {{- end }}
+
+{{ if .Page.Store.Get "hasmermaid" -}}
+{{- partial "scripts/mermaid.html" . -}}
+{{ end -}}

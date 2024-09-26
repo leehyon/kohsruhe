@@ -69,11 +69,16 @@ defaultContentLanguageInSubdir = true  # true if you want to use /zh/ in URL
   ] # if ['custom.css'], load '/static/css/custom.css' file
   customJS = [] # if ['custom.js'], load '/static/js/custom.js' file
 
-  [params.author]
-    email = 'kohsruhe@outlook.com'
-    name = 'Leehyon HNG'
-  [params.markmap]
-    enable = true
+[params.author]
+  email = 'kohsruhe@outlook.com'
+  name = 'Leehyon HNG'
+
+## Mermaid configuration
+[params.mermaid]
+  theme = 'neutral'  # Optional theme: "default" | "base" | "dark" | "forest" | "neutral" | "null"
+
+[params.markmap]
+  enable = true
 
 [markup]
   [markup.goldmark]
