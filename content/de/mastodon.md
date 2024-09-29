@@ -1,5 +1,5 @@
 ---
-title: "Mastodon"
+title: "Toots"
 date: 2022-10-29T16:38:52+08:00
 menu: "main"
 weight: 90
