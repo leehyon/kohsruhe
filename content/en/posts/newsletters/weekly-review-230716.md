@@ -20,7 +20,7 @@ As for the content, I will initially lean towards some reflections on life, as i
 
 ~~Besides reflecting on life, I will also record some content heard (podcasts) or seen (articles), mainly leaning towards technology and business. I consider myself like a person picking up shells on the beach of life. The sea rises and falls, and some tiny things are always forgotten. I hope these things can be discovered and subtly influence my ordinary life. Of course, if they also happen to inspire you, that would be even better.~~[^ud1]
 
-[^ud1]: Updated on 2024-09-27: This part has been moved to the "Mastodon" for a better presentation
+[^ud1]: Updated on 2024-09-27: This part has been moved to the "Toots" for a better presentation
 
 ## Facing choices
 

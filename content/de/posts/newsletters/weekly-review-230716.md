@@ -20,7 +20,7 @@ Was den Inhalt betrifft, so werde ich mich zunächst auf einige Reflexionen übe
 
 ~~Neben den Reflexionen über das Leben werde ich auch einige gehörte (Podcasts) oder gesehene (Artikel) Inhalte aufzeichnen, die hauptsächlich auf Technologie und Geschäft ausgerichtet sind. Ich betrachte mich selbst wie jemanden, der am Strand des Lebens Muscheln sammelt. Das Meer steigt und fällt, und einige winzige Dinge werden immer vergessen. Ich hoffe, diese Dinge können entdeckt werden und subtil mein gewöhnliches Leben beeinflussen. Natürlich wäre es umso besser, wenn sie auch dich inspirieren könnten.~~[^ud1]
 
-[^ud1]: Aktualisiert am 2024-09-27: Dieser Teil wurde in die "Mastodon" Kolumne verschoben, um eine bessere Präsentation zu erzielen
+[^ud1]: Aktualisiert am 2024-09-27: Dieser Teil wurde in die "Toots" Kolumne verschoben, um eine bessere Präsentation zu erzielen
 
 ## Entscheidungen treffen
 

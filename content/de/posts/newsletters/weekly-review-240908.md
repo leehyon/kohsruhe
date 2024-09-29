@@ -12,7 +12,7 @@ authors:
 
 ## Vorwort
 
-Dies ist eine Aufzeichnung und Reflexion des Lebens vom 2024-09-01 bis 2024-09-08.
+Dies ist eine Aufzeichnung und Reflexion des Lebens vom 01.09.2024 bis 08.09.2024.
 
 Das Projekt, das seit über einem halben Jahr beschäftigt war, hatte diese Woche eine ASPICE-Vorprüfung, und Teamkonsens ist sehr wichtig. Habe dem Blog-Rahmen Unterstützung für [markmap](https://markmap.js.org/) und [mermaid](https://mermaid.js.org/) hinzugefügt, obwohl die Funktion klein ist, hat es einige Zeit gedauert. Studiere Deep-Learning-basierte Objekterkennungsalgorithmen, die im kommenden Projekt verwendet werden. Von „Woher kommt meine Sprache“ bis „Catfish: Was ist ein offenes und nüchternes Leben“, überlege, ob ich anfangen soll, eine Memoir zu schreiben.
 

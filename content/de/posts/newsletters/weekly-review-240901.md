@@ -12,7 +12,7 @@ authors:
 
 ## Einleitung
 
-*Dieser Artikel dokumentiert und reflektiert das Leben vom 2024-08-26 bis zum 2024-09-01.*
+*Dieser Artikel dokumentiert und reflektiert das Leben vom 26.08.2024 bis zum 01.09.2024.*
 
 Ich habe etwas Zeit damit verbracht, den Blog neu zu deployen. Schließlich habe ich die Reisepläne für die Nationalfeiertage nach Hulunbuir festgelegt und werde mit Freunden aus Peking den Herbst in der Inneren Mongolei erleben. Das vom Abteilungsorganisierte Softwaredesign-Training P2 ist zu Ende. Obwohl die zwei Sitzungen zusammen nur vier Tage gedauert haben, habe ich viel gelernt. Dies ist jedoch nur der Anfang, und es gibt danach noch viel zu lernen. Während der Restaurantwoche bin ich auf ein nicht so gutes Restaurant gestoßen, und bei chinesischem Essen ist es wichtig, die Gerichte und Online-Bewertungen sorgfältig zu überprüfen.
 
