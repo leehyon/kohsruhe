@@ -58,7 +58,7 @@ authors:
 
 ## 边缘计算
 
-近期在玩 TI AM62A 的板子，顺便也了解下 Edge Computing 概念。边缘计算之前在科技类频道或多或少听说过。区别与云计算，边缘计算侧重在物联网设备或嵌入式领域，这也包括 Edge AI。
+近期在玩 TI AM62A 的板子，顺便也了解下 **Edge Computing** 概念。边缘计算之前在科技类频道或多或少听说过。区别与云计算，边缘计算侧重在物联网设备或嵌入式领域，这也包括 Edge AI。
 
 > *Edge computing allows devices in remote locations to process data at the "edge" of the network, either by the device or a local server. And when data needs to be processed in the central datacenter, only the most important data is transmitted, thereby minimizing latency.*
 
