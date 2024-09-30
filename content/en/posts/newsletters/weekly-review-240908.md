@@ -57,9 +57,9 @@ From my personal experience, letting AI write a biography for you daily is indee
 
 Additionally, Apple’s built-in Journal now has some of this in mind. Once Apple Intelligence becomes available, it should integrate well. However, considering the current AI capabilities, maybe keeping good records is more important. Take more photos of daily life, save them, and when AI becomes smarter, use it to generate the story.
 
-## Inescapable daily record
+## Fun stuff
 
-This section will record some progress of personal projects this week, and also list books and media read or watched, interesting things bought, etc., which will be more routine in content.
+This section will record some interesting inputs, such as articles read, podcasts listened to, fun items purchased, etc. Although most of the content will be automatically synced in the "Toots" column, some of it will still be selected and listed here.
 
 ### Books and media
 

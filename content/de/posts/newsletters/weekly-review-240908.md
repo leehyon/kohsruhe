@@ -57,9 +57,9 @@ Aus meiner persönlichen Erfahrung ist es tatsächlich durchführbar, AI täglic
 
 Außerdem hat Apples integriertes Journal jetzt einige dieser Gedanken im Kopf. Sobald Apple Intelligence verfügbar ist, sollte es gut integriert sein. Angesichts der aktuellen AI-Fähigkeiten könnte es jedoch wichtiger sein, gute Aufzeichnungen zu führen. Fotografiere den Alltag öfter, speichere sie und wenn AI intelligenter wird, nutze sie zur Erstellung der Geschichte.
 
-## Unvermeidliches tägliches Protokoll
+## Lustige Sachen
 
-In diesem Teil werde ich Fortschritte in persönlichen Projekten dieser Woche aufzeichnen und einige Bücher und Medien erwähnen, die ich gelesen oder gehört habe, sowie interessante Dinge, die ich gekauft habe. Der Inhalt wird eher tagebuchartig sein.
+Dieser Abschnitt wird einige interessante Inputs aufzeichnen, wie zum Beispiel gelesene Artikel, gehörte Podcasts, gekaufte lustige Gegenstände usw. Obwohl die meisten Inhalte automatisch in der „Toots“-Spalte synchronisiert werden, wird ein Teil davon hier ausgewählt und aufgelistet.
 
 ### Bücher und Medien
 
