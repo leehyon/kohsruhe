@@ -16,7 +16,7 @@ Im Film erscheinen viele bekannte Figuren und berühmte Gedichte aus unseren Sch
 
 > Die Worte und Sätze, die wir in unserer Jugend hastig auswendig gelernt haben, treffen uns jetzt tief.
 
-Ich war nicht gut in chinesischer Literatur und hatte nur allgemeines Verständnis für Poesie. Tatsächlich habe ich für die Gedichte, die auswendig gelernt und diktiert werden mussten, nur auf den letzten Drücker geübt. So fühlte ich beim Anschauen des Films oft in meinem Herzen: "Oh, so war das also."
+Ich war nicht gut in chinesischer Literatur und hatte nur allgemeines Verständnis für Poesie. Tatsächlich habe ich für die Gedichte, die auswendig gelernt und diktiert werden mussten, nur auf den letzten Drücker geübt. So fühlte ich beim Anschauen des Films oft in meinem Herzen: „Oh, so war das also.“
 
 Nach dem Film habe ich viele Videos über Dichter der Tang-Dynastie auf Bilibili geschaut. Ehrlich gesagt, auch wenn es mehr als tausend Jahre her ist, wirken die Geschichten aus jener Zeit noch immer lebendig. Die Romantik oder Empathie in den Gedichten berührt mich noch heute. 
 
@@ -30,13 +30,13 @@ Ich bin dankbar, dass die Worte unserer Vorfahren bis heute überliefert wurden,
 
 Es erinnert mich an den letzten Monat, als ich meine Mutter zu einer medizinischen Untersuchung nach Hangzhou brachte. Nach der Arbeit nahm ich den Hochgeschwindigkeitszug zum Westsee. Gegen zehn Uhr abends hörte der Regen auf, und da ich nichts anderes zu tun hatte, beschloss ich, zur Weißen Damm zu gehen. Der Westsee bei Nacht nach dem Regen war ruhig, ein krasser Gegensatz zu seinem üblichen Trubel. Nur gelegentlich gab es ein paar Passanten, und eine sanfte Brise ersetzte die Hitze des Tages, was sehr angenehm war. Das letzte Mal, dass ich Hangzhou besuchte, war vor drei oder vier Jahren auf dem Heimweg mit einem Schulfreund, für einen kurzen halbtägigen Zwischenstopp.
 
-Als ich entlang der Weißen Damm in Richtung Zentrum des Sees ging, erinnerte ich mich plötzlich an Zhang Dai's "Schnee auf dem Pavillon im See beobachten". Diese Prosa hinterließ während meiner Mittelschulzeit einen tiefen Eindruck bei mir, vielleicht weil das Gefühl der Isolation, das sie beschrieb, mein junges Herz berührte. Obwohl es in diesem Moment nicht schneite, erinnerte ich mich beim Blick auf den fernen Pavillon im See an den schneebedeckten Pavillon von vor Jahrhunderten, und die Emotionen und Szenen aus dem Text kamen mir lebhaft in den Sinn.
+Als ich entlang der Weißen Damm in Richtung Zentrum des Sees ging, erinnerte ich mich plötzlich an Zhang Dai's „Schnee auf dem Pavillon im See beobachten“. Diese Prosa hinterließ während meiner Mittelschulzeit einen tiefen Eindruck bei mir, vielleicht weil das Gefühl der Isolation, das sie beschrieb, mein junges Herz berührte. Obwohl es in diesem Moment nicht schneite, erinnerte ich mich beim Blick auf den fernen Pavillon im See an den schneebedeckten Pavillon von vor Jahrhunderten, und die Emotionen und Szenen aus dem Text kamen mir lebhaft in den Sinn.
 
 Verdammt noch mal, diese Worte haben eine solche Nachwirkung!
 
 ### Kunstausstellung
 
-Am Samstag besuchte ich die Ausstellung "Rückkehr zur Natur" im Mingzhu Art Museum. Ich war vor mehr als einem Jahr schon einmal dort gewesen, und dies war mein zweiter Besuch. Die Ausstellung war nicht groß, hatte aber eine Vielzahl von Formen, darunter Malerei, Installation, Skulptur, Video, Fotografie und Performancekunst. Wie soll ich es sagen? Ich habe es nicht ganz verstanden. Im Vergleich zu Worten begrenzen konkrete Kunstformen den Rahmen der Vorstellungskraft des Lesers, und dieser Rahmen ist zweiseitig, was es schwierig macht, eine Empathieverbindung zwischen dem Schöpfer und dem Publikum herzustellen. Zumindest ist es für mich so.
+Am Samstag besuchte ich die Ausstellung „Rückkehr zur Natur“ im Mingzhu Art Museum. Ich war vor mehr als einem Jahr schon einmal dort gewesen, und dies war mein zweiter Besuch. Die Ausstellung war nicht groß, hatte aber eine Vielzahl von Formen, darunter Malerei, Installation, Skulptur, Video, Fotografie und Performancekunst. Wie soll ich es sagen? Ich habe es nicht ganz verstanden. Im Vergleich zu Worten begrenzen konkrete Kunstformen den Rahmen der Vorstellungskraft des Lesers, und dieser Rahmen ist zweiseitig, was es schwierig macht, eine Empathieverbindung zwischen dem Schöpfer und dem Publikum herzustellen. Zumindest ist es für mich so.
 
 Ich habe es immer noch nicht ganz verstanden. Lass uns essen gehen[^1]!
 
@@ -44,7 +44,7 @@ Ich habe es immer noch nicht ganz verstanden. Lass uns essen gehen[^1]!
 
 ## Unvermeidliches tägliches Protokoll
 
-Dieser Abschnitt dokumentiert einige der Arbeits- und Lernfortschritte der Woche sowie gelesene oder gehörte Bücher und audiovisuelle Inhalte, interessante Einkäufe und Ähnliches. Es wird eher tagebuchartig sein.
+In diesem Teil werde ich Fortschritte in persönlichen Projekten dieser Woche aufzeichnen und einige Bücher und Medien erwähnen, die ich gelesen oder gehört habe, sowie interessante Dinge, die ich gekauft habe. Der Inhalt wird eher tagebuchartig sein.
 
 ### Technisches Lernen
 

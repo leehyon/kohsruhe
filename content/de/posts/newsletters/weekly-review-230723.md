@@ -42,7 +42,7 @@ Neben der Fotografie habe ich versucht, das Leben auf andere Weise aufzuzeichnen
 
 [^2]: Wer interessiert ist, kann sich diese [1 Second Everyday](https://apps.apple.com/cn/app/id587823548?from=mergeek.com) App ansehen
 
-Warum wir das Leben aufzeichnen müssen, denke ich, weiß jeder. Genau wie Heraklit sagte: "Man kann nicht zweimal in denselben Fluss steigen", ist die Zeit eine Einbahnstraße, und wir können nicht in die Vergangenheit zurückkehren. Natürlich, wenn du zurückkehren möchtest, ist es möglich - mache einfach gute Aufzeichnungen. Wenn du die Szenen dieser Zeit vollständig dokumentieren kannst, zählt das spätere Zurückblicken als „Zeitreise“. Vor langer Zeit dachte ich, dies könnte der einzig mögliche Weg zur Zeitreise sein, obwohl ich dachte, eine Kamera allein sei unzureichend. Aber mit der kürzlichen Veröffentlichung des MR-Geräts von Apple scheint dieser Prozess immer einfacher zu werden.
+Warum wir das Leben aufzeichnen müssen, denke ich, weiß jeder. Genau wie Heraklit sagte: „Man kann nicht zweimal in denselben Fluss steigen“, ist die Zeit eine Einbahnstraße, und wir können nicht in die Vergangenheit zurückkehren. Natürlich, wenn du zurückkehren möchtest, ist es möglich - mache einfach gute Aufzeichnungen. Wenn du die Szenen dieser Zeit vollständig dokumentieren kannst, zählt das spätere Zurückblicken als „Zeitreise“. Vor langer Zeit dachte ich, dies könnte der einzig mögliche Weg zur Zeitreise sein, obwohl ich dachte, eine Kamera allein sei unzureichend. Aber mit der kürzlichen Veröffentlichung des MR-Geräts von Apple scheint dieser Prozess immer einfacher zu werden.
 
 ![heraclitus-river](https://images.kohsruhe.com/2024/heraclitus-river.jpg)
 > *Hintergrundfoto von Tyler Palmer auf Unsplash*

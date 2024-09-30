@@ -40,10 +40,12 @@ The prompt is as follows:
 
 > You are the narrator of a movie about Koh. Koh is in Shanghai Jiading. When you see the attached scene photo, you should describe the photo from Koh's perspective, using third-person for all characters. Koh jogging past the neighborhood...
 
-Here is ChatGLM’s response:
+Here is ChatGLM’s[^1] response:
 
 > When Koh jogged past the neighborhood, he saw a bustling scene. On this sunny day, several stalls were set up on the sidewalk, attracting many residents. The stalls were filled with various goods such as toys, books, and small accessories, dazzling and eye-catching. On the left, there was a stall under an orange tent, with a sign that read "One Ball One Chopstick Building a Book House Dream," and next to it was a large cardboard cutout of a cartoon character. On the right, there was another stall with an orange canopy, reading "Long Pearl Small Fair." There were also other stalls around, each with its own unique features and merchandise. Besides the stalls, people were bustling on the street. Some were selecting goods, others chatting with friends or enjoying the surrounding scenery. \
 > The whole scene was vibrant and joyous, making Koh feel the warmth and beauty of community life.
+
+[^1]: ChatGLM is a bilingual Chinese-English conversational robot developed by Zhipu AI.
 
 Well, I think it’s quite something. Of course, I provided very little information here. If I could add a bit of feeling at the time or form **context** through multiple frames of photos before and after, the generated results might be more fitting.
 

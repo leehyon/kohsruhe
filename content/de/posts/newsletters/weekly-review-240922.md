@@ -14,7 +14,7 @@ authors:
 
 Dieser Beitrag ist eine Aufzeichnung und Reflexion über das Leben von 17.09.2024 bis 22.09.2024.
 
-Diese Woche habe ich nur drei Tage gearbeitet, aber aufgrund von Projektanforderungen am Samstag einen Tag von zu Hause aus gearbeitet. Ich beginne zu verstehen, dass „Cdie Welt ein riesiges Provisorium ist“, Gedankelosigkeit und Oberflächlichkeit sind wohl der Normalzustand. Endlich ist das Wetter nicht mehr so heiß, der Herbst sollte bald kommen. Habe mich auch mit Mastodon beschäftigt und bin bereit, das föderale Universum zu erkunden.
+Diese Woche habe ich nur drei Tage gearbeitet, aber aufgrund von Projektanforderungen am Samstag einen Tag von zu Hause aus gearbeitet. Ich beginne zu verstehen, dass „die Welt ein riesiges Provisorium ist“, Gedankelosigkeit und Oberflächlichkeit sind wohl der Normalzustand. Endlich ist das Wetter nicht mehr so heiß, der Herbst sollte bald kommen. Habe mich auch mit Mastodon beschäftigt und bin bereit, das föderale Universum zu erkunden.
 
 ## Die Welt ist ein riesiges Provisorium?
 

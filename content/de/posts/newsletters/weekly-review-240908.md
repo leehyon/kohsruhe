@@ -40,10 +40,12 @@ Das Prompt lautet wie folgt:
 
 > Du bist der Erzähler eines Films über Koh. Koh ist in Shanghai Jiading. Wenn du das angehängte Szenenfoto siehst, solltest du das Foto aus Kohs Perspektive beschreiben und alle Charaktere in der dritten Person verwenden. Koh joggt am Viertel vorbei...
 
-Hier ist die Antwort von ChatGLM:
+Hier ist die Antwort von ChatGLM[^1]:
 
-> Als Koh am Viertel vorbeijoggte, sah er eine belebte Szene. An diesem sonnigen Tag waren mehrere Stände auf dem Gehweg aufgebaut, die viele Einwohner anzogen. Die Stände waren mit verschiedenen Waren wie Spielzeug, Büchern und kleinen Accessoires gefüllt, die schillernd und auffällig waren. Links gab es einen Stand unter einem orangefarbenen Zelt mit einem Schild, auf dem "Ein Ball, ein Stäbchen, baue einen Buchtraum" stand, und daneben stand ein großer Pappaufsteller einer Cartoonfigur. Rechts gab es einen weiteren Stand mit einem orangefarbenen Baldachin, auf dem "Long Pearl Small Fair" zu lesen war. Es gab auch andere Stände in der Umgebung, jeder mit seinen eigenen einzigartigen Eigenschaften und Waren. Neben den Ständen waren die Leute auf der Straße beschäftigt. Einige wählten Waren aus, andere plauderten mit Freunden oder genossen die Umgebung. \
+> Als Koh am Viertel vorbeijoggte, sah er eine belebte Szene. An diesem sonnigen Tag waren mehrere Stände auf dem Gehweg aufgebaut, die viele Einwohner anzogen. Die Stände waren mit verschiedenen Waren wie Spielzeug, Büchern und kleinen Accessoires gefüllt, die schillernd und auffällig waren. Links gab es einen Stand unter einem orangefarbenen Zelt mit einem Schild, auf dem „Ein Ball, ein Stäbchen, baue einen Buchtraum“ stand, und daneben stand ein großer Pappaufsteller einer Cartoonfigur. Rechts gab es einen weiteren Stand mit einem orangefarbenen Baldachin, auf dem „Long Pearl Small Fair“ zu lesen war. Es gab auch andere Stände in der Umgebung, jeder mit seinen eigenen einzigartigen Eigenschaften und Waren. Neben den Ständen waren die Leute auf der Straße beschäftigt. Einige wählten Waren aus, andere plauderten mit Freunden oder genossen die Umgebung. \
 > Die ganze Szene war lebendig und freudig und ließ Koh die Wärme und Schönheit des Gemeinschaftslebens spüren.
+
+[^1]: ChatGLM ist ein von Zhipu AI entwickelter, zweisprachig (Chinesisch und Englisch) unterstützter Chatbot.
 
 Nun, ich denke, es ist recht gut. Natürlich habe ich hier sehr wenige Informationen gegeben. Wenn ich ein wenig Gefühl von damals hinzufügen oder durch mehrere Rahmenbilder vor und nach dem Kontext bilden könnte, wären die generierten Ergebnisse möglicherweise passender.
 
@@ -57,7 +59,7 @@ Außerdem hat Apples integriertes Journal jetzt einige dieser Gedanken im Kopf. 
 
 ## Unvermeidliches tägliches Protokoll
 
-Dieser Abschnitt wird einige Fortschritte persönlicher Projekte dieser Woche festhalten und auch gelesene oder gesehene Bücher und Medien, interessante gekaufte Dinge usw. auflisten, die inhaltlich routinemäßiger sind.
+In diesem Teil werde ich Fortschritte in persönlichen Projekten dieser Woche aufzeichnen und einige Bücher und Medien erwähnen, die ich gelesen oder gehört habe, sowie interessante Dinge, die ich gekauft habe. Der Inhalt wird eher tagebuchartig sein.
 
 ### Bücher und Medien
 
