@@ -1,14 +1,14 @@
 ---
-title: "Newsletter 07 - Willkommen im föderalen Universum"
+title: "Newsletter 07 - Willkommen im Fediverse"
 date: 2024-09-22T16:26:09+08:00
 draft: false
-tags: ["review", "fediverse", "mastodon", "chaos"]
+tags: ["review", "fediverse", "mastodon"]
 categories: ["Newsletter"]
 authors:
 - "leehyon"
 ---
 
-{{<audio src="audio/life-live.mp3" caption="♪ Life Live - Mayday" >}}
+{{<audio src="audio/du.mp3" caption="♪ Du - Cro" >}}
 
 ## Vorwort
 
@@ -30,11 +30,13 @@ Natürlich bin ich selbst meistens auch provisorisch, daher sind wir alle gleich
 2. Teammitglieder können in Fähigkeiten, Erfahrungen oder Arbeitsstilen nicht zusammenpassen und nicht effektiv zusammenarbeiten.
 3. Die Kommunikation zwischen den Teammitgliedern ist unzureichend, was zu Missverständnissen und Konflikten führt.
 
-Wie letztes Mal über Chaos gesprochen, ist dies nicht eine andere Manifestation davon. Entropieanstieg ist die Wahrheit, aber noch wichtiger ist es, das wahre Leben zu erkennen und dennoch das Leben zu lieben:
+Wie letztes Mal über **Chaos** gesprochen, ist dies nicht eine andere Manifestation davon. Entropieanstieg ist die Wahrheit, aber noch wichtiger ist es, „das wahre Leben zu erkennen und dennoch das Leben zu lieben“[^1]:
 
 - Viele scheinbar professionelle Dinge sind tatsächlich nur eine Fassade, andere auch, also nur mutig ausprobieren, sobald man sich eingehend damit beschäftigt, findet man Chancen.
 - Bewahren Sie sich Neugier für das Fachgebiet und hinterfragen Sie die Professionalität. Professionalität isoliert Kritik und verstärkt soziale Hierarchien, fördern Sie Offenheit durch Zweifel und persönliches Feingefühl.
 - Vertrauen und Zeit in sich selbst investieren, Autonomie respektieren und dennoch mit der Gesellschaft interagieren, anstatt nur gehorsam den sozialen Definitionen zu folgen. Warum Provisorium? Ich habe meine eigene Definition.
+
+[^1]: Romain Rolland Zitat: "There is only one heroism in the world: to see the world as it is, and to love it."
 
 Vielleicht können wir wie Truman sein, die wahren Fragmente der Welt kontinuierlich aufsammeln und dann durch diese Tür treten und sagen:
 
@@ -58,11 +60,11 @@ Wenn Sie mehr über Mastodon und das föderale Universum erfahren möchten, kön
 - [谈谈 Mastodon、Fediverse 和 ActivityPub](https://zu1k.com/posts/tutorials/p2p/fediverse/)
 - [去中心化社交网络 Mastodon 研究报告：平台与协议之争背后，它会是最终赢家吗](https://research.web3caff.com/zh/archives/6024?ref=0)
 
-## Unvermeidliches tägliches Protokoll
+## Lustige Sachen
 
-In diesem Teil werde ich Fortschritte in persönlichen Projekten dieser Woche aufzeichnen und einige Bücher und Medien erwähnen, die ich gelesen oder gehört habe, sowie interessante Dinge, die ich gekauft habe. Der Inhalt wird eher tagebuchartig sein.
+Dieser Abschnitt wird einige interessante Inputs aufzeichnen, wie zum Beispiel gelesene Artikel, gehörte Podcasts, gekaufte lustige Gegenstände usw. Obwohl die meisten Inhalte automatisch in der „Toots“-Spalte synchronisiert werden, wird ein Teil davon hier ausgewählt und aufgelistet.
 
-### Sammlung
+### Artikel
 
 - [Default blind](https://blog.sbensu.com/posts/default-blind/): In der Softwarebranche führt mangelnde Beobachtung oft zu falscher Positionierung und Entscheidungen.
 - [Thank You for the Code](https://jaketrent.com/post/thank-you-code): Danke für den Code, den du zur Verfügung gestellt hast. Wir nutzen oft den Code anderer und genießen seine Bequemlichkeit, ohne mehr zu verlangen. Selbst wenn Probleme auftreten, sollten wir zuerst Dankbarkeit ausdrücken und dann Verbesserungsvorschläge machen.
@@ -70,6 +72,9 @@ In diesem Teil werde ich Fortschritte in persönlichen Projekten dieser Woche au
 - [The 10 best tools to green your software](https://github.blog/open-source/social-impact/the-10-best-tools-to-green-your-software/): GitHub listet 10 Werkzeuge auf, die helfen, den CO2-Fußabdruck von Software zu verringern, um Entwicklern zu helfen, Code nachhaltiger zu schreiben.
 - [The big ideas behind retrieval augmented generation](https://www.elastic.co/blog/retrieval-augmented-generation-explained): Der Artikel untersucht die Anwendung von Retrieval Augmented Generation (RAG) in generativer KI.
 - [Gute Refaktorisierung vs. schlechte Refaktorisierung](https://www.builder.io/blog/good-vs-bad-refactoring): Refaktorisierung ist der Schlüssel zur Gesundheit des Codes. Aber falsche Refaktorisierung kann den Code schwerer verständlich, langsamer und fehleranfälliger machen.
+
+### Tools
+
 - [Mastodon embed timeline widget](https://gitlab.com/idotj/mastodon-embed-timeline): Einbinden der Mastodon-Zeitachse in eine HTML-Seite.
 
 ### Podcasts
