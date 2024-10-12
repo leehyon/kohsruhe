@@ -19,6 +19,10 @@ googleAnalytics = '' # UA-XXXXXXXX-X
 defaultContentLanguage = 'zh'
 defaultContentLanguageInSubdir = true  # true if you want to use /zh/ in URL
 
+# Title case style
+# https://github.com/gohugoio/hugo/issues/12115
+titleCaseStyle = 'none'
+
 [pagination]
   disableAliases = false
   pagerSize = 20
