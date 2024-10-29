@@ -104,7 +104,7 @@ YOLOv8 是一个无锚点模型。这意味着它直接预测物体的中心，�
 
 ### 新的卷积
 
-茎中的第一个 `6x6` 卷积被一个 `3x3` 所取代，主构建块被改变， [C2f](https://github.com/ultralytics/ultralytics/blob/dba3f178849692a13f3c43e81572255b1ece7da9/ultralytics/nn/modules.py?ref=blog.roboflow.com#L196) 取代了 [C3](https://github.com/ultralytics/yolov5/blob/cdd804d39ff84b413bde36a84006f51769b6043b/models/common.py?ref=blog.roboflow.com#L157)。
+茎中的第一个 `6x6` 卷积被一个 `3x3` 所取代，主构建块被改变，[C2f](https://github.com/ultralytics/ultralytics/blob/dba3f178849692a13f3c43e81572255b1ece7da9/ultralytics/nn/modules.py?ref=blog.roboflow.com#L196) 取代了 [C3](https://github.com/ultralytics/yolov5/blob/cdd804d39ff84b413bde36a84006f51769b6043b/models/common.py?ref=blog.roboflow.com#L157)。
 
 该模块在下图中进行了总结，其中 `f` 表示特征数，`e` 表示扩展率，CBS 是一个由 `Conv`、`BatchNorm` 和 `SiLU` 组成的块。
 
