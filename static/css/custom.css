@@ -1,5 +1,8 @@
-/*关于页面图片链接*/
+body {
+	font-family: "LXGW WenKai", sans-serif;
+}
 
+/*关于页面图片链接*/
 .content img {
 	margin-top: 5px;
 	margin-bottom: 5px;
