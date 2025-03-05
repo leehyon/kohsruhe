@@ -122,11 +122,6 @@ titleCaseStyle = 'none'
       subtitle = "Wouldn't be a Noble mission if it were easy."
     [languages.zh.menus]
       [[languages.zh.menu.main]]
-        name = "周报"
-        weight = 10
-        identifier = "newsletter"
-        url = "category/newsletter/"
-      [[languages.zh.menu.main]]
         name = "文章"
         weight = 20
         identifier = "articles"
@@ -161,11 +156,6 @@ titleCaseStyle = 'none'
       subtitle = "Wouldn't be a Noble mission if it were easy."
     [languages.en.menus]
         [[languages.en.menu.main]]
-        name = "Newsletter"
-        weight = 10
-        identifier = "newsletter"
-        url = "category/newsletter/"
-        [[languages.en.menu.main]]
         name = "Articles"
         weight = 20
         identifier = "articles"
@@ -199,11 +189,6 @@ titleCaseStyle = 'none'
     [languages.de.params]
       subtitle = "Es wäre keine edle Mission, wenn es einfach wäre."
     [languages.de.menus]
-      [[languages.de.menu.main]]
-        name = "Newsletter"
-        weight = 10
-        identifier = "newsletter"
-        url = "category/newsletter/"
       [[languages.de.menu.main]]
         name = "Artikel"
         weight = 20

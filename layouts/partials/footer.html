@@ -59,10 +59,9 @@
             {{ if or .Site.Copyright .Site.Params.author.name -}}
             {{if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Params.author.name | safeHTML }}{{ end }}
             {{- end }}
-            {{ if and .Site.Params.since (ne .Site.Params.since $current) }}
-              {{ .Site.Params.since }} -
+            {{ if .Site.Params.since }}
+              {{ .Site.Params.since }}
             {{ end }}
-            {{- $current }}
           </small>
           {{ with .Site.Params.footerHTML }}
           <small><em>{{ . | safeHTML }}</em></small>
