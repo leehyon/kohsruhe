@@ -220,7 +220,8 @@ blockquote {
 }
 
 /* comments */
-.comments-box {
+/* feat: add more configs for remark42 */
+/* .comments-box {
     margin: calc(var(--content-gap) * 2) 0;
     background-color: var(--code-bg);
     border-radius: 10px;
@@ -246,4 +247,4 @@ blockquote {
     font-size: 1rem;
     font-weight: bold;
     vertical-align: super;
-}
+} */
