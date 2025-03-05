@@ -2,8 +2,8 @@
 title: "周报 02 - 热爱可抵岁月漫长"
 date: 2023-07-23T13:52:27+08:00
 draft: false
-tags: ["review", "photography", "record", "flow"]
-categories: ["Newsletter"]
+tags: ["newsletter", "photography", "record", "flow"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

@@ -2,8 +2,8 @@
 title: "Newsletter 02 - Leidenschaft kann die langen Jahre überstehen"
 date: 2023-07-23T13:52:27+08:00
 draft: false
-tags: ["review", "photography", "record", "flow"]
-categories: ["Newsletter"]
+tags: ["newsletter", "photography", "record", "flow"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

@@ -2,8 +2,8 @@
 title: "Newsletter 06 - Bewegung, Chaos und technische Schulden"
 date: 2024-09-16T20:32:22+08:00
 draft: false
-tags: ["review", "chaos", "fitness", "note-taking", "technical-debt"]
-categories: ["Newsletter"]
+tags: ["newsletter", "chaos", "fitness", "note-taking", "technical-debt"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

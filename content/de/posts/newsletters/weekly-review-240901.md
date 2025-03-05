@@ -2,8 +2,8 @@
 title: "Newsletter 04 - Konzentration und die Bedeutung der Arbeit"
 date: 2024-09-01T21:33:19+08:00
 draft: false
-tags: ["review", "concentration", "training", "blog"]
-categories: ["Newsletter"]
+tags: ["newsletter", "concentration", "training", "blog"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

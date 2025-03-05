@@ -2,8 +2,8 @@
 title: "周报 06 - 锻炼、混沌和技术债"
 date: 2024-09-16T20:32:22+08:00
 draft: false
-tags: ["review", "chaos", "fitness", "note-taking", "technical-debt"]
-categories: ["Newsletter"]
+tags: ["newsletter", "chaos", "fitness", "note-taking", "technical-debt"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

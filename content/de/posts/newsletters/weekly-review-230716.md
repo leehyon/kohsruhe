@@ -2,8 +2,8 @@
 title: "Newsletter 01 - Lernen ohne Nachdenken führt zu Verwirrung"
 date: 2023-07-16T09:48:30+08:00
 draft: false
-tags: ["review", "life", "start", "edge-ai", "vectordb"]
-categories: ["Newsletter"]
+tags: ["newsletter", "life", "edge-ai", "vectordb"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

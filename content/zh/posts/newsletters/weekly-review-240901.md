@@ -2,8 +2,8 @@
 title: "周报 04 - 专注力和工作的意义"
 date: 2024-09-01T21:33:19+08:00
 draft: false
-tags: ["review", "concentration", "training", "blog"]
-categories: ["Newsletter"]
+tags: ["newsletter", "concentration", "training", "blog"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

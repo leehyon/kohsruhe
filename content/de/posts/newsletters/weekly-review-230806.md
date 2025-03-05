@@ -2,8 +2,8 @@
 title: "Newsletter 03 - Solange es Poesie gibt, existiert Chang'an"
 date: 2023-08-06T14:24:44+08:00
 draft: false
-tags: ["review", "tang", "record", "poetry", "art"]
-categories: ["Newsletter"]
+tags: ["newsletter", "tang", "record", "poetry", "art"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

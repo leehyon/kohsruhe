@@ -2,8 +2,8 @@
 title: "Newsletter 05 - The story of your life"
 date: 2024-09-08T12:49:48+08:00
 draft: false
-tags: ["review", "communication", "life", "memoir"]
-categories: ["Newsletter"]
+tags: ["newsletter", "communication", "life", "memoir"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---

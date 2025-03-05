@@ -1,16 +1,16 @@
 ---
-title: "Photography - Hulunbuir in autumn"
+title: "Fotografie - Hulunbuir im Herbst"
 date: 2024-10-12T19:04:42+08:00
 draft: false
 tags: ["hulunbuir", "autumn", "photography", "travel"]
-categories: ["Photography"]
+categories: ["Articles"]
 authors:
 - "leehyon"
 ---
 
-During the National Day holiday, I went on a self-driving tour to Inner Mongolia with my friends. We initially planned for a golden trip, but unfortunately, we went a bit late and could only catch the tail end of late autumn, which was a bit of a pity.
+Während der Nationaltagsferien bin ich mit Freunden zu einer Selbstfahrer-Tour in die Innere Mongolei gereist. Eigentlich wollte ich eine goldene Reise erleben, aber wir waren ein wenig zu spät dran und konnten nur das Ende des Spätherbstes mitnehmen, was ein bisschen schade war.
 
-> Please click to view the image in full size. Loading the image might take a little longer, I ask for your understanding.
+> Bitte klicken Sie, um das Bild in voller Größe zu sehen. Das Laden des Bildes könnte etwas länger dauern, Ich bitte um Verständnis.
 
 {{< gallery >}}
   {{< figure src="https://images.kohsruhe.com/2024/PA050855.jpg" >}}
