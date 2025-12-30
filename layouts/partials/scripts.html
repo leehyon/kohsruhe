@@ -1,17 +1,119 @@
-<script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!-- Prefer local vendor files in static/js/vendor/, fall back to CDN if missing -->
+<script>
+  (function() {
+    var head = document.getElementsByTagName('head')[0];
+
+    function loadScript(src, attrs) {
+      var s = document.createElement('script');
+      s.src = src;
+      s.async = false;
+      if (attrs) {
+        Object.keys(attrs).forEach(function(k){ s.setAttribute(k, attrs[k]); });
+      }
+      head.appendChild(s);
+      return s;
+    }
+
+    function fileExists(url, cb) {
+      var xhr = new XMLHttpRequest();
+      try {
+        // synchronous HEAD request to ensure script insertion happens before subsequent inline scripts
+        xhr.open('HEAD', url, false);
+        xhr.send(null);
+        cb(xhr.status >= 200 && xhr.status < 400);
+      } catch (e) {
+        cb(false);
+      }
+    }
+
+    var localBase = '/js/vendor/';
+
+    // jQuery: insert a minimal stub to avoid `$ is not defined` and flush queued ready-callbacks after real jQuery loads
+    (function(){
+      // stub: capture ready callbacks so inline code can call $(fn) safely before jQuery arrives
+      if (!window.jQuery) {
+        window._jqQ = [];
+        window.$ = window.jQuery = function(arg) {
+          if (typeof arg === 'function') {
+            window._jqQ.push(arg);
+          } else {
+            // return a minimal object to avoid TypeErrors when code expects a chainable object
+            return { on: function() {}, ready: function(f){ if (typeof f === 'function') window._jqQ.push(f); } };
+          }
+        };
+      }
+
+      var jqLocal = localBase + 'jquery-3.7.1.min.js';
+      var jqCDN = 'https://code.jquery.com/jquery-3.7.1.min.js';
+      var integrity = 'sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==';
+      var exists = (function(url){
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('HEAD', url, false);
+          xhr.send(null);
+          return xhr.status >= 200 && xhr.status < 400;
+        } catch(e) { return false; }
+      })(jqLocal);
+
+      if (exists) {
+        document.write('<script src="' + jqLocal + '"><\/script>');
+      } else {
+        document.write('<script src="' + jqCDN + '" integrity="' + integrity + '" crossorigin="anonymous"><\/script>');
+      }
+
+      // after insertion, poll until real jQuery is available, then flush queued ready callbacks
+      (function waitForJQ(){
+        var attempts = 0;
+        var id = setInterval(function(){
+          attempts++;
+          if (window.jQuery && window._jqQ) {
+            try {
+              while (window._jqQ.length) {
+                var fn = window._jqQ.shift();
+                try { window.jQuery(fn); } catch(e) { /* ignore individual errors */ }
+              }
+            } finally { clearInterval(id); }
+          } else if (attempts > 200) { // give up after ~10s
+            clearInterval(id);
+          }
+        }, 50);
+      })();
+    })();
+
+    // Popper
+    fileExists(localBase + 'popper.min.js', function(ok){
+      if (ok) {
+        loadScript(localBase + 'popper.min.js');
+      } else {
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', { integrity: 'sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin: 'anonymous' });
+      }
+    });
+
+    // Bootstrap
+    fileExists(localBase + 'bootstrap-4.1.3.min.js', function(ok){
+      if (ok) {
+        loadScript(localBase + 'bootstrap-4.1.3.min.js');
+      } else {
+        loadScript('https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js', { integrity: 'sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin: 'anonymous' });
+      }
+    });
+
+  })();
+</script>
 {{- if and (or .Params.mathjax (and .Site.Params.mathjax (ne .Params.mathjax false))) (or .IsPage .IsHome) }}
 <script>
   window.MathJax = {
     showProcessingMessages: false,
     messageStyle: 'none'
   };
+  (function(){
+    var src = window._local_mathjax || 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML';
+    var s = document.createElement('script');
+    s.src = src;
+    s.async = true;
+    document.head.appendChild(s);
+  })();
 </script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 {{- end }}
 {{- if .Site.Params.autoLoadComments }}
 <script>
