@@ -5,7 +5,7 @@
     <div class="col-lg-12">
       <div class="header-content">
         <h1 class="header-title text-uppercase">
-          {{ i18n .Data.Singular }} : {{ .Title }}
+          {{ .Title }}
         </h1>
         <div class="header-underline"></div>
         <p class="header-subtitle header-subtitle-homepage">
@@ -17,7 +17,7 @@
 </div>
 {{ end }}
 {{ define "main" }}
-{{- $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+{{- $paginator := .Paginate .Data.Pages }}
 <div class="archive-container">
     <div class="container content archive">
       <h2>{{ .Title }}{{ if $paginator.HasPrev }} <small>- {{ i18n "page" }} {{ $paginator.PageNumber }}</small>{{ end }}</h2>

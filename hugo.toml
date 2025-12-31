@@ -122,10 +122,15 @@ titleCaseStyle = 'none'
       subtitle = "Wouldn't be a Noble mission if it were easy."
     [languages.zh.menus]
       [[languages.zh.menu.main]]
-        name = "文章"
+        name = "博客"
+        weight = 10
+        identifier = "blog"
+        url = "category/blog/"
+      [[languages.zh.menu.main]]
+        name = "笔记"
         weight = 20
-        identifier = "articles"
-        url = "category/articles/"
+        identifier = "notes"
+        url = "category/notes/"
       [[languages.zh.menu.social]]
         name = "Telegram"
         weight = 10
@@ -155,61 +160,32 @@ titleCaseStyle = 'none'
     [languages.en.params]
       subtitle = "Wouldn't be a Noble mission if it were easy."
     [languages.en.menus]
-        [[languages.en.menu.main]]
-        name = "Articles"
+      [[languages.en.menu.main]]
+        name = "Blog"
+        weight = 10
+        identifier = "blog"
+        url = "category/blog/"
+      [[languages.en.menu.main]]
+        name = "Notes"
         weight = 20
-        identifier = "articles"
-        url = "category/articles/"
-        [[languages.en.menu.social]]
+        identifier = "notes"
+        url = "category/notes/"
+      [[languages.en.menu.social]]
         name = "Telegram"
         weight = 10
         identifier = "telegram"
         url = "https://t.me/kohsorbit"
-        [[languages.en.menu.social]]
+      [[languages.en.menu.social]]
         name = "Instagram"
         weight = 20
         identifier = "instagram"
         url = "https://www.instagram.com/kohsruhe/"
-        [[languages.en.menu.links]]
+      [[languages.en.menu.links]]
         name = "GitHub"
         weight = 10
         identifier = "github"
         url = "https://github.com/leehyon"
-        [[languages.en.menu.links]]
-        name = "Koh's Garden"
-        weight = 20
-        identifier = "garden"
-        url = "https://garden.kohsruhe.com/"
-  [languages.de]
-    contentDir = 'content/de'
-    disabled = false
-    languageCode = 'de'
-    languageName = 'DE'
-    weight = 3
-    [languages.de.params]
-      subtitle = "Es wäre keine edle Mission, wenn es einfach wäre."
-    [languages.de.menus]
-      [[languages.de.menu.main]]
-        name = "Artikel"
-        weight = 20
-        identifier = "articles"
-        url = "category/articles/"
-      [[languages.de.menu.social]]
-        name = "Telegram"
-        weight = 10
-        identifier = "telegram"
-        url = "https://t.me/kohsorbit"
-      [[languages.de.menu.social]]
-        name = "Instagram"
-        weight = 20
-        identifier = "instagram"
-        url = "https://www.instagram.com/kohsruhe/"
-      [[languages.de.menu.links]]
-        name = "GitHub"
-        weight = 10
-        identifier = "github"
-        url = "https://github.com/leehyon"
-      [[languages.de.menu.links]]
+      [[languages.en.menu.links]]
         name = "Koh's Garden"
         weight = 20
         identifier = "garden"

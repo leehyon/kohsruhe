@@ -20,13 +20,13 @@
   translation: 标签
 
 - id: category
-  translation: 类别
+  translation: 分类
 
 - id: archive_of_tag
-  translation: 'Archive Listed by Tag'
+  translation: 'Archive Listed by Tag of'
 
 - id: archive_of_category
-  translation: 'Archive Listed by Category'
+  translation: 'Archive Listed by Category of'
 
 - id: archive
   translation: 归档
