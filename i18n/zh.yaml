@@ -5,7 +5,7 @@
   translation: 标签
 
 - id: categories
-  translation: 类别
+  translation: 栏目
 
 - id: social
   translation: 社群
@@ -20,7 +20,7 @@
   translation: 标签
 
 - id: category
-  translation: 分类
+  translation: 栏目
 
 - id: archive_of_tag
   translation: 'Archive Listed by Tag of'
@@ -50,7 +50,7 @@
   translation: '404 错误 - 找不到网页'
 
 - id: in_category
-  translation: '类别'
+  translation: '栏目'
 
 - id: words
   translation: 字

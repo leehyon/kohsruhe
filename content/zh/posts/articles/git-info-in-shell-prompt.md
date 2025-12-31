@@ -87,7 +87,7 @@ PowerShellGet\Update-Module posh-git
 	- 在每一次 session 中手动输入 `Import-Module posh-git` 命令
 	- 添加 `Import-Module posh-git` 到配置文件[^3]，自动载入（推荐）
 
-[^3]: 用好配置文件能让你的终端如虎添翼，不清楚的配置文件的参考[这里](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.3)。
+[^3]: 用好配置文件能让你的终端如虎添翼，不清楚的配置文件的参考 [这里](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.3)。
 
 这样，下一次进入一个 Git 仓库目录时，你的终端就会变成这样子：
 

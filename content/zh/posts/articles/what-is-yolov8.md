@@ -1,7 +1,7 @@
 ---
 title: "[译] 什么是 YOLOv8？一份完全指南"
 date: 2024-10-24T18:04:58+08:00
-draft: false
+draft: true
 tags: ["yolo", "reading", "object-detection", "translation"]
 categories: ["notes"]
 authors:
