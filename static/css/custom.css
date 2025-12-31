@@ -1,5 +1,13 @@
+/* lxgw-wenkai-webfont */
+@import 'lxgw-wenkai-webfont/style.css';
+/* Lite version */
+@import 'lxgw-wenkai-lite-webfont/style.css';
+/* TC version */
+@import 'lxgw-wenkai-tc-webfont/style.css';
+/* Screen version */
+@import 'lxgw-wenkai-screen-webfont/style.css';
 body {
-	font-family: "LXGW WenKai", sans-serif;
+	font-family: "LXGW WenKai Screen", sans-serif;
 }
 
 /*关于页面图片链接*/

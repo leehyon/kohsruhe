@@ -29,7 +29,7 @@ titleCaseStyle = 'none'
   path = 'page'
 
 [permalinks]
-  posts = '/:year/:month/:filename/'
+  posts = '/:year/:month/:contentbasename/'
   categories = '/category/:slug/'       # required
   tags = '/tag/:slug/'                  # required
   pages = '/:slug/'
