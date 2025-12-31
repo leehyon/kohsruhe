@@ -3,7 +3,7 @@ title: "[译] 嵌入式工程学习指南"
 date: 2024-09-08T22:02:50+08:00
 draft: false
 tags: ["translation", "embedded", "roadmap", "learning"]
-categories: ["Articles"]
+categories: ["notes"]
 authors:
 - "leehyon"
 ---

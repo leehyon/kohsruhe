@@ -3,7 +3,7 @@ title: "Newsletter 04 - Focus and the meaning of work"
 date: 2024-09-01T21:33:19+08:00
 draft: false
 tags: ["newsletter", "concentration", "training", "work"]
-categories: ["Articles"]
+categories: ["blog"]
 authors:
 - "leehyon"
 ---

@@ -3,7 +3,7 @@ title: "Newsletter 02 - Passion can withstand the long years"
 date: 2023-07-23T13:52:27+08:00
 draft: false
 tags: ["newsletter", "photography", "record", "flow"]
-categories: ["Articles"]
+categories: ["blog"]
 authors:
 - "leehyon"
 ---

@@ -3,7 +3,7 @@ title: "Newsletter 01 - Study without reflection leads to confusion"
 date: 2023-07-16T09:48:30+08:00
 draft: false
 tags: ["newsletter", "life", "edge-ai", "vectordb"]
-categories: ["Articles"]
+categories: ["blog"]
 authors:
 - "leehyon"
 ---

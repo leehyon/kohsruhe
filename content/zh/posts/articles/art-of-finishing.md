@@ -3,7 +3,7 @@ title: "[译] 完成的艺术"
 date: 2024-10-29T16:51:09+08:00
 draft: false
 tags: ["productivity", "reading", "personal-growth", "translation"]
-categories: ["Articles"]
+categories: ["notes"]
 authors:
 - "leehyon"
 ---

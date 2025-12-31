@@ -3,7 +3,7 @@ title: "摄影 - 呼伦贝尔的秋"
 date: 2024-10-12T19:04:42+08:00
 draft: false
 tags: ["hulunbuir", "autumn", "photography", "travel"]
-categories: ["Articles"]
+categories: ["blog"]
 authors:
 - "leehyon"
 ---

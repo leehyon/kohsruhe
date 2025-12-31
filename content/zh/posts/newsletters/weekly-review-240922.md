@@ -3,7 +3,7 @@ title: "周报 07 - 欢迎来到联邦宇宙"
 date: 2024-09-22T16:26:09+08:00
 draft: false
 tags: ["newsletter", "fediverse", "mastodon"]
-categories: ["Articles"]
+categories: ["blog"]
 authors:
 - "leehyon"
 ---
