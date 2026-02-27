@@ -1,7 +1,7 @@
 ---
 title: "Python 多版本管理"
 date: 2022-12-30T21:23:55+08:00
-draft: false
+draft: true
 tags: ["python", "help"]
 categories: ["notes"]
 authors:
