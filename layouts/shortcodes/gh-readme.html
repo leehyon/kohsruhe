@@ -1,0 +1,50 @@
+{{- /*
+Shortcode: gh-readme
+
+Usage examples:
+	{{< gh-readme repo="OWNER/REPO" >}}
+	{{< gh-readme repo="OWNER/REPO" branch="main" path="README.md" >}}
+
+Params:
+	repo:   "owner/repo" (required unless owner+name provided)
+	owner:  owner name (optional)
+	name:   repo name (optional)
+	branch: git ref/branch (default "main")
+	path:   path to README (default "README.md")
+	cacheSeconds: cache rendered HTML in localStorage (default 3600)
+*/ -}}
+
+{{- $repoFull := (.Get "repo") | default "" -}}
+{{- $owner := (.Get "owner") | default "" -}}
+{{- $name := (.Get "name") | default "" -}}
+
+{{- if and (eq $repoFull "") (ne $owner "") (ne $name "") -}}
+	{{- $repoFull = printf "%s/%s" $owner $name -}}
+{{- end -}}
+
+{{- $parts := split $repoFull "/" -}}
+{{- if lt (len $parts) 2 -}}
+	<div class="gh-readme">
+		<p>Invalid <code>gh-readme</code> params: please provide <code>repo="OWNER/REPO"</code>.</p>
+	</div>
+{{- else -}}
+	{{- $owner = index $parts 0 -}}
+	{{- $name = index $parts 1 -}}
+	{{- $branch := (.Get "branch") | default "main" -}}
+	{{- $path := (.Get "path") | default "README.md" -}}
+	{{- $cacheSeconds := (.Get "cacheSeconds") | default "3600" -}}
+
+	{{- .Page.Store.Set "hasGhReadme" true -}}
+
+	<div class="gh-readme content"
+			 data-owner="{{ $owner }}"
+			 data-repo="{{ $name }}"
+			 data-branch="{{ $branch }}"
+			 data-path="{{ $path }}"
+			 data-cache-seconds="{{ $cacheSeconds }}">
+		<p>Loading README from <a href="https://github.com/{{ $owner }}/{{ $name }}" rel="noopener" target="_blank">{{ $owner }}/{{ $name }}</a>…</p>
+		<noscript>
+			<p>JavaScript is required to load this README.</p>
+		</noscript>
+	</div>
+{{- end -}}
