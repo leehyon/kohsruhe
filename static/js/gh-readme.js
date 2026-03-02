@@ -154,7 +154,7 @@
         return;
       }
 
-      setStatus(el, "<p>Loading README…</p>");
+      setStatus(el, "<p>Loading from GitHub…</p>");
 
       var markdown = await fetchText(rawReadmeUrl);
       var html = await renderMarkdownWithGitHubApi(markdown, contextRepo);
@@ -176,7 +176,7 @@
     } catch (e) {
       var repoUrl = "https://github.com/" + owner + "/" + repo;
       var msg =
-        "<p>Failed to load README. " +
+        "<p>Failed to load README from GitHub. " +
         "<a href=\"" +
         repoUrl +
         "\" rel=\"noopener\" target=\"_blank\">Open on GitHub</a>." +
