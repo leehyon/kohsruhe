@@ -39,6 +39,11 @@ $(document).ready(function() {
 <script>
 window.markmap = {
   autoLoader: {
+    // Avoid loading markmap-toolbar assets from 3rd-party CDNs.
+    // The site does not use the toolbar UI (toolbar defaults to false),
+    // and some browsers log Tracking Prevention warnings for these requests.
+    baseJs: ["d3@7.9.0", "markmap-lib@0.18.12", "markmap-view@0.18.12"],
+    baseCss: [],
     manual: true,
     onReady() {
         // You can keep this empty if you don't need to customize plugins
@@ -71,3 +76,4 @@ $(document).ready(function() {
 {{ if .Page.Store.Get "hasmermaid" -}}
 {{- partial "scripts/mermaid.html" . -}}
 {{ end -}}
+
