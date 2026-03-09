@@ -113,7 +113,6 @@ titleCaseStyle = 'none'
 
 [languages]
   [languages.zh]
-    contentDir = 'content/zh'
     disabled = false
     languageCode = 'zh'
     languageName = 'ZH'
@@ -152,7 +151,6 @@ titleCaseStyle = 'none'
         identifier = "garden"
         url = "https://garden.kohsruhe.com/"
   [languages.en]
-    contentDir = 'content/en'
     disabled = false
     languageCode = 'en'
     languageName = 'EN'
