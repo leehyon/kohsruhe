@@ -70,6 +70,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Translate Chinese posts to English"
+            git commit -m "ci: translate Chinese posts to English"
             git push
           fi

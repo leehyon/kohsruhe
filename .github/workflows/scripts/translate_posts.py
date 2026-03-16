@@ -44,12 +44,13 @@ def should_skip_translation(title):
 
 
 def translate_text_via_llm(text):
-    prompt = """You are a professional translator. Translate the following Chinese markdown text into English 
-while keeping the original meaning. Strictly preserve the markdown syntax, formatting, 
+    prompt = """You are a professional translator. Translate the following Chinese markdown text into English
+while keeping the original meaning as much as possible. Strictly preserve the markdown syntax, formatting, 
 code blocks, links, and all other markdown elements. 
 Maintain the same line breaks and paragraph structure as the original text.
 Do not add, remove, or modify any markdown syntax. 
-Only return the translated text without any additional explanation.
+Avoid keeping any Chinese characters unless absolutely necessary.
+Maintain the original logic and tone. Output only the translation, no extra explanations.
 
 Special translation rules:
 - "周报" should be translated as "Newsletter"
