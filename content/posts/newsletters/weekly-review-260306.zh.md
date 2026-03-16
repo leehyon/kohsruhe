@@ -1,5 +1,5 @@
 ---
-title: "周报 10 - 智能家居的折腾和 Vibe Coding 的尝试"
+title: "周报 10 - 智能家居和 Vibe Coding 的尝试"
 date: 2026-03-06T10:50:22+08:00
 draft: false
 tags: ["newsletter", "llm", "home", "vibe-coding"]
