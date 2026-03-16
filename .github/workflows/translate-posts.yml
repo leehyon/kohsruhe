@@ -1,0 +1,75 @@
+name: Translate Chinese Posts
+
+on:
+  push:
+    branches:
+      - dev
+    paths:
+      - 'content/posts/**/*.zh.md'
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Get changed .zh.md files
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" == "push" ]; then
+            COMMIT_RANGE="${{ github.event.before }}..${{ github.event.after }}"
+          else
+            COMMIT_RANGE="HEAD~1..HEAD"
+          fi
+          
+          if [ -n "$COMMIT_RANGE" ] && [ "$COMMIT_RANGE" != ".." ]; then
+            CHANGED_FILES=$(git diff --name-only $COMMIT_RANGE | grep 'content/posts/.*\.zh\.md$')
+          else
+            CHANGED_FILES=""
+          fi
+          
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+          
+          echo "CHANGED_FILES<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml requests
+
+      - name: Translate posts
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_ENDPOINT: ${{ vars.OPENAI_API_ENDPOINT }}
+          OPENAI_API_MODEL: ${{ vars.OPENAI_API_MODEL }}
+          CHANGED_FILES: ${{ steps.changes.outputs.CHANGED_FILES }}
+        run: |
+          python .github/workflows/scripts/translate_posts.py
+
+      - name: Create translation commit
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add -A
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Translate Chinese posts to English"
+            git push
+          fi
