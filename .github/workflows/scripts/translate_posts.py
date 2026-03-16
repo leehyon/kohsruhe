@@ -49,8 +49,9 @@ while keeping the original meaning as much as possible. Strictly preserve the ma
 code blocks, links, and all other markdown elements. 
 Maintain the same line breaks and paragraph structure as the original text.
 Do not add, remove, or modify any markdown syntax. 
-Avoid keeping any Chinese characters unless absolutely necessary.
-Maintain the original logic and tone. Output only the translation, no extra explanations.
+- **Primary rule**: Translate every part into English first. Only use double quotation marks to keep the original Chinese word **when no reasonable English equivalent exists**
+- Format: If you must use parentheses, write it as `English translation "original Chinese word"`
+- Maintain the original logic and tone. Output only the translation, no extra explanations
 
 Special translation rules:
 - "周报" should be translated as "Newsletter"
