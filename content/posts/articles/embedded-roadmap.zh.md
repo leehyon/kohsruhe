@@ -1,5 +1,5 @@
 ---
-title: "[译] 嵌入式工程学习指南"
+title: "[译] 嵌入式工程学习路线图"
 date: 2024-09-08T22:02:50+08:00
 draft: false
 tags: ["translation", "embedded", "roadmap", "learning"]
@@ -87,7 +87,7 @@ authors:
 
 ## 😕 不知道从哪里开始！
 
-**如果您被路线图中大量的主题感到不知所措，您并不孤单。在深入之前，让我们通过一些简单的入门项目来轻松入门。学习嵌入式系统工程需要时间和精力。如果您没有立即理解某些内容，请不要气馁。不断练习，您最终会达到目标。**
+如果您被路线图中大量的主题感到不知所措，您并不孤单。在深入之前，让我们通过一些简单的入门项目来轻松入门。学习嵌入式系统工程需要时间和精力。如果您没有立即理解某些内容，请不要气馁。不断练习，您最终会达到目标。
 
 ### ⚒️ 项目
 
@@ -208,9 +208,7 @@ authors:
 
 ### 🐜 PlatformIO
 
-PlatformIO 是一个跨平台、跨架构、多框架的专业工具，面向嵌入式系统工程师和为嵌入式产品编写应用程序的软件开发人员。
-
-- [🔗 PlatformIO - 嵌入式开发的协作平台](https://platformio.org/)
+[PlatformIO](https://platformio.org/) 是一个跨平台、跨架构、多框架的专业工具，面向嵌入式系统工程师和为嵌入式产品编写应用程序的软件开发人员。
 
 PlatformIO 在工业和大型项目中尚未被广泛采用，然而，对于从事小型项目的个人来说，它是一个极好的选择。因为它大大减少了对安装框架和设置构建及调试工具的需求，让您能够专注于编程。
 
@@ -220,7 +218,7 @@ PlatformIO 在工业和大型项目中尚未被广泛采用，然而，对于从
 > 您不需要阅读这里的所有书籍、文章或观看所有视频。如果您尝试这样做，最终会感到疲惫和失望。您无法在合理的时间内学习完这里提供的所有内容，因为这可能需要数年时间。重要的是学习足够的知识以对所需主题至少有一个基本的了解。当然，您投入学习和做项目的时间越多，您的知识和专业知识就会越深厚。
 >
 > 这里提到的一些资源只会用作参考资料。仅在需要时参考它们。
-> _________________
+> 
 
 ### ✳️ 软技能
 
@@ -229,7 +227,7 @@ PlatformIO 在工业和大型项目中尚未被广泛采用，然而，对于从
 - [📝 嵌入式系统软件开发人员的软技能](https://www.embeddedrelated.com/showarticle/1470.php)
 - [📝 每个嵌入式工程师应具备的 10 项技能](https://medium.com/@lanceharvieruntime/10-skills-every-embedded-engineer-should-have-dcb867095b91)
 
-_________________
+
 
 ### ✳️ 电子学
 
@@ -282,7 +280,7 @@ _________________
 - [📘 ARM® Cortex®-M3 和 Cortex®-M4 处理器权威指南 - Joseph Yiu](https://www.oreilly.com/library/view/the-definitive-guide/9780124080829/)
 - [🔗 从头开始构建 8 位计算机](https://eater.net/8bit/)
 
-_________________
+
 
 ### ✳️ 使用测试设备
 
@@ -304,7 +302,7 @@ _________________
 - [🎞️👶 如何使用示波器 / 什么是示波器 / 示波器教程](https://youtu.be/CzY2abWCVTY)
 - [🎞️ 使用示波器进行 EMI 调试](https://www.youtube.com/watch?v=x1rn5YNLmVw)
 
-_________________
+
 
 ### ✳️ 原型制作技能
 
@@ -358,7 +356,7 @@ _________________
 - [🎞️ 如何手工焊接 QFN MLF 封装（使用热风返修站）| Digi-Key Electronics](https://youtu.be/X3Rc1s6EpSI)
 - [🎞️ 从无焊面包板到焊接电路 - 电子产品与 Becky Stern | Digi-Key Electronics](https://www.youtube.com/watch?v=F9Krq7seV1g)
 
-_________________
+
 
 ### ✳️ FPGA 开发
 
@@ -372,7 +370,7 @@ FPGA（现场可编程门阵列）是专用集成电路，可配置为执行各�
 - [🎞️💎 Coursera – FPGA 设计嵌入式系统专业](https://www.coursera.org/specializations/fpga-design)
 - [📘💎 嵌入式系统设计实践指南 - Adam Taylor, Dan Binnun, Saket Srivastava](https://www.amazon.com/Hands-Guide-Designing-Embedded-Systems/dp/1630816833)
 
-_________________
+
 
 ### ✳️ 编程基础
 
@@ -424,7 +422,7 @@ _________________
 - [📝 理解 Rust 中的内存管理](https://medium.com/geekculture/understanding-memory-management-in-rust-a341cfce9807)
 - [📝 Python 中的内存管理](https://realpython.com/python-memory-management/)
 
-_________________
+
 
 ### ✳️ 编程语言
 
@@ -526,7 +524,7 @@ C 和汇编等低级语言提供直接硬件访问，能够为资源受限的嵌
 - [🔗 MicroZic - 多种微控制器的统一抽象层和 HAL](https://github.com/ZigEmbeddedGroup/microzig)
 - [📝 Zig STM32F103 裸机编程 — 启动](https://maldus512.medium.com/zig-bare-metal-programming-on-stm32f103-booting-up-b0ecdcf0de35)
 
-_________________
+
 
 ### ✳️ 微控制器
 
@@ -634,7 +632,7 @@ _________________
 - [🎞️💎 Udemy – STM32Fx 微控制器自定义引导加载程序开发](https://www.udemy.com/course/stm32f4-arm-cortex-mx-custom-bootloader-development/)
 - [📝💎 设备固件更新 Cookbook](https://interrupt.memfault.com/blog/device-firmware-update-cookbook)
 
-_________________
+
 
 ### ✳️ 接口、协议与通信技术
 
@@ -858,7 +856,7 @@ _________________
 
 - [🔗 蜂窝物联网基础 - Nordic Semiconductor](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/)
 
-_________________
+
 
 ### ✳️ 存储技术与文件系统
 
@@ -909,7 +907,7 @@ _________________
 - [🔗 SPIFS - 嵌入式设备的磨损均衡 SPI 闪存文件系统](https://github.com/pellepl/spiffs)
 - [🔗 EEPROM 文件系统 (EEFS)](opensource.gsfc.nasa.gov/projects/eefs/index.php)
 
-_________________
+
 
 ### ✳️ 硬件仿真 / 模拟
 
@@ -941,7 +939,7 @@ _________________
 - [📝 Renode 入门简单指南](https://github.com/tarciszera/renode_guide)
 - [🎞️ 在 CI 工作流中使用 Renode 将 TensorFlow Lite 引入 Zephyr](https://www.youtube.com/watch?v=jF94cXPoZZg)
 
-_________________
+
 
 ### ✳️ 传感器和执行器
 
@@ -970,7 +968,7 @@ _________________
 - [🎞️ 电子基础 #24：步进电机及其使用方法](https://youtu.be/bkqoKWP4Oy4?si=kvhwykmFZ0UnLDJ7)
 - [🎞️ 电子基础 #18：直流和无刷直流电机 + ESC](https://youtu.be/UteZJ_7C4Mg?si=uADPmCaucyWXd8Xe)
 
-_________________
+
 
 ### ✳️ 数字信号处理
 
@@ -1019,7 +1017,7 @@ _________________
 - [🎞️ Simulink 入门 (YouTube 播放列表)](https://youtube.com/playlist?list=PL484BA2AD3AE4C2D0)
 - [🎞️ Udemy – MATLAB/SIMULINK 权威指南|从零到英雄！](https://www.udemy.com/course/matlabsimulink-biblego-from-zero-to-hero/)
 
-_________________
+
 
 ### ✳️ 操作系统
 
@@ -1201,7 +1199,7 @@ _________________
 
 - [🔗 Qt 文档](https://doc.qt.io/)
 
-_________________
+
 
 ### ✳️ 调试
 
@@ -1239,7 +1237,7 @@ OpenOCD（开源片上调试器）是一个开源软件工具，为调试和编�
 - [🔗 OpenOCD - GitHub 仓库](https://github.com/openocd-org/openocd)
 - [🎞️ 这 100% 是您应该使用的调试方式 | 如何使用 OpenOCD 和 GDB 调试嵌入式软件](https://www.youtube.com/watch?v=_1u7IOnivnM)
 
-_________________
+
 
 ### ✳️ 构建系统
 
@@ -1285,7 +1283,7 @@ Docker 容器为构建软件应用程序提供了一致和隔离的环境。这�
 - [🎞️ CI/CD 入门第一部分：Docker 入门 | Digi-Key Electronics](https://youtu.be/1nxGcfIm-TU)
 - [📝 现代 C 开发环境](https://interrupt.memfault.com/blog/a-modern-c-dev-env)
 
-_________________
+
 
 ### ✳️ 软件开发生命周期 (SDLC) 模型
 
@@ -1308,7 +1306,7 @@ _________________
 - [📝 什么是软件开发的 V 模型](https://x-engineer.org/v-model-software-development/)
 - [📝 软件工程中的 V 模型：终极指南](https://biplus.com.vn/v-model-in-software-engineering/)
 
-_________________
+
 
 ### ✳️ 版本控制系统
 
@@ -1322,8 +1320,6 @@ _________________
 #### 🔵 SVN (Subversion)
 
 - [🔗 Apache® Subversion®](https://subversion.apache.org/)
-
-_________________
 
 ### ✳️ 测试
 
@@ -1401,8 +1397,6 @@ _________________
 - [📝 安全关键嵌入式系统：如何为软件开发做准备](https://www.nagarro.com/en/blog/embedded-software-development-safety-critical-systems)
 - [📝 DO-178C - 航空系统和设备认证中的软件考虑](https://en.wikipedia.org/wiki/DO-178C)
 
-_________________
-
 ### ✳️ 嵌入式安全
 
 嵌入式系统安全特别具有挑战性，因为资源限制和这些设备的固有性质。嵌入式系统通常在具有有限内存和处理能力的小型低功耗微控制器上运行。这使得实现与传统计算平台相同级别的安全性变得困难。此外，嵌入式系统通常对更新和补丁的访问有限，使它们更容易受到已知漏洞的影响。
@@ -1411,7 +1405,7 @@ _________________
 
 #### 🔵 硬件黑客
 
-学习硬件黑客帮助安全专业人员了解嵌入式系统如何被 compromise 并开发有效的防御措施来抵御网络攻击。这些知识提高了嵌入式设备对攻击的弹性。
+学习硬件黑客技术有助于安全专业人员理解嵌入式系统是如何被攻破的，从而能够设计和开发有效的防御措施来抵御网络攻击。这类知识能够显著提升嵌入式设备在面对攻击时的安全性与韧性。
 
 - [📘💎 实用硬件渗透测试 - Jean-Georges Valle](https://a.co/d/dq4SeNH)
 - [🎞️ 硬件黑客教程 (YouTube 播放列表)](https://www.youtube.com/playlist?list=PLoFdAHrZtKkhcd9k8ZcR4th8Q8PNOx7iU)
@@ -1449,7 +1443,7 @@ _________________
 - [📝 嵌入式 Linux 安全简介 - 第1部分](https://sergioprado.blog/introduction-embedded-linux-security-part-1/)
 - [📝 嵌入式 Linux 安全简介 - 第2部分](https://sergioprado.blog/introduction-embedded-linux-security-part-2/)
 
-_________________
+
 
 ### ✳️ 嵌入式 GUI
 
@@ -1460,7 +1454,7 @@ _________________
 - [🔗 TouchGFX](https://support.touchgfx.com/4.20/docs/introduction/welcome)
 - [🎞️ Qt / QML 简介 (YouTube 播放列表)](https://www.youtube.com/playlist?list=PL6CJYn40gN6hdNC1IGQZfVI707dh9DPRc)
 
-_________________
+
 
 ### ✳️ 物联网 (IoT)
 
@@ -1506,7 +1500,7 @@ _________________
 - [🎞️ edX -规模化 TinyML 的 MLOps](https://www.edx.org/learn/computer-programming/harvard-university-mlops-for-scaling-tinyml)
 - [📘 TinyML：TensorFlow Lite 在 Arduino 和超低功耗微控制器上的机器学习 - Pete Warden, Daniel Situnayake](https://tinymlbook.com/)
 
-_________________
+
 
 ### ✳️ AUTOSAR 架构
 
@@ -1520,17 +1514,17 @@ AUTOSAR，即汽车开放系统架构，是一个全球性的汽车工业软件�
 - [💎 🔗 OSEK/VDX 操作系统规范 2.2.3](https://www.osek-vdx.org/mirror/os223.pdf)
 - [💎 🔗 OSEK/VDX OIL（OSEK 实现语言）规范 2.4.1](https://www.osek-vdx.org/mirror/oil241.pdf)
 
-_________________
+
 
 ### ✳️ 附录 A：高级主题
 
 #### 🔵 离散数学
 
-一门common subject，对于计算机科学学生和一些数学/电气工程专业至关重要，基于[计算机协会关于 CS/CE 教育的指南](https://www.acm.org/education/curricula-recommendations)。它包含_抽象数学建模_和_计算理论_最 essential subjects。此外，它帮助学生建立 essential 工程思维，代表所有计算机科学和计算机工程领域的共同基础。然而，逻辑、组合学理论、编码理论和计算理论是嵌入式系统工程师最重要的科目。
+一门通用核心课程：这是一门对计算机科学学生以及部分数学和电气工程专业学生都至关重要的公共基础课程，其设置依据是[计算机协会关于 CS/CE 教育的指南](https://www.acm.org/education/curricula-recommendations)。该课程涵盖了抽象数学建模和计算理论中最为核心的内容。此外，它有助于学生建立关键的工程化思维方式，构成所有计算机科学与计算机工程领域的共同基础。然而，对于嵌入式系统工程师而言，逻辑、组合数学理论、编码理论以及计算理论是最为重要的核心科目。
 
-_**学习离散数学的目标：**_嵌入式系统工程师应该能够根据 their subspeciality迟早掌握大多数这些信息；因为它解释了计算机工程的科学和理论基础（例如，用于音频/视频编码/解码和数据传输的编码理论 - 用于事件控制和数据传输的自动机理论 - 用于数字电路设计和交换代数的逻辑 - 用于并发建模的 π 演算和自动机理论）。
+**学习离散数学的目标**：嵌入式系统工程师应当根据自身的专业方向，最终掌握其中的大部分内容；因为离散数学解释了计算机工程的科学与理论基础。例如：用于音频/视频编码与解码以及数据传输的编码理论，用于事件控制和数据传输的自动机理论，用于数字电路设计和开关代数的逻辑理论，以及用于并发建模的 π 演算和自动机理论。
 
-_离散数学_是一门多学期课程，涉及计算机科学理论数学基础的主题，包括但不限于：
+离散数学是一门多学期课程，涉及计算机科学理论数学基础的主题，包括但不限于：
 
 - 逻辑（命题、量词和规范形式）。
 - 公理化集合论（集合、集合运算和幂集）。
@@ -1559,9 +1553,9 @@ _离散数学_是一门多学期课程，涉及计算机科学理论数学基础
 
 本作品采用 [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) 授权，这意味着您可以自由地**共享**或**改编**本作品，但须遵守以下条款：
 
-**署名** — 您必须给予适当的 credit，提供指向 license 的链接，并 indicate if changes were made。您可以通过任何合理方式这样做，但不能以任何方式暗示许可人认可您或您的使用。
+- **署名** — 您必须给予适当的署名，提供指向许可协议的链接，并注明是否进行了修改。您可以通过任何合理的方式履行这些要求，但不得以任何形式暗示许可方认可您或您的使用方式。
 
-**相同方式共享** — 如果您再编、转换或基于本作品进行创作，必须在相同的许可协议下分发您的贡献作品。
+- **相同方式共享** — 如果您再编、转换或基于本作品进行创作，必须在相同的许可协议下分发您的贡献作品。
 
 ## 致谢
 
