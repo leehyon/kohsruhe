@@ -114,8 +114,8 @@ titleCaseStyle = 'none'
 [languages]
   [languages.zh]
     disabled = false
-    languageCode = 'zh'
-    languageName = 'ZH'
+    locale = 'zh'
+    label = 'ZH'
     weight = 1
     [languages.zh.params]
       subtitle = "Wouldn't be a Noble mission if it were easy."
@@ -152,8 +152,8 @@ titleCaseStyle = 'none'
         url = "https://garden.kohsruhe.com/"
   [languages.en]
     disabled = false
-    languageCode = 'en'
-    languageName = 'EN'
+    locale = 'en'
+    label = 'EN'
     weight = 2
     [languages.en.params]
       subtitle = "Wouldn't be a Noble mission if it were easy."
