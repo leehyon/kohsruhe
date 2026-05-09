@@ -37,7 +37,7 @@
           {{ range .Site.Home.AllTranslations }}
           {{ if ne ($.Scratch.Get "language") .Language }}
             <li class="nav-item">
-              <a class="nav-link" href="{{ .Permalink }}"><i class="fas fa-globe"></i> {{ .Language.LanguageName }}</a>
+              <a class="nav-link" href="{{ .Permalink }}"><i class="fas fa-globe"></i> {{ .Language.Label }}</a>
             </li>
           {{ end }}
           {{ end }}

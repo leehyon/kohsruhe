@@ -23,7 +23,7 @@
 
 <link rel="canonical" href="{{ .Permalink }}" />
 {{ range (.Translations | sort) -}}
-<link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Site.LanguageCode }}">
+<link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Site.Language.Locale }}">
 {{ end }}
 
 {{- with .Site.Params.customFavicon -}}
