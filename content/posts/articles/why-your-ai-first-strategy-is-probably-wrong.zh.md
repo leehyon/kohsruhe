@@ -8,9 +8,13 @@ authors:
 - "leehyon"
 ---
 
-真正的 AI-First 不是用 AI 提效，而是以 AI 为核心重构整个工程体系，让人类从“写代码”转为“设计系统与约束智能体”。原文由 [Peter Pang](https://x.com/intuitiveml) 发布。
+✨ 真正的 AI-First 不是用 AI 提效，而是以 AI 为核心重构整个工程体系，让人类从「写代码」转为「设计系统与约束智能体」。
+
+原文由 [Peter Pang](https://x.com/intuitiveml) 发布。
 
 > Original: https://x.com/intuitiveml/status/2043545596699750791
+
+---
 
 ## 引言
 

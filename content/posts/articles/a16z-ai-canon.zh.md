@@ -8,7 +8,7 @@ authors:
 - "leehyon"
 ---
 
-本文档为一份详尽的 AI 学习资源指南，原英文由 a16z 整理。
+✨ 本文档为一份详尽的 AI 学习资源指南，原英文由 a16z 整理。
 
 > Original: https://a16z.com/ai-canon/
 

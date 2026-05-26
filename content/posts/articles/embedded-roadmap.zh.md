@@ -8,7 +8,7 @@ authors:
 - "leehyon"
 ---
 
-本文档是一份面向嵌入式工程师的学习路线图，由 [Meysam Parvizi](https://github.com/m3y54m) 编写，系统整理了从入门到进阶的学习方向及优质资源。
+✨ 本文档是一份面向嵌入式工程师的学习路线图，由 [Meysam Parvizi](https://github.com/m3y54m) 编写，系统整理了从入门到进阶的学习方向及优质资源。
 
 > Original: https://github.com/m3y54m/Embedded-Engineering-Roadmap
 

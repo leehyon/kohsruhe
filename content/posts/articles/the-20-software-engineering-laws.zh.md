@@ -8,9 +8,13 @@ authors:
 - "leehyon"
 ---
 
-软件工程中的核心规律本质上反映的是人在复杂系统、时间压力和协作环境中不可避免的行为模式，这些规律决定了系统如何构建、团队如何运作以及为什么项目常常偏离预期。原文由 Dr Milan Milanović 发布。
+✨ 软件工程中的核心规律本质上反映的是人在复杂系统、时间压力和协作环境中不可避免的行为模式，这些规律决定了系统如何构建、团队如何运作以及为什么项目常常偏离预期。
+
+原文由 Dr Milan Milanović 发布。
 
 > Original: https://newsletter.techworld-with-milan.com/p/the-20-software-engineering-laws
+
+---
 
 ## 引言：为什么软件项目会失败，系统会腐化，团队会慢下来
 
