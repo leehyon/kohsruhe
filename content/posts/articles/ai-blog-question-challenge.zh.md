@@ -8,9 +8,8 @@ authors:
 - "leehyon"
 ---
 
-从别人的博客看到的，我也来凑个热闹。
+从别人的博客看到的，我也来凑个热闹。👉 [AI blog question challenge](https://blog.rishabhps.com/posts/2026-05-28-ai-blog-question-challenge/)
 
-> 👉 [AI blog question challenge](https://blog.rishabhps.com/posts/2026-05-28-ai-blog-question-challenge/)
 > 1. How was your first experience with AI models?
 > 2. Do you use AI or are you completely against using it?
 > 3. Do you have any preference among different models, for example Claude vs ChatGPT? If yes, how do you choose?
