@@ -1,26 +1,71 @@
 <!--
-Put this file in /layouts/shortcodes/figure.html
-NB this overrides Hugo's built-in "figure" shortcode but is backwards compatible
-Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
+  Figure shortcode with build-time dimension detection.
+
+  When width/height are not provided, we attempt to fetch the image at build
+  time via resources.GetRemote to read its intrinsic dimensions. The result
+  is cached by Hugo under a stable key so subsequent builds are offline.
+
+  If the fetch fails (CDN down / 404 / non-image content), we fall through
+  to the runtime path: <img loading="eager" decoding="sync"> + the
+  load-photoswime partial's naturalWidth fallback.
+
+  Inspired by https://github.com/liwenyip/hugo-easy-gallery/
 -->
-<!-- count how many times we've called this shortcode; load the css if it's the first time -->
+{{- $src := .Get "src" -}}
+{{- $thumb := $src | default (printf "%s." (.Get "thumb") | replace (.Get "link") ".") -}}
+
+{{/* Resolve image dimensions: explicit > auto-detected > unknown */}}
+{{- $userW := int (.Get "width" | default 0) -}}
+{{- $userH := int (.Get "height" | default 0) -}}
+{{- $hasUserDims := and (gt $userW 0) (gt $userH 0) -}}
+
+{{- $detectedW := 0 -}}
+{{- $detectedH := 0 -}}
+{{- if and $src (not $hasUserDims) -}}
+  {{/* Build-time fetch to read intrinsic image dimensions.
+       resources.GetRemote populates Width/Height from response headers / first bytes;
+       the result is internally cached, so we don't need resources.CopyRemote here. */}}
+  {{- with try (resources.GetRemote $src) -}}
+    {{- with .Err -}}
+      {{/* swallow: leave $detectedW/H at 0, runtime fallback kicks in */}}
+    {{- else with .Value -}}
+      {{- if .Width -}}
+        {{- $detectedW = .Width -}}
+        {{- $detectedH = .Height -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $finalW := cond $hasUserDims $userW $detectedW -}}
+{{- $finalH := cond $hasUserDims $userH $detectedH -}}
+{{- $hasDims := and (gt $finalW 0) (gt $finalH 0) -}}
+
 {{- if not ($.Page.Scratch.Get "figurecount") }}<link rel="stylesheet" href={{ "css/hugo-easy-gallery.css" | relURL }} />{{ end }}
-{{- $.Page.Scratch.Add "figurecount" 1 -}}
-<!-- use either src or link-thumb for thumbnail image -->
-{{- $thumb := .Get "src" | default (printf "%s." (.Get "thumb") | replace (.Get "link") ".") }}
+{{- $.Page.Scratch.Add "figurecount" 1 }}
 <div class="box{{ with .Get "caption-position" }} fancy-figure caption-position-{{.}}{{end}}{{ with .Get "caption-effect" }} caption-effect-{{.}}{{end}}" {{ with .Get "width" }}style="max-width:{{.}}"{{end}}>
-  <figure {{ with .Get "class" }}class="{{.}}"{{ end }} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+  <figure {{ with .Get "class" }}class="{{ . }}"{{ end }} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <div class="img"{{ if .Parent }} style="background-image: url('{{ $thumb | relURL }}');"{{ end }}{{ with .Get "size" }} data-size="{{.}}"{{ end }}>
-      <img itemprop="thumbnail" src="{{ $thumb | relURL }}" {{ with .Get "alt" | default (.Get "caption") }}alt="{{.}}"{{ end }}/><!-- <img> hidden if in .gallery -->
+      <img itemprop="thumbnail"
+           src="{{ $thumb | relURL }}"
+           {{- with .Get "alt" | default (.Get "caption") }} alt="{{ . }}"{{ end -}}
+           {{- if $hasDims }} width="{{ $finalW }}" height="{{ $finalH }}"{{ end -}}
+           {{- if not $hasDims }} loading="eager" decoding="sync"{{ end -}}><!-- <img> hidden if in .gallery -->
     </div>
-    {{ with .Get "link" | default (.Get "src") }}<a href="{{ . | relURL }}" itemprop="contentUrl"></a>{{ end }}
+    {{ with .Get "link" | default (.Get "src") -}}
+    <a href="{{ . | relURL }}"
+       itemprop="contentUrl"
+       {{- if $hasDims }} data-pswp-width="{{ $finalW }}" data-pswp-height="{{ $finalH }}"{{ end }}
+       {{- with $.Get "alt" }} aria-label="{{ . }}"{{ end -}}
+    ></a>
+    {{- end }}
     {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
       <figcaption>
-        {{- with .Get "title" }}<h4>{{.}}</h4>{{ end }}
+        {{- with .Get "title" }}<h4>{{ . }}</h4>{{ end }}
         {{- if or (.Get "caption") (.Get "attr")}}
           <p>
             {{- .Get "caption" -}}
-            {{- with .Get "attrlink"}}<a href="{{.}}">{{ .Get "attr" }}</a>{{ else }}{{ .Get "attr"}}{{ end -}}
+            {{- with .Get "attrlink"}}<a href="{{ . }}">{{ .Get "attr" }}</a>{{ else }}{{ .Get "attr" }}{{ end -}}
           </p>
         {{- end }}
       </figcaption>
