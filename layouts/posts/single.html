@@ -4,38 +4,37 @@
     <div class="col-lg-12">
       <div class="header-content">
         <h1 class="header-title">{{ .Title }}</h1>
-        <p class="header-date">
-        {{- if .Params.authors }}
-          {{- $last := (sub (len .Params.authors) 1) -}}
-          {{- i18n "author_by" }}
-          {{ range $index, $value := .Params.authors -}}
-            {{- $author := index (hugo.Data.authors | default dict) $value -}}
-            {{- $author_lang := index ($author | default dict) $.Site.Language.Lang | default $author -}}
-            {{ $author_lang.name.display | default $author.name.display | default $value }}{{ if ne $index $last }}, {{ end -}}
-          {{ end }}
-          | <span> {{ .WordCount }} {{ i18n "words"}}, {{ .ReadingTime }} {{ i18n "minutes"}}</span>
-        {{ end }}
-        | <span data-cusdis-count-page-id="{{ .File.UniqueID }}">0</span> {{ i18n "comments"}}
-        | {{ .Date.Format (.Site.Params.dateFormatToUse | default "Mon 02 January 2006") -}}
-          {{ with .Params.categories -}}
-          {{ $.Scratch.Set "firstcategory" true }}
-          | {{ i18n "in_category" }}
-          {{ range . -}}
-          {{- $name := . -}}
-          {{- with $.Site.GetPage "taxonomy" (printf "/categories/%s" $name) | default ($.Site.GetPage "taxonomy" (printf "/categories/%s" ($name | urlize))) -}}
-            {{- if not ($.Scratch.Get "firstcategory") -}}
-            ,
-            {{ else -}}
-            {{- $.Scratch.Set "firstcategory" false -}}
-            {{- end -}}
-            <a href="{{ .Permalink }}">{{ $name }}</a>
-          {{- end -}}
-          {{ end }}
-        </p>
-        {{ end }}
+        {{/*
+          Author + word count + comment count + date + categories.
+          Use <div> (not <p>): the tag list below contains a nested
+          <div class="clearfix"> which is not valid inside <p> and would
+          cause the browser to auto-close the paragraph mid-block.
+        */}}
+        <div class="header-date">
+          {{- if .Params.authors }}
+            {{- $last := (sub (len .Params.authors) 1) -}}
+            {{ i18n "author_by" }}{{ " " }}
+            {{- range $index, $value := .Params.authors -}}
+              {{- $author := index (site.Data.authors | default dict) $value -}}
+              {{ $author.name.display | default $value }}
+              {{- if ne $index $last -}}, {{ end -}}
+            {{- end }}
+             | <span>{{ .WordCount }} {{ i18n "words" }} {{ .ReadingTime }} {{ i18n "minutes" }}</span>
+          {{- end }}
+           | <span data-cusdis-count-page-id="{{ .File.UniqueID }}">0</span> {{ i18n "comments" }}
+           | {{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
+          {{- with .Params.categories }}
+             | {{ i18n "in_category" }}{{ " " }}
+            {{- range $i, $name := . }}
+              {{- with $.Site.GetPage "taxonomy" (printf "/categories/%s" $name) | default ($.Site.GetPage "taxonomy" (printf "/categories/%s" ($name | urlize))) }}
+                {{- if $i }}, {{ end -}}
+                <a href="{{ .Permalink }}">{{ $name }}</a>
+              {{- end }}
+            {{- end }}
+          {{- end }}
+        </div>
         <div class="header-underline"></div>
         {{ with .Params.tags -}}
-          {{ $.Scratch.Set "firsttag" true }}
           <div class="clearfix"></div>
           <p class="float-left header-tags">
               <i class="fas fa-tags" aria-hidden="true"></i>
