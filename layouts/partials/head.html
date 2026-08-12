@@ -33,7 +33,16 @@
 <link rel="stylesheet" href="{{ "css/vendor/bootstrap.min.css" | absURL }}">
 <link rel="stylesheet" href="{{ "css/vendor/fontawesome-6.7.2/css/all.min.css" | absURL }}">
 <link rel="stylesheet" href="{{ "css/den.css" | absURL }}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-webfont/1.7.0/style.css" />
+{{/*
+  LXGW WenKai webfont per the upstream package README:
+    https://github.com/chawyehsu/lxgw-wenkai-webfont#use-cdn
+  jsDelivr (the upstream-recommended CDN) is used in preference to cdnjs so
+  cross-origin subresource requests aren't mis-classified as third-party
+  trackers by Edge Tracking Prevention. font-family is declared inline so it
+  wins the cascade without needing custom.css to be loaded.
+*/}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" crossorigin="anonymous" />
+<style>body { font-family: "LXGW WenKai", sans-serif; }</style>
 {{ range .Site.Params.customCSS }}
 <link rel="stylesheet" href="{{ "css/" | absURL }}{{ . }}">
 {{ end }}
