@@ -25,7 +25,7 @@ titleCaseStyle = 'none'
 
 [pagination]
   disableAliases = false
-  pagerSize = 20
+  pagerSize = 26
   path = 'page'
 
 [permalinks]
