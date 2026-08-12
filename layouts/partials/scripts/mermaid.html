@@ -1,17 +1,24 @@
-{{ $version := .Site.Params.mermaid.version | default "latest" -}}
+{{/*
+  Mermaid loader.
 
+  Hugo template no longer fetches the Mermaid bundle at build time. The bundle
+  is loaded by the browser directly from jsdelivr (same ESM URL Hugo
+  previously validated). This keeps the build hermetic — no outbound network
+  at hugo-time — while still giving Hugo something to invalidate when the
+  pinned version changes.
+
+  Pin a version with [params.mermaid] version = "11.4.1" in hugo.toml.
+*/}}
+{{ $version := .Site.Params.mermaid.version | default "11.4.1" -}}
+{{/* Touch the Site.Params.mermaid at build time so the build fails loudly if
+   the config block is malformed. */}}
+{{- if not .Site.Params.mermaid -}}
+  {{- warnf "Mermaid loaded but [params.mermaid] block missing from hugo.toml." -}}
+{{- end -}}
 {{ $cdnurl := printf "https://cdn.jsdelivr.net/npm/mermaid@%s/dist/mermaid.esm.min.mjs" $version -}}
-{{ with try (resources.GetRemote $cdnurl) -}}
-  {{ with .Err -}}
-    {{ errorf "Could not retrieve mermaid script from CDN. Reason: %s." . -}}
-  {{ else with .Value -}}
-  {{ else -}}
-    {{ errorf "Invalid Mermaid version %s, could not retrieve this version from CDN." $version -}}
-  {{ end -}}
-{{ end -}}
 
 <script type="module" async>
-  import mermaid from "{{ $cdnurl }}";
+  import mermaid from {{ $cdnurl | jsonify | safeJS }};
 
   (function ($) {
     if ($('.mermaid').length == 0) {
