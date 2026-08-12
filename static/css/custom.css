@@ -2,7 +2,36 @@ body {
 	font-family: "LXGW WenKai", sans-serif;
 }
 
-/*关于页面图片链接*/
+/* Related posts (replaces the old dl/dt/dd Bootstrap-grid layout) */
+.related-heading {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+ul.related-posts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.related-posts li {
+  margin: 0.55rem 0;
+}
+
+ul.related-posts a {
+  display: inline-block;
+}
+
+.related-date {
+  display: block;
+  margin-bottom: 0.1rem;
+  color: #888;
+  font-size: 0.78em;
+  letter-spacing: 0.02em;
+}
+
+/* about page image links */
 .content img {
 	margin-top: 5px;
 	margin-bottom: 5px;
