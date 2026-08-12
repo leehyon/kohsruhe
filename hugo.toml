@@ -66,6 +66,11 @@ titleCaseStyle = 'none'
 
   google_verification = ''                # Google_Verification
 
+## Cusdis comment system
+[params.cusdis]
+  app_id = '50b5d4e4-6f9c-470a-a152-72bf1b7ecdbb'   # override per environment in a private config
+  host = 'https://cusdis.com'
+
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
   customCSS = [
@@ -80,6 +85,9 @@ titleCaseStyle = 'none'
 ## Mermaid configuration
 [params.mermaid]
   theme = 'neutral'  # Optional theme: "default" | "base" | "dark" | "forest" | "neutral" | "null"
+  # Pin a specific Mermaid version so the browser-loads-from-CDN path stays
+  # stable across builds. Update intentionally.
+  version = '11.4.1'
 
 ## Markmap configuration
 [params.markmap]
@@ -114,10 +122,10 @@ titleCaseStyle = 'none'
 [languages]
   [languages.zh]
     disabled = false
-    locale = 'zh'
-    label = 'ZH'
     weight = 1
     [languages.zh.params]
+      locale = 'zh'
+      label = 'ZH'
       subtitle = "Wouldn't be a Noble mission if it were easy."
     [languages.zh.menus]
       [[languages.zh.menu.main]]
@@ -152,10 +160,10 @@ titleCaseStyle = 'none'
         url = "https://garden.kohsruhe.com/"
   [languages.en]
     disabled = false
-    locale = 'en'
-    label = 'EN'
     weight = 2
     [languages.en.params]
+      locale = 'en'
+      label = 'EN'
       subtitle = "Wouldn't be a Noble mission if it were easy."
     [languages.en.menus]
       [[languages.en.menu.main]]

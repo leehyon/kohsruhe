@@ -1,4 +1,4 @@
-{{- if (not site.Params.disableScrollToTop) }}
+{{- if not (.Site.Params.disableScrollToTop) }}
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" id="scroll-top" class="scroll-top" accesskey="g">
     <span class="arrow-icon"></span>
 </a>
