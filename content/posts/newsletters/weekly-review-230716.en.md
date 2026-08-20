@@ -94,7 +94,7 @@ This part will record some work and study progress this week, as well as list bo
 
 - [来都来了 - No.152 - 嘉宾叶斌：既要又要的人生，真的是你想要的吗？](https://podcasts.apple.com/cn/podcast/no-152-%E5%98%89%E5%AE%BE%E5%8F%B6%E6%96%8C-%E6%97%A2%E8%A6%81%E5%8F%88%E8%A6%81%E7%9A%84%E4%BA%BA%E7%94%9F-%E7%9C%9F%E7%9A%84%E6%98%AF%E4%BD%A0%E6%83%B3%E8%A6%81%E7%9A%84%E5%90%97/id1512932915?i=1000619920004)
 - [商业就是这样 - Vol.118 英伟达如何变得“不可替代”？](https://podcasts.apple.com/cn/podcast/vol-118-%E8%8B%B1%E4%BC%9F%E8%BE%BE%E5%A6%82%E4%BD%95%E5%8F%98%E5%BE%97-%E4%B8%8D%E5%8F%AF%E6%9B%BF%E4%BB%A3/id1552904790?i=1000619426083)
-- [What's Next｜科技早知道 - S7E19｜一亿人支持 Meta 新产品「像素级拷贝」Twitter](https://podcasts.apple.com/cn/podcast/s7e19-%E4%B8%80%E4%BA%BF%E4%BA%BA%E6%94%AF%E6%8C%81-meta-%E6%96%B0%E4%BA%A7%E5%93%81-%E5%83%8F%E7%B4%A0%E7%BA%A7%E6%8B%B7%E8%B4%9D-twitter-%E5%8F%AA%E5%9B%A0%E9%A9%AC%E6%96%AF%E5%85%8B%E5%A4%AA%E6%8B%9B%E9%AA%82/id1494812579?i=1000620854237)
+- [科技早知道 - S7E19｜一亿人支持 Meta 新产品「像素级拷贝」Twitter](https://podcasts.apple.com/cn/podcast/s7e19-%E4%B8%80%E4%BA%BF%E4%BA%BA%E6%94%AF%E6%8C%81-meta-%E6%96%B0%E4%BA%A7%E5%93%81-%E5%83%8F%E7%B4%A0%E7%BA%A7%E6%8B%B7%E8%B4%9D-twitter-%E5%8F%AA%E5%9B%A0%E9%A9%AC%E6%96%AF%E5%85%8B%E5%A4%AA%E6%8B%9B%E9%AA%82/id1494812579?i=1000620854237)
 - [She Said](https://movie.douban.com/subject/35493136/)
 - [The Logic Behind the Hot Vector Database](https://www.bilibili.com/video/BV1W94y1B7Vd/?share_source=copy_web)
 - [Vector Database Technology Appreciation](https://www.bilibili.com/video/BV11a4y1c7SW/?share_source=copy_web)

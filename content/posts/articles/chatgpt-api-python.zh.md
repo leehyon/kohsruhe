@@ -1,8 +1,8 @@
 ---
-title: "白嫖 ChatGPT API"
+title: "薅一把 ChatGPT API"
 date: 2023-03-06T09:47:44+08:00
 draft: false
-tags: ["chatgpt", "guide"]
+tags: ["chatgpt", "guide", "setup"]
 categories: ["notes"]
 authors:
 - "leehyon"
@@ -34,7 +34,7 @@ authors:
 
 ### 配置环境
 
-本教程使用 Python 调用 ChatGPT-3.5-API，所以需先安装 Python，如果是 Linux 系统，确保再安装 `pip`，Windows 系统包含在 Python 安装包中，无需单独安装 `pip`。
+本教程使用 Python 调用 ChatGPT-3.5-API，所以需先安装 Python，如果是 Linux 系统，确保有安装 `pip`，Windows 系统包含在 Python 安装包中，无需单独安装 `pip`。
 
 安装好 Python 环境后，使用 `pip` 安装 `openai` 库，在命令行窗口中输入以下命令：
 
