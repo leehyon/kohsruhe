@@ -38,14 +38,9 @@
           <div class="clearfix"></div>
           <p class="float-left header-tags">
               <i class="fas fa-tags" aria-hidden="true"></i>
-              {{ range (. | sort) -}}
-              {{- $name := . -}}
+              {{ range $i, $name := (. | sort) -}}
               {{- with $.Site.GetPage "taxonomy" (printf "/tags/%s" $name) | default ($.Site.GetPage "taxonomy" (printf "/tags/%s" ($name | urlize))) -}}
-                {{- if not ($.Scratch.Get "firsttag") -}}
-                ,
-                {{ else -}}
-                {{- $.Scratch.Set "firsttag" false -}}
-                {{- end -}}
+                {{- if $i -}}, {{ end -}}
                 <a href="{{ .Permalink }}">{{ $name }}</a>
               {{- end -}}
               {{ end }}
