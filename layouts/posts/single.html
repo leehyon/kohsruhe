@@ -21,7 +21,7 @@
             {{- end }}
              | <span>{{ .WordCount }} {{ i18n "words" }} {{ .ReadingTime }} {{ i18n "minutes" }}</span>
           {{- end }}
-           | <span data-cusdis-count-page-id="{{ .File.UniqueID }}">0</span> {{ i18n "comments" }}
+           | <span class="remark42__counter" data-url="{{ .Permalink }}">0</span> {{ i18n "comments" }}
            | {{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
           {{- with .Params.categories }}
              | {{ i18n "in_category" }}{{ " " }}
