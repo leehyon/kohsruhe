@@ -108,6 +108,8 @@ services:
 
 在博客页用 GitHub 登录一次评论系统，点用户名右侧展开会显示完整的 user ID（`github_` 开头的一长串 hex），复制这段。
 
+![github_user_id](https://images.kohsruhe.com/2026/github_user_id.png)
+
 然后停掉容器，env 里加上 `ADMIN_SHARED_ID=github_<your-user-id>`，重启即可。
 
 ## 集成到 Hugo
