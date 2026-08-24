@@ -78,6 +78,30 @@ code {
 	color: #002fa7;
 }
 
+/* Mermaid diagrams should not inherit the theme's code-block framing. */
+.content pre.mermaid {
+	background: transparent;
+	color: inherit;
+	font-family: inherit;
+	font-weight: 400;
+	line-height: normal;
+	margin: 34px 0;
+	padding: 0;
+	text-align: center;
+}
+
+.content pre.mermaid svg {
+	display: block;
+	height: auto;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+.content pre.mermaid text,
+.content pre.mermaid .label {
+	font-family: "LXGW WenKai", sans-serif !important;
+}
+
 /* Footnotes — Obsidian-like style: list stripped of <ol> chrome, items
    start with a small superscript number, footer separator, compact grey
    text. Hugo emits <div class="footnotes" role="doc-endnotes"> */

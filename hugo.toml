@@ -84,7 +84,8 @@ titleCaseStyle = 'none'
 
 ## Mermaid configuration
 [params.mermaid]
-  theme = 'neutral'  # Optional theme: "default" | "base" | "dark" | "forest" | "neutral" | "null"
+  theme = 'default'  # Optional theme: "default" | "base" | "dark" | "forest" | "neutral" | "null"
+  fontfamily = '"LXGW WenKai", sans-serif'
   # Pin a specific Mermaid version so the browser-loads-from-CDN path stays
   # stable across builds. Update intentionally.
   version = '11.4.1'
