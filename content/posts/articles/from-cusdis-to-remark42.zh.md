@@ -16,7 +16,9 @@ authors:
 - 后台比较简陋，缺少基本的反垃圾和通知能力
 - 评论需要管理员手动审核，经常错过评论和及时回复
 
-但真正让我下决心换掉的是这个 iframe bug：评论区被压成一个小框带滚动条，要手动拉才能看到完整内容。issue [#283](https://github.com/djyde/cusdis/issues/283) 开了快 2 年没修，社区的 workaround 都是手动 JS 重设 iframe 高度或者 MutationObserver 监听 resize，相当 hacky；连 [Cusdis 自己的官网](https://cusdis.com/doc#/faq) 也中招。
+但真正让我下决心换掉的是这个 iframe bug：评论区被压成一个小框带滚动条，要手动拉才能看到完整内容。issue [#283](https://github.com/djyde/cusdis/issues/283) 开了快 2 年没修，社区的 workaround 都是手动 JS 重设 iframe 高度或者 MutationObserver 监听 resize，相当 hacky；连 Cusdis 自己的 [官网](https://cusdis.com/doc#/faq) 也中招。
+
+![cusdis_iframe_issue](https://images.kohsruhe.com/2026/cusdis_iframe_issue.png)
 
 ## 选型
 
@@ -38,18 +40,23 @@ authors:
 
 ## 整体架构
 
-```text
-访客浏览器
-  │ HTTPS
-  ▼
-Cloudflare 边缘 (comments.kohsruhe.com)
-  │ Cloudflare Tunnel
-  ▼
-家里 NAS（无公网 IP）
-  │ localhost:8080
-  ▼
-Remark42 容器
+```mermaid
+flowchart TB
+    User["公网用户"]
+    Edge["Cloudflare Edge<br/>域名、HTTPS、安全防护"]
+
+    subgraph Home["家庭内网 · 无公网 IP"]
+        Tunnel["cloudflared<br/>Docker 项目 A"]
+        Service["Remark42<br/>Docker 项目 B"]
+    end
+
+    User -->|"访问 comments.kohsruhe.com"| Edge
+    Tunnel ==>|"主动建立加密隧道"| Edge
+    Edge -->|"通过隧道转发请求"| Tunnel
+    Tunnel -->|"Docker 共享网络<br/>remark42:8080"| Service
 ```
+
+> 对比以 FRP 一类的公网中转方案，主要区别是 Cloudflare Tunnel 使用 Cloudflare Edge 作为公网入口，并集成域名、HTTPS 和安全能力，而一般内网穿透通常依赖一台自行维护的公网中转服务器及端口映射。
 
 ## 部署 Remark42
 
