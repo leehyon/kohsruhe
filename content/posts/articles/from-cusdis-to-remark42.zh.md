@@ -1,5 +1,5 @@
 ---
-title: "从 Cusdis 到 Remark42：博客评论迁移记"
+title: "从 Cusdis 到 Remark42：博客评论系统迁移记"
 date: 2026-08-22T13:20:00+08:00
 draft: false
 tags: ["cusdis", "self-host", "remark42", "cloudflare"]
