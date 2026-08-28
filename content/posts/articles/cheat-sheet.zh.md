@@ -77,6 +77,8 @@ sudo find / -type d -name "*ota*" # 模糊匹配
 find . -type d -name ota # 当前目录查找
 find . -type f -name "*ota*" # 查找文件
 
+du -sh * # 查看当前目录下各子目录大小
+
 # tmux
 tmux new -s name            # 创建会话
 tmux ls                     # 列出会话
