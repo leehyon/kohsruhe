@@ -65,7 +65,6 @@ flowchart TB
 ```yaml
 services:
   remark42:
-    build: .
     image: ghcr.io/umputun/remark42:latest
     container_name: "remark42"
     hostname: "remark42"
@@ -81,18 +80,45 @@ services:
       - "8080:8080"
 
     environment:
+      # Basic setup
       REMARK_URL: "https://comments.kohsruhe.com"
       SITE: "kohsruhe"
       SECRET: "<random-long-string>" # openssl rand -hex 32
-      ALLOWED_HOSTS: "'self',https://www.kohsruhe.com"
+      DEBUG: "false"
+      ALLOWED_HOSTS: "localhost,www.kohsruhe.com"
       AUTH_SAME_SITE: "lax"
       AUTH_ANON: "true"
+
+      # Enable Email login
       AUTH_EMAIL_ENABLE: "true"
+      AUTH_EMAIL_FROM: '"Remark42 Login" <kohsruhe@gmail.com>'
+      AUTH_EMAIL_SUBJ: "Confirm your Remark42 login"
+      AUTH_EMAIL_CONTENT_TYPE: "text/html"
+
+      # GitHub setup
       AUTH_GITHUB_CID: "<from-github>"
       AUTH_GITHUB_CSEC: "<from-github>"
       ADMIN_SHARED_ID: "github_<your-user-id>"
-      DEBUG: "false"
 
+      # Gmail SMTP setup
+      SMTP_HOST: "smtp.gmail.com"
+      SMTP_PORT: "465"
+      SMTP_TLS: "true"
+      SMTP_STARTTLS: "false"
+      SMTP_USERNAME: "kohsruhe@gmail.com"
+      SMTP_PASSWORD: "<xxxx xxxx xxxx xxxx>"
+      SMTP_TIMEOUT: "10s"
+      SMTP_INSECURE_SKIP_VERIFY: "false"
+
+      # Notify users
+      NOTIFY_USERS: "email"
+      NOTIFY_EMAIL_FROM: '"Remark42 Notifications" <kohsruhe@gmail.com>'
+      NOTIFY_EMAIL_VERIFICATION_SUBJ: "Confirm your comment subscription"
+
+      NOTIFY_ADMINS: "slack"
+      NOTIFY_SLACK_CHAN: "remark42"
+      NOTIFY_SLACK_TOKEN: "xoxb-<your-slack-token>"
+      
     volumes:
       - ./var:/srv/var
 ```
