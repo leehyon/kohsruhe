@@ -60,7 +60,7 @@ flowchart TB
 
 ## 部署 Remark42
 
-最小可用 `docker-compose.yml`：
+我使用 Docker Compose 的方式部署，直接在绿联 NAS 中新建一个 Docker 项目，并将下面的配置保存为项目的 `docker-compose.yml` 文件：
 
 ```yaml
 services:
@@ -106,7 +106,7 @@ services:
       SMTP_TLS: "true"
       SMTP_STARTTLS: "false"
       SMTP_USERNAME: "kohsruhe@gmail.com"
-      SMTP_PASSWORD: "<xxxx xxxx xxxx xxxx>"
+      SMTP_PASSWORD: "<16-digit passcode>"
       SMTP_TIMEOUT: "10s"
       SMTP_INSECURE_SKIP_VERIFY: "false"
 
@@ -123,7 +123,9 @@ services:
       - ./var:/srv/var
 ```
 
-`./var` 目录用来存 bolt 数据和上传图片，建议挂到 NAS 的持久化卷。
+- `./var` 目录用来存 bolt 数据和图片，建议挂到 NAS 的持久化卷
+- 消息通知我用的 [Slack](https://remark42.com/docs/configuration/notifications/)，Telegram 换手机后就寄了
+- 配置项太多了，参考官方说明 [parameters](https://remark42.com/docs/configuration/parameters/)
 
 ## 配 GitHub OAuth
 
