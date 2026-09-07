@@ -23,6 +23,6 @@ The name of the site is a combination of my nickname "Koh", and the German word 
 
 The site content is rather messy, it may involve industry technology, life experiences and so on. But I will try to keep it simple, clear, focused and detailed. If you have any questions or suggestions for improvement or would like to discuss something further, please don't hesitate to [contact](mailto:leehyon@live.com) me.
 
-## 🌍 Places I've Been
+## 🌍 Travel Map
 
 {{< amap >}}
