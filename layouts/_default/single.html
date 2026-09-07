@@ -17,5 +17,12 @@
 {{ define "main" }}
 <div class="container content">
   {{ .Content }}
+
+  {{- /* Comments — opt-in via front matter `comments: true`.
+       Default off for static pages; posts/single.html loads remark42
+       unconditionally. */ -}}
+  {{- if .Params.comments -}}
+    {{ partial "remark42.html" . }}
+  {{- end -}}
 </div>
 {{ end }}

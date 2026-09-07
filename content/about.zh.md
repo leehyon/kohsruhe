@@ -4,6 +4,7 @@ date: 2022-10-29T16:38:52+08:00
 menu: "main"
 weight: 100
 rss_ignore: true
+comments: true
 ---
 
 ## 🖖 初次见面
