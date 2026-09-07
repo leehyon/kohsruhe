@@ -21,3 +21,7 @@ Beyond academics and my professional life, I enjoy engaging in outdoor activitie
 The name of the site is a combination of my nickname "Koh", and the German word "Ruhe", meaning "peace" or "calm". I hope that through this site I can settle my thoughts and find a sense of inner peace. Well, no quatsch, the name is largely borrowed from "Karlsruhe", the city where I studied in Germany, hahaha.
 
 The site content is rather messy, it may involve industry technology, life experiences and so on. But I will try to keep it simple, clear, focused and detailed. If you have any questions or suggestions for improvement or would like to discuss something further, please don't hesitate to [contact](mailto:leehyon@live.com) me.
+
+## 🌍 Places I've Been
+
+{{< amap >}}

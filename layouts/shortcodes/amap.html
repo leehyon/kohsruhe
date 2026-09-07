@@ -1,0 +1,42 @@
+{{/*
+  Shortcode: {{< amap >}}
+  Renders an AMap-powered travel map under the current page.
+
+  No parameters — all data is sourced from data/travel.yaml (the "config
+  file" the user edits to add new places). The AMap JS API key is read
+  in priority order:
+    1. `HUGO_AMAP_KEY` env var (set in Cloudflare Pages dashboard or
+       local env — preferred for production so the key never enters git).
+    2. `params.amap.key` in hugo.toml (convenient for local `hugo server`
+       when you don't want to manage an env var).
+  If both are absent, a placeholder notice is shown instead of the map.
+*/}}
+{{- $key := os.Getenv "HUGO_AMAP_KEY" -}}
+{{- if not $key -}}
+  {{- with .Site.Params.amap -}}
+    {{- $key = .key -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $travel := .Site.Data.travel | default (slice) -}}
+
+<div class="amap-travel-map" data-amap-key="{{ $key }}">
+  {{- if not $key -}}
+    <div class="amap-notice">
+      ⚠️ 高德地图 JS API Key 未配置。可选方式：
+      <ol style="margin: 0.5rem 0 0.5rem 1.5rem; padding: 0;">
+        <li>Cloudflare Pages：在 dashboard 的 Environment variables 加 <code>HUGO_AMAP_KEY</code>（推荐，避免泄漏到 GitHub）。</li>
+        <li>本地开发：在 <code>hugo.toml</code> 写入 <code>[params.amap] key = "..."</code>。</li>
+      </ol>
+      Key 申请：<a href="https://lbs.amap.com/" target="_blank" rel="noopener">lbs.amap.com</a>
+      （应用类型选「Web 端 (JS API)」，域名白名单加上本站）。
+    </div>
+  {{- else -}}
+    <div id="amap-container" class="amap-container"></div>
+    <script type="application/json" id="amap-travel-data">
+      {{- $travel | jsonify -}}
+    </script>
+    {{- /* Mark this page so the loader partial knows to inject AMap scripts. */ -}}
+    {{- .Page.Store.Set "hasAmap" true -}}
+  {{- end -}}
+</div>

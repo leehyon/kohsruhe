@@ -1,0 +1,28 @@
+{{/*
+  AMap JS API loader.
+
+  Only loaded when a page contains the `amap` shortcode (signaled by
+  the Page.Store flag `hasAmap`). The page provides its own map container
+  (#amap-container) and the JSON payload (#amap-travel-data); this
+  partial just wires up the API script and the renderer.
+
+  Two CDN scripts are loaded:
+    1. The main AMap JS API v2.0 loader (provides AMap.* globals).
+    2. A small inline renderer that reads the data payload, drops a marker
+       per city, and binds a click handler that opens an InfoWindow with
+       the optional note. Auto-fit bounds + a sensible initial center/
+       zoom are computed from the data.
+
+  Why a separate JS file instead of inline: keeps the loader reusable
+  across pages and lets the browser cache it.
+*/}}
+{{- $key := os.Getenv "HUGO_AMAP_KEY" -}}
+{{- if not $key -}}
+  {{- with .Site.Params.amap -}}
+    {{- $key = .key -}}
+  {{- end -}}
+{{- end -}}
+{{- if $key -}}
+<script src="https://webapi.amap.com/maps?v=2.0&key={{ $key }}&plugin=AMap.InfoWindow,AMap.ToolBar" defer></script>
+<script src="{{ "js/amap-travel.js" | relURL }}" defer></script>
+{{- end -}}

@@ -1,0 +1,158 @@
+# Travel map data — coordinate source: AMap geocoding (gcj02).
+# Each entry: name, lng, lat, visited (YYYY-MM), note (optional, plain text or Markdown).
+# Add new places by appending; order is preserved as-is on the map.
+#
+# To get coordinates:
+#   1. Open https://lbs.amap.com/console/show/tools (需 JS API Key)
+#   2. Search place name → click marker → copy lng/lat
+#   3. Or use AMap REST geocoding API: https://restapi.amap.com/v3/geocode/geo
+
+- name: Karlsruhe
+  lng: 8.403653
+  lat: 49.006889
+  visited: 2017-09
+  note: KIT 求学两年半，Frankstr. 宿舍窗前那棵大栗子树年年开花。
+
+- name: Stuttgart
+  lng: 9.182201
+  lat: 48.775845
+  visited: 2018-05
+  note: 保时捷博物馆和奔驰博物馆一天跑完。
+
+- name: Heidelberg
+  lng: 8.672434
+  lat: 49.398750
+  visited: 2018-06
+  note: 老桥与哲学家小径。
+
+- name: Freiburg
+  lng: 7.842119
+  lat: 47.999008
+  visited: 2018-07
+  note: 大教堂边的小水渠，夏天光脚踩过。
+
+- name: Strasbourg
+  lng: 7.748119
+  lat: 48.573405
+  visited: 2018-08
+  note: 周末晃过去的法国小城。
+
+- name: Berlin
+  lng: 13.404954
+  lat: 52.520008
+  visited: 2019-03
+  note:
+
+- name: München
+  lng: 11.575382
+  lat: 48.137154
+  visited: 2019-04
+  note: 玛丽亚广场的春天。
+
+- name: 上海
+  lng: 121.473701
+  lat: 31.230416
+  visited: 2019-08
+  note: 现居地。
+
+- name: 杭州
+  lng: 120.209947
+  lat: 30.245854
+  visited: 2020-10
+  note:
+
+- name: 苏州
+  lng: 120.585294
+  lat: 31.299758
+  visited: 2021-04
+  note:
+
+- name: 南京
+  lng: 118.796877
+  lat: 32.060255
+  visited: 2021-11
+  note:
+
+- name: 黄山
+  lng: 118.337481
+  lat: 29.714828
+  visited: 2022-05
+  note: 老家山顶，云海。
+
+- name: 宏村
+  lng: 117.985340
+  lat: 29.909443
+  visited: 2022-05
+  note: 徽派建筑，雨天更美。
+
+- name: 北京
+  lng: 116.407394
+  lat: 39.904211
+  visited: 2023-04
+  note:
+
+- name: 西安
+  lng: 108.939865
+  lat: 34.341611
+  visited: 2023-10
+  note:
+
+- name: 大理
+  lng: 100.225766
+  lat: 25.596899
+  visited: 2024-03
+  note: 苍山洱海，住了一周。
+
+- name: 丽江
+  lng: 100.233303
+  lat: 26.872108
+  visited: 2024-03
+  note:
+
+- name: 成都
+  lng: 104.066801
+  lat: 30.572961
+  visited: 2024-09
+  note:
+
+- name: 重庆
+  lng: 106.551556
+  lat: 29.563009
+  visited: 2024-09
+  note:
+
+- name: 厦门
+  lng: 118.089425
+  lat: 24.479834
+  visited: 2025-04
+  note:
+
+- name: 泉州
+  lng: 118.675675
+  lat: 24.874132
+  visited: 2025-04
+  note: 半城烟火半城仙。
+
+- name: 东京
+  lng: 139.691706
+  lat: 35.689487
+  visited: 2025-08
+  note:
+
+- name: 京都
+  lng: 135.768029
+  lat: 35.011636
+  visited: 2025-08
+  note:
+
+- name: 大阪
+  lng: 135.502165
+  lat: 34.693737
+  visited: 2025-08
+  note:
+
+- name: 奈良
+  lng: 135.804702
+  lat: 34.685060
+  visited: 2025-08
+  note: 鹿比人多。

@@ -84,3 +84,7 @@ $(document).ready(function() {
 {{ if .Page.Store.Get "hasGhReadme" -}}
 <script src="{{ "js/gh-readme.js" | absURL }}" defer></script>
 {{ end -}}
+
+{{ if .Page.Store.Get "hasAmap" -}}
+{{- partial "scripts/amap.html" . -}}
+{{ end -}}
