@@ -14,7 +14,7 @@ authors:
 
 ## 准备工作
 
-去年在做婚礼请帖时，也就是「[我们结婚啦](https://wedding.kohsruhe.com/)」这个站点，有用过高德地图的 API，所以这次还是用它。没有的话，要先去 [高德开放平台](lbs.amap.com) 注册开发者账号、申请 Web 端 JS API 的 Key。
+去年在做婚礼请帖时，也就是「[👩‍❤️‍👨 我们结婚啦](https://wedding.kohsruhe.com/)」这个站点，有用过高德地图的 API，所以这次还是用它。如果你是第一次接入，要先去 [高德开放平台](lbs.amap.com) 注册开发者账号、申请 Web 端 JS API 的 Key。
 
 Key 准备好之后，剩下的工作就交给 AI 了。
 
@@ -27,7 +27,7 @@ Key 准备好之后，剩下的工作就交给 AI 了。
   lng: 8.403653
   lat: 49.006889
   visited: 2016-04
-  note: KIT 求学两年半
+  note: KIT 求学岁月
 ```
 
 新增一个城市就在文件末尾追加一条，`hugo` 重新 build 后地图自动多一个绿点。
