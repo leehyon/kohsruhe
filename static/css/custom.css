@@ -399,6 +399,15 @@ blockquote a {
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.amap-container .amap-copyright {
+  opacity: 0.05;
+  transition: opacity 0.2s ease;
+}
+
+.amap-container .amap-copyright:hover {
+  opacity: 0.8;
+}
+
 .amap-legend {
   list-style: none;
   margin: 1rem 0 0;

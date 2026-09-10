@@ -273,10 +273,7 @@
     });
 
     // AMap renders two attribution elements (.amap-logo and
-    // .amap-copyright) that we re-pin to opposite edges so they
-    // don't get visually jumbled with the controls. The logo sits
-    // top-left (its default-ish home) and the copyright sits
-    // bottom-left to mirror the layout of typical AMap embeds.
+    // .amap-copyright)
     // Both keep their full original content — only their absolute
     // positioning is overridden.
     function repositionAttribution() {
@@ -286,9 +283,9 @@
       if (logo.dataset.amapRepositioned === "1") return;
 
       logo.style.cssText +=
-        ";position:absolute;top:0;left:8px;bottom:auto;";
+        ";position:absolute;top:0;left:6px;bottom:auto;";
       copy.style.cssText +=
-        ";position:absolute;left:8px;bottom:0;right:auto;";
+        ";position:absolute;right:4px;bottom:0;left:auto;top:auto;";
       logo.dataset.amapRepositioned = "1";
       copy.dataset.amapRepositioned = "1";
     }
