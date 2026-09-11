@@ -65,15 +65,19 @@
     );
   }
 
-  function buildInfoContent(p) {
+  function buildInfoContent(place) {
     var html = '<div style="font-family:inherit;font-size:13px;line-height:1.5;max-width:240px;padding:2px 4px;">';
-    html += '<div style="font-weight:600;font-size:14px;margin-bottom:2px;">' + escapeHtml(p.name) + "</div>";
-    if (p.visited) {
-      html += '<div class="amap-info-date">' + escapeHtml(p.visited) + "</div>";
-    }
-    if (p.note) {
-      html += '<div style="color:#444;">' + escapeHtml(p.note) + "</div>";
-    }
+    html += '<div style="font-weight:600;font-size:14px;margin-bottom:6px;">' + escapeHtml(place.name) + "</div>";
+    place.visits.forEach(function (visit) {
+      html += '<div style="margin-bottom:6px;">';
+      if (visit.visited) {
+        html += '<div class="amap-info-date">' + escapeHtml(visit.visited) + "</div>";
+      }
+      if (visit.note) {
+        html += '<div style="color:#444;">' + escapeHtml(visit.note) + "</div>";
+      }
+      html += "</div>";
+    });
     html += "</div>";
     return html;
   }
@@ -223,31 +227,41 @@
       map.setCenter([108.95, 33.87]);
     });
 
-    // Count visits per city so the marker badge reflects how many
-    // trips the user has taken to the same place.
-    var visitCount = {};
+    // Group visits by city so each place gets one marker and one
+    // InfoWindow containing all of its visits.
+    var groupedPlaces = {};
+    var uniquePlaces = [];
     places.forEach(function (p) {
       if (!p.name) return;
-      visitCount[p.name] = (visitCount[p.name] || 0) + 1;
+      if (!groupedPlaces[p.name]) {
+        groupedPlaces[p.name] = {
+          name: p.name,
+          lng: p.lng,
+          lat: p.lat,
+          visits: [],
+        };
+        uniquePlaces.push(groupedPlaces[p.name]);
+      }
+      groupedPlaces[p.name].visits.push(p);
     });
 
-    places.forEach(function (p) {
-      if (typeof p.lng !== "number" || typeof p.lat !== "number") return;
+    uniquePlaces.forEach(function (place) {
+      if (typeof place.lng !== "number" || typeof place.lat !== "number") return;
 
       // Anchor 'center' centers the dot on the coordinate. Inline
       // styles bypass any host CSS that might otherwise misposition
       // the marker.
       var marker = new AMap.Marker({
-        position: [p.lng, p.lat],
-        title: p.name + (p.visited ? " — " + p.visited : ""),
-        content: buildMarkerContent(p, visitCount[p.name] > 1 ? visitCount[p.name] : null),
+        position: [place.lng, place.lat],
+        title: place.name,
+        content: buildMarkerContent(place, place.visits.length > 1 ? place.visits.length : null),
         anchor: "center",
         offset: new AMap.Pixel(0, 0),
         zooms: [2, 20],
       });
 
       marker.on("click", function () {
-        infoWindow.setContent(buildInfoContent(p));
+        infoWindow.setContent(buildInfoContent(place));
         infoWindow.open(map, marker.getPosition());
       });
 
