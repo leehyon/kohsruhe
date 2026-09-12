@@ -6,7 +6,7 @@
 // marker rendering.
 //
 // Data: data/travel.yaml
-// Style: 24px green dots, white border, soft shadow. Optional badge
+// Style: 16px green dots, white border, soft shadow. Optional badge
 // renders the visit count if the same city appears more than once.
 
 (function () {
@@ -15,7 +15,7 @@
   // Visual constants — kept inline (not in a CSS file) because the
   // host CSS can otherwise override Marker content positioning.
   var COLOR = "#10b981";      // Tailwind emerald-500 — "visited"
-  var SIZE = 24;
+  var SIZE = 16;
   var BORDER = "#ffffff";
 
   function escapeHtml(s) {
