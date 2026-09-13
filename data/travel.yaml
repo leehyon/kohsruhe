@@ -8,111 +8,119 @@
 #   3. Or use AMap REST geocoding API: https://restapi.amap.com/v3/geocode/geo
 
 - name: 大连
-  lng: 121.5236
-  lat: 38.8781
+  lng: 121.5218
+  lat: 38.8830
   visited: 2011-08-30
+  note: 一年的交换生涯
 
 - name: 长春
-  lng: 125.3422
-  lat: 43.9036
+  lng: 125.3487
+  lat: 43.9056
   visited: 2011-10-02
+  note: 火车穷游东三省
 
 - name: 哈尔滨
-  lng: 126.5349
-  lat: 45.8038
+  lng: 126.59788
+  lat: 45.791584
   visited: 2011-10-03
+  note: 住初中同学的哈工大宿舍
 
 - name: 沈阳
-  lng: 123.4315
-  lat: 41.8057
+  lng: 123.42758
+  lat: 41.851292
   visited: 2011-10-05
   note: 凌晨的火车，等的睡着了差点错过
 
 - name: 北京大学
-  lng: 116.3062
-  lat: 39.9928
+  lng: 116.3098
+  lat: 39.99475
   visited: 2012-07-28
+  note: 初中同学带玩了四天，感恩有你
 
 - name: 故宫
-  lng: 116.3972
-  lat: 39.9163
+  lng: 116.397029
+  lat: 39.917839
   visited: 2012-07-29
 
 - name: 居庸关
   lng: 116.0703
   lat: 40.2895
   visited: 2012-07-30
+  note: 快乐的日子总是短暂的
 
-- name: 北京动物园
-  lng: 116.3339
-  lat: 39.9390
-  visited: 2012-07-31
 
 - name: 厦门
   lng: 118.0894
   lat: 24.4798
   visited: 2012-10-03
+  note: 应该是第一次喝奶茶？
 
 - name: 鼓浪屿
   lng: 118.0672
   lat: 24.4452
   visited: 2012-10-04
+  note: 找各种小店盖章
 
 - name: 龙门石窟
   lng: 112.4724
   lat: 34.5587
   visited: 2013-07-14
+  note: 你敢信带个 iPad 拍照
 
 - name: 郑州
   lng: 113.6254
   lat: 34.7466
   visited: 2013-07-20
+  note: 翻墙进景区，只记得保安在后面追
 
 - name: 华山
   lng: 110.0850
   lat: 34.4750
   visited: 2013-07-23
-  note: 夜爬华山
+  note: 夜爬华山，看了日出，但云层还是有点厚，下山后腿废了
 
 - name: 西安
   lng: 109.2785
   lat: 34.3841
   visited: 2013-07-23
+  note: 好像还被骗去了地宫，印象中空气很差
 
-- name: 磁器口
+- name: 重庆
   lng: 106.4433
   lat: 29.5767
   visited: 2013-07-27
+  note: 初中同学带玩，住在她前男友宿舍
 
-- name: 洪崖洞
-  lng: 106.5786
-  lat: 29.5628
-  visited: 2013-07-28
 
 - name: 成都
   lng: 104.0657
   lat: 30.6598
   visited: 2013-07-30
+  note: 一个人去了宽窄巷子和武侯祠，好像就玩了一天
 
 - name: 长沙
   lng: 112.9388
   lat: 28.2282
   visited: 2014-07-04
+  note: 参加日语等级考试，结果挂了
 
 - name: 同济大学
   lng: 121.5132
   lat: 31.2820
   visited: 2014-08-12
+  note: 彰武的宿舍真不错
 
 - name: 昆山
   lng: 120.9308
   lat: 31.3900
   visited: 2015-08-12
+  note: 暑假整个教席都在这闭关
 
-- name: 杭州东站
+- name: 杭州
   lng: 120.2130
   lat: 30.2910
   visited: 2015-02-23
+  note: 和初中同学一起回家
 
 - name: 广州
   lng: 113.2644
@@ -124,48 +132,50 @@
   lng: 114.0579
   lat: 22.5431
   visited: 2015-03-29
-  note: 见同学
+  note: 初中同学带玩深圳
 
-- name: 广州外国语学院
-  lng: 113.2925
-  lat: 23.2005
-  visited: 2015-11-05
-  note: 考德福
 
 - name: 香港
   lng: 114.1694
   lat: 22.3193
   visited: 2015-11-08
+  note: 和本科同学去了一趟香港
 
 - name: 卡尔斯鲁厄
   lng: 8.4128
   lat: 49.01
   visited: 2016-04-11
+  note: 留学德国
 
 - name: 巴登巴登
   lng: 8.2430
   lat: 48.7583
   visited: 2016-04-23
+  note: 那天大家在澡堂坦诚相见
 
 - name: 马耳他
   lng: 14.5140
   lat: 35.8989
   visited: 2016-06-14
+  note: 出行三人组，还想再去一趟
 
 - name: 罗马
   lng: 12.5990
   lat: 41.8045
   visited: 2016-09-22
+  note: 大部分记忆已经消退了，除了斗兽场和夕阳余晖下的穹顶
 
 - name: 梵蒂冈
   lng: 12.4534
   lat: 41.9029
   visited: 2016-09-10
+  note: 教皇游街啦
 
 - name: 佛罗伦萨
   lng: 11.2558
   lat: 43.7696
   visited: 2016-09-11
+  note: 很美很艺术
 
 - name: 米兰
   lng: 9.1900
@@ -176,16 +186,19 @@
   lng: 23.7275
   lat: 37.9838
   visited: 2016-09-14
+  note: 当时学生不要门票
 
 - name: 圣托里尼
   lng: 25.4321
   lat: 36.3932
   visited: 2016-09-17
+  note: 没有马耳他好玩
 
 - name: 弗莱堡
   lng: 7.8494
   lat: 47.9961
   visited: 2016-11-12
+  note: 和教席的师兄们一起玩
 
 - name: 斯特拉斯堡
   lng: 7.7521
@@ -197,6 +210,7 @@
   lng: 11.5556
   lat: 48.1761
   visited: 2017-02-17
+  note: 果然是大城市，误入一家西餐厅要 dress code
 
 - name: 埃尔瓦尔德
   lng: 10.9842
