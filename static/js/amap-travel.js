@@ -6,8 +6,8 @@
 // marker rendering.
 //
 // Data: data/travel.yaml
-// Style: 16px green dots, white border, soft shadow. Optional badge
-// renders the visit count if the same city appears more than once.
+// Style: 16px green dots, white border, soft shadow. Each marker opens
+// an InfoWindow listing every visit when clicked.
 
 (function () {
   "use strict";
@@ -42,12 +42,7 @@
     }, 100);
   }
 
-  function buildMarkerContent(p, badge) {
-    var badgeHtml = badge
-      ? '<div style="position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:#ef4444;color:#fff;font-size:10px;font-weight:600;line-height:16px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,0.2);">' +
-        escapeHtml(String(badge)) +
-        "</div>"
-      : "";
+  function buildMarkerContent(p) {
     return (
       '<div class="amap-marker-dot" style="' +
         "position:relative;" +
@@ -60,7 +55,6 @@
         "cursor:pointer;" +
         "transition:transform 0.15s ease;" +
         '">' +
-        badgeHtml +
         "</div>"
     );
   }
@@ -136,6 +130,13 @@
 
     var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -SIZE / 2 - 2) });
     var markers = [];
+
+    // Close the InfoWindow when the user clicks elsewhere on the map.
+    // AMap fires map-level clicks only when the canvas itself is hit, not
+    // when a marker is clicked — so marker clicks keep their open behavior.
+    map.on("click", function () {
+      infoWindow.close();
+    });
 
     // AMap v2.0 doesn't render the zoom bar by default — instantiate
     // it explicitly so we get the standard +/- control. ToolBar is a
@@ -254,7 +255,7 @@
       var marker = new AMap.Marker({
         position: [place.lng, place.lat],
         title: place.name,
-        content: buildMarkerContent(place, place.visits.length > 1 ? place.visits.length : null),
+        content: buildMarkerContent(place),
         anchor: "center",
         offset: new AMap.Pixel(0, 0),
         zooms: [2, 20],
