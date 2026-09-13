@@ -7,21 +7,99 @@
 #   2. Search place name → click marker → copy lng/lat
 #   3. Or use AMap REST geocoding API: https://restapi.amap.com/v3/geocode/geo
 
+- name: 天坛
+  lng: 116.4123
+  lat: 39.8825
+  visited: 2024-10-02
+  note: 北京半日游
+
+- name: 海拉尔
+  lng: 119.7809
+  lat: 49.2033
+  visited: 2024-10-03
+  note: 和朋友一起自驾内蒙
+
+- name: 阿尔山
+  lng: 120.4312
+  lat: 47.3351
+  visited: 2024-10-04
+  note: 来晚了，没有那种成片的金黄，晚上睡的炕
+
+- name: 新巴尔虎左旗
+  lng: 117.5856
+  lat: 48.4076
+  visited: 2024-10-05
+  note: 离开山区，驶向草原
+
+- name: 呼伦湖
+  lng: 117.1156
+  lat: 48.9189
+  visited: 2024-10-05
+  note: 日落很赞，第二天没能爬起来看日出
+
+- name: 满洲里
+  lng: 117.4460
+  lat: 49.5886
+  visited: 2024-10-06
+  note: 来一杯瑞幸吧
+
+- name: 额尔古纳
+  lng: 120.4440
+  lat: 50.3498
+  visited: 2024-10-07
+  note: 骑了马看了驯鹿，但湿地的秋色差点意思
+
+- name: 莫日格勒河
+  lng: 119.9633
+  lat: 49.5951
+  visited: 2024-10-08
+  note: 这秋色终究是差点意思
+
+- name: 毕棚沟
+  lng: 102.8505
+  lat: 31.2220
+  visited: 2024-12-28
+  note: 竟然看到了晨雾
+
+- name: 达古冰川
+  lng: 102.7892
+  lat: 32.1438
+  visited: 2024-12-29
+  note: 她说愿意！
+
+- name: 九寨沟
+  lng: 103.9319
+  lat: 33.0447
+  visited: 2024-12-30
+  note: 夏天来应该更好看
+
+- name: 黄龙
+  lng: 103.8331
+  lat: 32.7299
+  visited: 2024-12-31
+  note: 五彩斑斓的池子，太阳照下很漂亮
+
+- name: 成都
+  lng: 104.0722
+  lat: 30.6513
+  visited: 2024-12-31
+  note: 成都跨年，街上好多年轻人
+
 - name: 福冈
-  lng: 130.4017
-  lat: 33.5904
+  lng: 130.4066
+  lat: 33.5917
   visited: 2025-03-24
   note: 第一次来日本，这酒店也太小了
 
 - name: 熊本
-  lng: 130.7070
-  lat: 32.8032
+  lng: 130.7132
+  lat: 32.7984
   visited: 2025-03-25
   note: 到处都是熊本熊的元素
 
 - name: 阿苏火山
-  lng: 131.0855
-  lat: 32.8842
+  lng: 131.0387
+  lat: 32.8894
   visited: 2025-03-26
   note: Aso Boy！出发
 
@@ -32,14 +110,14 @@
   note: 一泊二食带汤，一般般
 
 - name: 由布院
-  lng: 131.3553
-  lat: 33.2628
+  lng: 131.3592
+  lat: 33.2623
   visited: 2025-03-27
   note: 没必要特意住一晚
 
 - name: 别府
-  lng: 131.4984
-  lat: 33.2794
+  lng: 131.4832
+  lat: 33.3073
   visited: 2025-03-28
   note: 地狱七汤，神奇地方
 
@@ -49,15 +127,21 @@
   visited: 2025-03-29
   note: 小仓城的樱花非常棒，来的正是时候
 
+- name: 门司港
+  lng: 130.9626
+  lat: 33.9451
+  visited: 2025-03-29
+  note: 老街区很有味道
+
 - name: 杭州
-  lng: 120.1442
-  lat: 30.2469
+  lng: 120.1503
+  lat: 30.2411
   visited: 2025-08-29
   note: 陪 Sören 一家逛西湖，女儿一岁还不到，德国人带娃心真大
 
 - name: 苏州
-  lng: 120.5954
-  lat: 31.3041
+  lng: 120.6301
+  lat: 31.3668
   visited: 2025-10-06
   note: 过来看家具，终于把家具确定下来了
 
@@ -67,6 +151,12 @@
   visited: 2026-01-24
   note: 连续几天天气都一般，博物馆门票简直抢钱
 
+- name: 达拉曼
+  lng: 28.7882
+  lat: 36.7235
+  visited: 2026-01-25
+  note: 这机场感觉建在山里，出来是一片树林，很清幽
+
 - name: 费特希耶
   lng: 29.1173
   lat: 36.6216
@@ -74,28 +164,34 @@
   note: 小城，没啥人，坐了滑翔伞，沙滩上一直待到日落
 
 - name: 卡什
-  lng: 29.6366
-  lat: 36.1994
+  lng: 29.4383
+  lat: 36.2382
   visited: 2026-01-26
   note: 露天古剧场，可以看到海
 
-- name: 西代
+- name: 西代古城
   lng: 31.3906
   lat: 36.7681
   visited: 2026-01-27
   note: 自驾过来，第一次在土耳其开车，海边风大
 
 - name: 安塔利亚
-  lng: 30.7061
-  lat: 36.8850
+  lng: 30.70663
+  lat: 36.88304
   visited: 2026-01-28
   note: 住在老城的杜莫套房酒店，非常棒
 
-- name: 卡帕多奇亚
-  lng: 34.8292
-  lat: 38.6431
+- name: 格雷梅
+  lng: 34.8271
+  lat: 38.6436
   visited: 2026-01-29
   note: 等了三天没等到热气球，非常遗憾。但这片区域能玩的地方还是很多的
+
+- name: 代林库尤
+  lng: 34.7352
+  lat: 38.3732
+  visited: 2026-01-30
+  note: 地下城很震撼
 
 - name: 网师园
   lng: 120.6335
@@ -218,8 +314,8 @@
   note: 琉璃塔很震撼，但爬山上来差点热晕
 
 - name: 长治
-  lng: 113.1167
-  lat: 36.1972
+  lng: 113.0583
+  lat: 36.0575
   visited: 2026-08-08
   note: 气候宜人，家里人热情
 
