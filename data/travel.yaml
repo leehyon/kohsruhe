@@ -7,6 +7,357 @@
 #   2. Search place name → click marker → copy lng/lat
 #   3. Or use AMap REST geocoding API: https://restapi.amap.com/v3/geocode/geo
 
+- name: 大连
+  lng: 121.5236
+  lat: 38.8781
+  visited: 2011-08-30
+
+- name: 长春
+  lng: 125.3422
+  lat: 43.9036
+  visited: 2011-10-02
+
+- name: 哈尔滨
+  lng: 126.5349
+  lat: 45.8038
+  visited: 2011-10-03
+
+- name: 沈阳
+  lng: 123.4315
+  lat: 41.8057
+  visited: 2011-10-05
+  note: 凌晨的火车，等的睡着了差点错过
+
+- name: 北京大学
+  lng: 116.3062
+  lat: 39.9928
+  visited: 2012-07-28
+
+- name: 故宫
+  lng: 116.3972
+  lat: 39.9163
+  visited: 2012-07-29
+
+- name: 居庸关
+  lng: 116.0703
+  lat: 40.2895
+  visited: 2012-07-30
+
+- name: 北京动物园
+  lng: 116.3339
+  lat: 39.9390
+  visited: 2012-07-31
+
+- name: 厦门
+  lng: 118.0894
+  lat: 24.4798
+  visited: 2012-10-03
+
+- name: 鼓浪屿
+  lng: 118.0672
+  lat: 24.4452
+  visited: 2012-10-04
+
+- name: 龙门石窟
+  lng: 112.4724
+  lat: 34.5587
+  visited: 2013-07-14
+
+- name: 郑州
+  lng: 113.6254
+  lat: 34.7466
+  visited: 2013-07-20
+
+- name: 华山
+  lng: 110.0850
+  lat: 34.4750
+  visited: 2013-07-23
+  note: 夜爬华山
+
+- name: 西安
+  lng: 109.2785
+  lat: 34.3841
+  visited: 2013-07-23
+
+- name: 磁器口
+  lng: 106.4433
+  lat: 29.5767
+  visited: 2013-07-27
+
+- name: 洪崖洞
+  lng: 106.5786
+  lat: 29.5628
+  visited: 2013-07-28
+
+- name: 成都
+  lng: 104.0657
+  lat: 30.6598
+  visited: 2013-07-30
+
+- name: 长沙
+  lng: 112.9388
+  lat: 28.2282
+  visited: 2014-07-04
+
+- name: 同济大学
+  lng: 121.5132
+  lat: 31.2820
+  visited: 2014-08-12
+
+- name: 昆山
+  lng: 120.9308
+  lat: 31.3900
+  visited: 2015-08-12
+
+- name: 杭州东站
+  lng: 120.2130
+  lat: 30.2910
+  visited: 2015-02-23
+
+- name: 广州
+  lng: 113.2644
+  lat: 23.1291
+  visited: 2015-03-26
+  note: 考德福
+
+- name: 深圳
+  lng: 114.0579
+  lat: 22.5431
+  visited: 2015-03-29
+  note: 见同学
+
+- name: 广州外国语学院
+  lng: 113.2925
+  lat: 23.2005
+  visited: 2015-11-05
+  note: 考德福
+
+- name: 香港
+  lng: 114.1694
+  lat: 22.3193
+  visited: 2015-11-08
+
+- name: 卡尔斯鲁厄
+  lng: 8.4128
+  lat: 49.01
+  visited: 2016-04-11
+
+- name: 巴登巴登
+  lng: 8.2430
+  lat: 48.7583
+  visited: 2016-04-23
+
+- name: 马耳他
+  lng: 14.5140
+  lat: 35.8989
+  visited: 2016-06-14
+
+- name: 罗马
+  lng: 12.5990
+  lat: 41.8045
+  visited: 2016-09-22
+
+- name: 梵蒂冈
+  lng: 12.4534
+  lat: 41.9029
+  visited: 2016-09-10
+
+- name: 佛罗伦萨
+  lng: 11.2558
+  lat: 43.7696
+  visited: 2016-09-11
+
+- name: 米兰
+  lng: 9.1900
+  lat: 45.4642
+  visited: 2016-09-13
+
+- name: 雅典
+  lng: 23.7275
+  lat: 37.9838
+  visited: 2016-09-14
+
+- name: 圣托里尼
+  lng: 25.4321
+  lat: 36.3932
+  visited: 2016-09-17
+
+- name: 弗莱堡
+  lng: 7.8494
+  lat: 47.9961
+  visited: 2016-11-12
+
+- name: 斯特拉斯堡
+  lng: 7.7521
+  lat: 48.5734
+  visited: 2016-12-28
+  note: 你的名字欧洲首映
+
+- name: 慕尼黑
+  lng: 11.5556
+  lat: 48.1761
+  visited: 2017-02-17
+
+- name: 埃尔瓦尔德
+  lng: 10.9842
+  lat: 47.4211
+  visited: 2017-02-18
+
+- name: 巴黎
+  lng: 2.2400
+  lat: 48.8441
+  visited: 2017-06-22
+
+- name: 康斯坦茨
+  lng: 9.1784
+  lat: 47.6621
+  visited: 2017-07-09
+
+- name: 科隆
+  lng: 6.9688
+  lat: 50.9410
+  visited: 2017-07-18
+
+- name: 杜塞尔多夫
+  lng: 6.7739
+  lat: 51.2159
+  visited: 2017-07-19
+
+- name: 毛尔布龙
+  lng: 8.8132
+  lat: 49.0015
+  visited: 2017-07-23
+
+- name: 柏林
+  lng: 13.3842
+  lat: 52.5143
+  visited: 2017-08-17
+
+- name: 海德堡
+  lng: 8.7015
+  lat: 49.4113
+  visited: 2017-11-01
+
+- name: 布达佩斯
+  lng: 19.0895
+  lat: 47.5005
+  visited: 2017-12-29
+
+- name: 第比利斯
+  lng: 44.8091
+  lat: 41.6928
+  visited: 2017-12-30
+
+- name: 姆茨赫塔
+  lng: 44.7207
+  lat: 41.8425
+  visited: 2017-12-31
+
+- name: 西格纳吉
+  lng: 45.9210
+  lat: 41.6159
+  visited: 2018-01-01
+
+- name: 卡兹贝吉
+  lng: 44.4848
+  lat: 42.4681
+  visited: 2018-01-02
+
+- name: 埃里温
+  lng: 44.5104
+  lat: 40.1858
+  visited: 2018-01-03
+
+- name: 塞凡湖
+  lng: 44.9999
+  lat: 40.5682
+  visited: 2018-01-03
+
+- name: 法兰克福
+  lng: 8.6363
+  lat: 50.1022
+  visited: 2018-04-28
+
+- name: 林雪平
+  lng: 15.6011
+  lat: 58.4079
+  visited: 2019-11-05
+
+- name: 斯德哥尔摩
+  lng: 18.0640
+  lat: 59.3300
+  visited: 2019-11-09
+
+- name: 蒙自
+  lng: 103.4131
+  lat: 23.3442
+  visited: 2020-04-28
+
+- name: 普者黑
+  lng: 104.1143
+  lat: 24.1387
+  visited: 2020-04-30
+
+- name: 大理
+  lng: 100.1630
+  lat: 25.6931
+  visited: 2020-05-02
+
+- name: 昆明
+  lng: 102.8286
+  lat: 24.9935
+  visited: 2020-05-04
+
+- name: 济州市
+  lng: 126.4959
+  lat: 33.4968
+  visited: 2024-03-07
+
+- name: 咸德海水浴场
+  lng: 126.6671
+  lat: 33.5427
+  visited: 2024-03-07
+
+- name: 迷路公园
+  lng: 126.7726
+  lat: 33.5368
+  visited: 2024-03-07
+
+- name: 城山日出峰
+  lng: 126.9445
+  lat: 33.4573
+  visited: 2024-03-08
+
+- name: 涉地可支
+  lng: 126.9314
+  lat: 33.4247
+  visited: 2024-03-08
+
+- name: 牛岛
+  lng: 126.9681
+  lat: 33.5153
+  visited: 2024-03-09
+
+- name: 上海天文馆
+  lng: 121.9225
+  lat: 30.9138
+  visited: 2024-03-17
+
+- name: 迪士尼
+  lng: 121.6742
+  lat: 31.1193
+  visited: 2024-03-26
+
+- name: 福州
+  lng: 119.2830
+  lat: 26.0832
+  visited: 2024-05-02
+
+- name: 平潭
+  lng: 119.8056
+  lat: 25.5195
+  visited: 2024-05-03
+
 - name: 天坛
   lng: 116.4123
   lat: 39.8825
@@ -42,6 +393,12 @@
   lat: 49.5886
   visited: 2024-10-06
   note: 来一杯瑞幸吧
+
+- name: 陈巴尔虎旗
+  lng: 118.8301
+  lat: 49.9363
+  visited: 2024-10-06
+  note: 最美边境公路，室韦封路，只能改行程
 
 - name: 额尔古纳
   lng: 120.4440
@@ -133,7 +490,7 @@
   visited: 2025-03-29
   note: 老街区很有味道
 
-- name: 杭州
+- name: 西湖
   lng: 120.1503
   lat: 30.2411
   visited: 2025-08-29
