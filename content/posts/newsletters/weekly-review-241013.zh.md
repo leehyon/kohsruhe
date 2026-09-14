@@ -1,5 +1,5 @@
 ---
-title: "周报 08 - 国庆长假和这就是牛市吗"
+title: "#08 国庆长假和这就是牛市吗"
 date: 2024-10-13T21:40:28+08:00
 draft: false
 tags: ["newsletter", "market", "travel", "lessons-learned"]

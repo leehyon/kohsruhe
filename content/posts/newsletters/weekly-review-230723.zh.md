@@ -1,5 +1,5 @@
 ---
-title: "周报 02 - 热爱可抵岁月漫长"
+title: "#02 热爱可抵岁月漫长"
 date: 2023-07-23T13:52:27+08:00
 draft: false
 tags: ["newsletter", "photography", "record", "flow"]

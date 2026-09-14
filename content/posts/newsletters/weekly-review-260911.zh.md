@@ -1,5 +1,5 @@
 ---
-title: "周报 13 - 记一次失败的小红书起号经历"
+title: "#13 记一次失败的小红书起号经历"
 date: 2026-09-11T16:41:10+08:00
 draft: false
 tags: ["newsletter", "vlog", "review"]

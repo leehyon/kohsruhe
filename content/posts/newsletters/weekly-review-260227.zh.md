@@ -1,5 +1,5 @@
 ---
-title: "周报 09 - 过年的日子"
+title: "#09 过年的日子"
 date: 2026-02-27T17:37:54+08:00
 draft: false
 tags: ["newsletter"]

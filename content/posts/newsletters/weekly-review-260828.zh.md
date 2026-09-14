@@ -1,5 +1,5 @@
 ---
-title: "周报 12 - 重置的诱惑和失焦的当下"
+title: "#12 重置的诱惑和失焦的当下"
 date: 2026-08-28T17:00:48+08:00
 draft: false
 tags: ["newsletter", "restart"]
