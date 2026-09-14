@@ -60,18 +60,45 @@ article li {
 
 /* Table */
 table {
-	overflow: auto;
+	width: 100%;
 	display: block;
+	overflow-x: auto;
 	border-spacing: 0;
 	border-collapse: collapse;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.8rem;
+	font-size: 0.95rem;
+	border-top: 1px solid #e5e7eb;
+	border-bottom: 1px solid #e5e7eb;
 }
 
-table tr th,
-table tr td {
-	padding: 0.3rem 0.8rem;
-	border: 1px solid gray;
+table th {
+	color: #374151;
+	font-weight: 600;
+	padding: 0.75rem 1rem;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 2px solid #e5e7eb;
+	white-space: nowrap;
+	background-color: transparent;
+}
+
+table td {
+	padding: 0.75rem 1rem;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid #f3f4f6;
+	vertical-align: middle;
+}
+
+table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+table tr:hover td {
+	background-color: #fafbfc;
 }
 
 code {
