@@ -138,41 +138,12 @@
       infoWindow.close();
     });
 
-    // AMap v2.0 doesn't render the zoom bar by default — instantiate
-    // it explicitly so we get the standard +/- control. ToolBar is a
-    // separate plugin, so we need to load it first. We then hide its
-    // built-in widget and wire our own row of 4 controls so the
-    // zoom/fullscreen/reset buttons all share the same visual style
-    // and sit on one row in the top-right corner.
-    var standardControlsLoaded = false;
-    function onStandardControls() {
-      if (standardControlsLoaded) return;
-      if (AMap.ToolBar) {
-        var tb = new AMap.ToolBar({ position: "RT" });
-        map.addControl(tb);
-        // Hide the rendered DOM — we drive zoom from our own buttons.
-        // This is purely visual re-skinning: the ToolBar instance is
-        // still on the map and accepts programmatic zoom changes.
-        setTimeout(function () {
-          var node = container.querySelector(".amap-toolbar");
-          if (node) node.style.display = "none";
-        }, 0);
-        standardControlsLoaded = true;
-      }
-    }
-    if (typeof AMap.ToolBar !== "function") {
-      AMap.plugin(["AMap.ToolBar"], onStandardControls);
-    } else {
-      onStandardControls();
-    }
-
     // Custom right-edge control column: a single vertical strip with
     // four 36×36 buttons — zoom-in, zoom-out, fullscreen, reset —
     // sharing one card background so the group reads as one widget.
     // Positioned `right: 10px; top: 50%; transform: translateY(-50%)`
     // so it sits dead-center along the right edge of the map.
-    // AMap's ToolBar instance handles the actual zoom logic via
-    // map.zoomIn() / map.zoomOut().
+    // Zoom logic is handled directly via map.zoomIn() / map.zoomOut().
     function btn(svgPath, action, title, isLast) {
       var borderBottom = isLast
         ? ""
