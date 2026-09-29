@@ -98,3 +98,76 @@ readelf -d libqcdplatform.so | grep NEEDED
 # nm -D 命令提取了 libqcdplatform.so 的非未定义符号（即该库导出的函数 / 变量）
 nm -D libqcdplatform.so | grep -v "U"
 ```
+
+## Hermes
+
+```bash
+hermes --continue             # Resume the most recent CLI session (-c)
+hermes --resume <session_id>  # Resume a specific session by ID (-r)
+hermes --tui -c               # Resume the latest TUI session
+
+hermes sessions list
+hermes sessions stats
+# 导出会话历史
+hermes sessions export history.jsonl
+hermes sessions export history.html --format html
+```
+
+## Keyboard shortcuts
+
+> 以下按使用场景和记忆顺序整理：先记系统与窗口，再记文件、编辑和截图。
+
+### Windows
+
+```shell
+# 系统与窗口：Tab 切换，D 显示桌面，方向键调整窗口
+Win + Tab               # 打开任务视图
+Win + D                 # 显示或隐藏桌面
+Win + E                 # 打开文件资源管理器
+Win + A                 # 打开快速设置
+Win + N                 # 打开通知中心和日历
+Win + X                 # 打开快速链接菜单
+Win + L                 # 锁定电脑
+Win + R                 # 打开“运行”
+Win + I                 # 打开“设置”
+Win + ↑                 # 最大化窗口
+Win + ↓                 # 还原或最小化窗口
+Win + ← / →             # 将窗口贴靠到屏幕左侧或右侧
+Win + Ctrl + D          # 新建虚拟桌面
+Win + Ctrl + ← / →      # 切换虚拟桌面
+Win + Ctrl + F4         # 关闭当前虚拟桌面
+
+# 文件管理：E 打开资源管理器，L 定位路径，N 新建目录
+Alt + ↑                 # 返回上一级目录
+Alt + ← / →             # 后退或前进
+Ctrl + L                # 定位到地址栏
+Ctrl + Shift + N        # 新建文件夹
+F2                      # 重命名选中项目
+F5                      # 刷新
+Delete                  # 移入回收站
+Shift + Delete          # 永久删除
+Ctrl + C / X / V        # 复制 / 剪切 / 粘贴
+Ctrl + Z / Y            # 撤销 / 重做
+
+# 文本编辑：Shift 选择，Ctrl 按单词移动
+Ctrl + 方向键           # 按单词移动光标
+Shift + 方向键          # 连续选择文本
+Ctrl + Shift + 方向键   # 按单词选择文本
+
+# 截图与工具：Shift + S 截图，V 访问剪贴板
+Win + Shift + S         # 打开截图工具
+Win + V                 # 打开剪贴板历史记录
+Win + .                 # 打开表情符号和特殊字符面板
+Win + Space             # 切换输入法或键盘布局
+Win + P                 # 切换投影或多显示器模式
+Win + G                 # 打开 Xbox 游戏栏
+
+# 通用操作：Alt 切换窗口，Ctrl 管理当前应用
+Alt + Tab               # 切换窗口
+Alt + F4                # 关闭当前窗口或应用
+Ctrl + Shift + Esc      # 打开任务管理器
+Ctrl + W                # 关闭当前标签页或文档
+Ctrl + T                # 新建标签页
+Ctrl + Shift + T        # 恢复最近关闭的标签页
+Ctrl + Tab              # 切换到下一个标签页
+```
