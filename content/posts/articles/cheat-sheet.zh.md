@@ -79,6 +79,12 @@ find . -type f -name "*ota*" # 查找文件
 
 du -sh * # 查看当前目录下各子目录大小
 
+scp -r myproject/ user@192.168.1.100:/home/user/ # 递归复制整个目录
+
+tar -czvf archive.tar.gz myfolder/ # 压缩整个目录
+tar -xzvf archive.tar.gz # 解压
+
+
 # tmux
 tmux new -s name            # 创建会话
 tmux ls                     # 列出会话
